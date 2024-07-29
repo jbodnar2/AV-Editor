@@ -1,0 +1,2174 @@
+{
+  "text": " This message comes from NPR sponsor Whole Foods Market. Shop Whole Foods Market during sweet summer days and save through July 30th on best-of-season organic strawberries, organic blueberries, fruit snacks, frozen treats and more, only at Whole Foods Market. This message comes from NPR sponsor Train Technologies. By setting a higher standard, they're accelerating climate innovation for impact, aiming to achieve net-zero carbon emissions by 2050. See how at traintechnologies.com. You're listening to Shortwave from NPR. See science stories in the news that have caught our attention recently. Yeah, yeah, yeah, and I want to say the first one. We have got chimpanzee gestures revealing things about communication. How oxygen is created at the bottom of the ocean. Yeah, and how a computer program may warn people before a huge rogue wave hits. All of that on this episode of Shortwave, the science podcast from NPR. This message comes from NPR sponsor Greenlight. Want to teach your kids financial literacy? With Greenlight, kids and teens use a debit card of their own, while parents can keep an eye on kids spending and savings in the app. Get your first month free at greenlight.com.npr. This message comes from NPR sponsor American Express. Take your business further with the smart and flexible American Express business gold card. It offers flexible spending capacity that adapts to your business. You can also earn up to $395 in annual statement credits on eligible purchases at select business merchants. That's the powerful backing of American Express. Terms apply. Learn more at americanexpress.com. This message comes from NPR sponsor Planet Oat. No deep thinking here. Planet Oat oat milk is rich, creamy and an excellent source of calcium with vitamins A and D. Also, Planet Oats unsweetened varieties have zero grams of sugar. Visit planetoat.com for more. All right Elsa, you're our guest. We want to make you feel welcome, you know, happy. Which topic do you want to start with first? Well of course I want to start with the gesticulating chimpanzees. Right. Yes, do they use their hands as much as I do to communicate? Okay, yeah chimps definitely do. I mean they don't have full-blown language like we do, so gestures are really important for communication. Can I show you a clip of that? Oh yes, please. Okay, so these are two chimpanzees in a tree. They just had some conflict. And you can see that one chimp reaches for the other chimp's hand like I'm sorry. After a pause, the other chimp gently taps their hand back. It looks so tender. I'm watching this like they're really making up. Is that happening? Yeah, I mean maybe. So like gestural exchanges like this are the topic of a recent paper in the journal Current Biology. Gal Badihi is a postdoctoral research fellow at the University of St. Andrews in Scotland and the lead author of this paper. And my part was the East African chimpanzees. Sweeping an enormous data set, Gal looked at exchanges among five wild chimpanzee populations. Usually these exchanges had like two parts, hand reach, hand tap back. But sometimes these exchanges had up to seven parts, which was super exciting to see. Because they seem to have this back and forth in a face-to-face communicative setup that kind of resembles human conversations a little bit more. That's so cool. And they're sure that it has nothing to do with the sounds that they're uttering towards each other. It's just the gestures? Well, they are making sounds, but the gestures is what they were really paying attention to because of the pacing of the gestures. Like the back and forth was really similar to human conversation. The pause between a gesture and a gestural response averaged to about 120 milliseconds. Wow. It's really fast. Okay, well how close is that to human response? Yeah, conversational turns and humans averaged to about 200 milliseconds across language. No way. Again, all very rapid fire, all very fast. I had no idea there was a rate. Anyway, if chimps are supposed to be like one of our closest living relatives, right? Like does this reveal anything about the evolution of how humans communicate? It presents an intriguing possibility. Yeah, that this kind of back and forth communication may have evolved before humans split off from great apes. We don't know for sure, but several primatologists I spoke to who were not a part of the study all felt this was an important contribution to understanding how turn-taking and communication dynamics evolved. No language required. That is so fascinating. Okay, now we're going to take a sharp turn and move to oxygen on the sea floor. I take it that that is a weird thing, right? Otherwise we would not be talking about it. Yeah, so most of us oxygen is created through photosynthesis. That's when, you know, plants take in light, water and carbon dioxide and then they make like sugar and oxygen. But for over a decade, scientists were aware of traces of oxygen at the bottom of the ocean, like three miles down where there's no light, no photosynthesis, so where did this oxygen come from? And a new study in the journal Nature Geoscience may have an answer. It shows that oxygen produced with outlight called dark oxygen could be coming from bits of metal in the deep ocean. Wait, metal? What kind of metal is in the deep sea? Like how did it get all the way down there? It's these clumps of metals like nickel, manganese, cobalt, iron that form these nodules on the sea floor. And they grow on top of stuff that falls to the bottom like shark teeth. Yeah, I talked to physical chemist Franz Geiger about this and he's one of the paper's co-authors and he studied these clumps of metal in the lab. He specified it's not a rock and these nodules grow one millimeter per million years. And these are a few centimeters big so these clumps of metal accumulated over millions and millions of years. Think of like a really, really slow game of Tetris. Okay, so these clumps of metal grow very, very slowly. They glom together and how are they producing oxygen? Like I thought that is what plants do. Right, so preliminary experiment suggests it's partly through electrolysis of seawater. So electric current in the middle chunk splits ocean water H2O into hydrogen and oxygen, but the sensors they used only detect oxygen so they need more data before they can be like, sure this is happening. That's super cool. Yeah, it was surprising actually to the researchers, but there was another surprise that happened along the way. Franz almost lost the nodules. He got an email from customs about the package the nodules were in and they said that soil imports aren't allowed and they told him... The package will be destroyed. And I was like, what? I wasn't at faculty meeting when that happened. Oh, dang customs! Yeah, well, okay, so he then like scour the shipping rules and found that soil of oceanic origins can be imported without any issues in this save the nodule samples. Soil of oceanic origin loophole! Yes, okay. Your legal background is coming through. I want to stay in the ocean. Our final story is about waves gone rogue. What the heck, guys? Yeah, so row waves are these abnormally large waves that seem to come out of nowhere and they endanger ships at sea. Our colleague Nell Greenfield-Boys reported that advances in AI could someday help predict them. Huh. Okay, so when you say abnormally large waves, like how big are we talking? For a wave to be rogue, it has to be over twice the size of the surrounding waves at a given time. So it depends on the size of the waves in the area. For centuries, scientists thought these waves were a sailing myth until a scientific instrument managed to record one that measured 84 feet. Whoa! Yeah, and rogue waves are dangerous. They can damage ships, infrastructure, cause power failures, and really hurt people. A cruise ship passenger died and others were injured when a freak wave hit the Viking Polaris in 2022. Oh my god, that's terrible. Yeah. Yeah, there's no way of predicting them. But a new study suggests that actually it may be possible to use information from floating buoys to give people some advanced warning. So researchers have developed a computer system that correctly predicted 73% of these rogue waves five minutes before they occurred, which is valuable. It's like an earthquake warning, you know? With some time, oil rig workers or ship passengers can seek shelter, perform emergency shutdowns, or evacuate. Yeah. If people on the ocean had a little more time, that would help. Wow. Well, how did these researchers figure out how to predict these waves? Yeah, so a researcher with the University of Maryland, Bala Balachandran, and his colleagues trained a neural network using data from 172 buoys off the coast of the continental U.S. and the Pacific Islands. All of that data helped train the computer system to recognize waves that occurred right before a rogue wave happened, and also to distinguish them from waves that weren't followed by a rogue wave. The scientists say they still have to improve the system's accuracy, but this could be the start of a powerful tool that could even lead to better forecasting for other extreme events. That's pretty awesome. Yeah, it really is. And Elsa, thank you so much for hanging out with us. You're always welcome. You're always amazing. Thank you. I always feel welcome. I love it here. This is the good place. It is the good place. You can catch more of Elsa doing her day job hosting the news on Consider This and Pair's afternoon news podcast. Before we head out, a quick shout out to our Shore Wave Plus listeners. We appreciate you and we thank you for supporting our show. Shore Wave Plus helps support our show. And if you're a regular listener, we'd love for you to join so you can enjoy the show without sponsor interruptions. Find out more at plus.npr.org slash Shore Wave. This episode was produced by Kira Wakeem and Rachel Carlson. It was edited by Rebecca Ramirez and Christopher Intelyata. Emily, Rebecca, Rachel and I checked the facts. And the audio engineer was Valentino Rodriguez Sanchez. I'm Regina Barber. And I'm Emily Kwong. Thanks for listening to Shore Wave, the science podcast from NPR. With the smart and flexible Amex Business Gold Card, it's packed with benefits that help unlock more value from your business purchases. Learn more at americanexpress.com slash businessgoldcard. This message comes from NPR sponsor, UNI, introducing the Coda 2 Max, their biggest and most versatile oven yet, with two powerful independently controlled gas burners for side by side dual zone cooking at a range of temperatures. The oven features a 24 inch wide cooking area, allowing you to bake one 20 inch New York style pizza, or multiple 10 to 12 inch pizzas simultaneously. It also comes with a glass visor for dramatic views, easily removable to accommodate larger dishes. More at ooni.com.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 3.5,
+      "text": " This message comes from NPR sponsor Whole Foods Market.",
+      "tokens": [50364, 639, 3636, 1487, 490, 426, 15958, 16198, 30336, 40724, 15596, 13, 50539],
+      "temperature": 0.0,
+      "avg_logprob": -0.1747997457330877,
+      "compression_ratio": 1.7007042253521127,
+      "no_speech_prob": 0.0893903598189354
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 3.5,
+      "end": 9.5,
+      "text": " Shop Whole Foods Market during sweet summer days and save through July 30th on best-of-season organic strawberries,",
+      "tokens": [
+        50539, 16319, 30336, 40724, 15596, 1830, 3844, 4266, 1708, 293, 3155, 807, 7370, 2217, 392, 322, 1151, 12, 2670,
+        12, 28862, 10220, 26873, 11, 50839
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1747997457330877,
+      "compression_ratio": 1.7007042253521127,
+      "no_speech_prob": 0.0893903598189354
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 9.5,
+      "end": 14.5,
+      "text": " organic blueberries, fruit snacks, frozen treats and more, only at Whole Foods Market.",
+      "tokens": [
+        50839, 10220, 43722, 11, 6773, 16160, 11, 12496, 19566, 293, 544, 11, 787, 412, 30336, 40724, 15596, 13, 51089
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1747997457330877,
+      "compression_ratio": 1.7007042253521127,
+      "no_speech_prob": 0.0893903598189354
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 14.5,
+      "end": 18.5,
+      "text": " This message comes from NPR sponsor Train Technologies.",
+      "tokens": [51089, 639, 3636, 1487, 490, 426, 15958, 16198, 28029, 46993, 13, 51289],
+      "temperature": 0.0,
+      "avg_logprob": -0.1747997457330877,
+      "compression_ratio": 1.7007042253521127,
+      "no_speech_prob": 0.0893903598189354
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 18.5,
+      "end": 23.0,
+      "text": " By setting a higher standard, they're accelerating climate innovation for impact,",
+      "tokens": [51289, 3146, 3287, 257, 2946, 3832, 11, 436, 434, 34391, 5659, 8504, 337, 2712, 11, 51514],
+      "temperature": 0.0,
+      "avg_logprob": -0.1747997457330877,
+      "compression_ratio": 1.7007042253521127,
+      "no_speech_prob": 0.0893903598189354
+    },
+    {
+      "id": 5,
+      "seek": 0,
+      "start": 23.0,
+      "end": 26.5,
+      "text": " aiming to achieve net-zero carbon emissions by 2050.",
+      "tokens": [51514, 20253, 281, 4584, 2533, 12, 32226, 5954, 14607, 538, 38308, 13, 51689],
+      "temperature": 0.0,
+      "avg_logprob": -0.1747997457330877,
+      "compression_ratio": 1.7007042253521127,
+      "no_speech_prob": 0.0893903598189354
+    },
+    {
+      "id": 6,
+      "seek": 0,
+      "start": 26.5,
+      "end": 29.5,
+      "text": " See how at traintechnologies.com.",
+      "tokens": [51689, 3008, 577, 412, 3847, 29113, 6204, 13, 1112, 13, 51839],
+      "temperature": 0.0,
+      "avg_logprob": -0.1747997457330877,
+      "compression_ratio": 1.7007042253521127,
+      "no_speech_prob": 0.0893903598189354
+    },
+    {
+      "id": 7,
+      "seek": 3000,
+      "start": 30.0,
+      "end": 34.5,
+      "text": " You're listening to Shortwave from NPR.",
+      "tokens": [50389, 509, 434, 4764, 281, 16881, 35461, 490, 426, 15958, 13, 50589],
+      "temperature": 0.0,
+      "avg_logprob": -0.2388753524193397,
+      "compression_ratio": 0.8297872340425532,
+      "no_speech_prob": 0.023142069578170776
+    },
+    {
+      "id": 8,
+      "seek": 6000,
+      "start": 60.0,
+      "end": 63.5,
+      "text": " See science stories in the news that have caught our attention recently.",
+      "tokens": [50364, 3008, 3497, 3676, 294, 264, 2583, 300, 362, 5415, 527, 3202, 3938, 13, 50539],
+      "temperature": 0.0,
+      "avg_logprob": -0.1179595674787249,
+      "compression_ratio": 1.5612648221343874,
+      "no_speech_prob": 0.8869220614433289
+    },
+    {
+      "id": 9,
+      "seek": 6000,
+      "start": 63.5,
+      "end": 65.5,
+      "text": " Yeah, yeah, yeah, and I want to say the first one.",
+      "tokens": [50539, 865, 11, 1338, 11, 1338, 11, 293, 286, 528, 281, 584, 264, 700, 472, 13, 50639],
+      "temperature": 0.0,
+      "avg_logprob": -0.1179595674787249,
+      "compression_ratio": 1.5612648221343874,
+      "no_speech_prob": 0.8869220614433289
+    },
+    {
+      "id": 10,
+      "seek": 6000,
+      "start": 65.5,
+      "end": 71.5,
+      "text": " We have got chimpanzee gestures revealing things about communication.",
+      "tokens": [50639, 492, 362, 658, 18375, 48410, 68, 28475, 23983, 721, 466, 6101, 13, 50939],
+      "temperature": 0.0,
+      "avg_logprob": -0.1179595674787249,
+      "compression_ratio": 1.5612648221343874,
+      "no_speech_prob": 0.8869220614433289
+    },
+    {
+      "id": 11,
+      "seek": 6000,
+      "start": 71.5,
+      "end": 74.5,
+      "text": " How oxygen is created at the bottom of the ocean.",
+      "tokens": [50939, 1012, 9169, 307, 2942, 412, 264, 2767, 295, 264, 7810, 13, 51089],
+      "temperature": 0.0,
+      "avg_logprob": -0.1179595674787249,
+      "compression_ratio": 1.5612648221343874,
+      "no_speech_prob": 0.8869220614433289
+    },
+    {
+      "id": 12,
+      "seek": 6000,
+      "start": 74.5,
+      "end": 79.5,
+      "text": " Yeah, and how a computer program may warn people before a huge rogue wave hits.",
+      "tokens": [
+        51089, 865, 11, 293, 577, 257, 3820, 1461, 815, 12286, 561, 949, 257, 2603, 39100, 5772, 8664, 13, 51339
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1179595674787249,
+      "compression_ratio": 1.5612648221343874,
+      "no_speech_prob": 0.8869220614433289
+    },
+    {
+      "id": 13,
+      "seek": 6000,
+      "start": 79.5,
+      "end": 83.5,
+      "text": " All of that on this episode of Shortwave, the science podcast from NPR.",
+      "tokens": [
+        51339, 1057, 295, 300, 322, 341, 3500, 295, 16881, 35461, 11, 264, 3497, 7367, 490, 426, 15958, 13, 51539
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1179595674787249,
+      "compression_ratio": 1.5612648221343874,
+      "no_speech_prob": 0.8869220614433289
+    },
+    {
+      "id": 14,
+      "seek": 9000,
+      "start": 90.5,
+      "end": 96.5,
+      "text": " This message comes from NPR sponsor Greenlight.",
+      "tokens": [50389, 639, 3636, 1487, 490, 426, 15958, 16198, 6969, 2764, 13, 50689],
+      "temperature": 0.0,
+      "avg_logprob": -0.10734746062639848,
+      "compression_ratio": 1.721311475409836,
+      "no_speech_prob": 0.3169119954109192
+    },
+    {
+      "id": 15,
+      "seek": 9000,
+      "start": 96.5,
+      "end": 99.5,
+      "text": " Want to teach your kids financial literacy?",
+      "tokens": [50689, 11773, 281, 2924, 428, 2301, 4669, 23166, 30, 50839],
+      "temperature": 0.0,
+      "avg_logprob": -0.10734746062639848,
+      "compression_ratio": 1.721311475409836,
+      "no_speech_prob": 0.3169119954109192
+    },
+    {
+      "id": 16,
+      "seek": 9000,
+      "start": 99.5,
+      "end": 102.5,
+      "text": " With Greenlight, kids and teens use a debit card of their own,",
+      "tokens": [50839, 2022, 6969, 2764, 11, 2301, 293, 24849, 764, 257, 39709, 2920, 295, 641, 1065, 11, 50989],
+      "temperature": 0.0,
+      "avg_logprob": -0.10734746062639848,
+      "compression_ratio": 1.721311475409836,
+      "no_speech_prob": 0.3169119954109192
+    },
+    {
+      "id": 17,
+      "seek": 9000,
+      "start": 102.5,
+      "end": 105.5,
+      "text": " while parents can keep an eye on kids spending and savings in the app.",
+      "tokens": [50989, 1339, 3152, 393, 1066, 364, 3313, 322, 2301, 6434, 293, 13454, 294, 264, 724, 13, 51139],
+      "temperature": 0.0,
+      "avg_logprob": -0.10734746062639848,
+      "compression_ratio": 1.721311475409836,
+      "no_speech_prob": 0.3169119954109192
+    },
+    {
+      "id": 18,
+      "seek": 9000,
+      "start": 105.5,
+      "end": 109.5,
+      "text": " Get your first month free at greenlight.com.npr.",
+      "tokens": [51139, 3240, 428, 700, 1618, 1737, 412, 3092, 2764, 13, 1112, 13, 77, 1424, 13, 51339],
+      "temperature": 0.0,
+      "avg_logprob": -0.10734746062639848,
+      "compression_ratio": 1.721311475409836,
+      "no_speech_prob": 0.3169119954109192
+    },
+    {
+      "id": 19,
+      "seek": 9000,
+      "start": 109.5,
+      "end": 113.5,
+      "text": " This message comes from NPR sponsor American Express.",
+      "tokens": [51339, 639, 3636, 1487, 490, 426, 15958, 16198, 2665, 20212, 13, 51539],
+      "temperature": 0.0,
+      "avg_logprob": -0.10734746062639848,
+      "compression_ratio": 1.721311475409836,
+      "no_speech_prob": 0.3169119954109192
+    },
+    {
+      "id": 20,
+      "seek": 9000,
+      "start": 113.5,
+      "end": 119.5,
+      "text": " Take your business further with the smart and flexible American Express business gold card.",
+      "tokens": [51539, 3664, 428, 1606, 3052, 365, 264, 4069, 293, 11358, 2665, 20212, 1606, 3821, 2920, 13, 51839],
+      "temperature": 0.0,
+      "avg_logprob": -0.10734746062639848,
+      "compression_ratio": 1.721311475409836,
+      "no_speech_prob": 0.3169119954109192
+    },
+    {
+      "id": 21,
+      "seek": 11950,
+      "start": 119.5,
+      "end": 123.0,
+      "text": " It offers flexible spending capacity that adapts to your business.",
+      "tokens": [50364, 467, 7736, 11358, 6434, 6042, 300, 23169, 1373, 281, 428, 1606, 13, 50539],
+      "temperature": 0.0,
+      "avg_logprob": -0.09635092137934087,
+      "compression_ratio": 1.4721030042918455,
+      "no_speech_prob": 0.007184513378888369
+    },
+    {
+      "id": 22,
+      "seek": 11950,
+      "start": 123.0,
+      "end": 128.0,
+      "text": " You can also earn up to $395 in annual statement credits",
+      "tokens": [50539, 509, 393, 611, 6012, 493, 281, 1848, 12493, 20, 294, 9784, 5629, 16816, 50789],
+      "temperature": 0.0,
+      "avg_logprob": -0.09635092137934087,
+      "compression_ratio": 1.4721030042918455,
+      "no_speech_prob": 0.007184513378888369
+    },
+    {
+      "id": 23,
+      "seek": 11950,
+      "start": 128.0,
+      "end": 131.0,
+      "text": " on eligible purchases at select business merchants.",
+      "tokens": [50789, 322, 14728, 26762, 412, 3048, 1606, 36253, 13, 50939],
+      "temperature": 0.0,
+      "avg_logprob": -0.09635092137934087,
+      "compression_ratio": 1.4721030042918455,
+      "no_speech_prob": 0.007184513378888369
+    },
+    {
+      "id": 24,
+      "seek": 11950,
+      "start": 131.0,
+      "end": 134.0,
+      "text": " That's the powerful backing of American Express.",
+      "tokens": [50939, 663, 311, 264, 4005, 19373, 295, 2665, 20212, 13, 51089],
+      "temperature": 0.0,
+      "avg_logprob": -0.09635092137934087,
+      "compression_ratio": 1.4721030042918455,
+      "no_speech_prob": 0.007184513378888369
+    },
+    {
+      "id": 25,
+      "seek": 11950,
+      "start": 134.0,
+      "end": 135.0,
+      "text": " Terms apply.",
+      "tokens": [51089, 19835, 82, 3079, 13, 51139],
+      "temperature": 0.0,
+      "avg_logprob": -0.09635092137934087,
+      "compression_ratio": 1.4721030042918455,
+      "no_speech_prob": 0.007184513378888369
+    },
+    {
+      "id": 26,
+      "seek": 11950,
+      "start": 135.0,
+      "end": 137.0,
+      "text": " Learn more at americanexpress.com.",
+      "tokens": [51139, 17216, 544, 412, 16116, 299, 1929, 87, 11637, 13, 1112, 13, 51239],
+      "temperature": 0.0,
+      "avg_logprob": -0.09635092137934087,
+      "compression_ratio": 1.4721030042918455,
+      "no_speech_prob": 0.007184513378888369
+    },
+    {
+      "id": 27,
+      "seek": 11950,
+      "start": 137.0,
+      "end": 142.0,
+      "text": " This message comes from NPR sponsor Planet Oat.",
+      "tokens": [51239, 639, 3636, 1487, 490, 426, 15958, 16198, 22146, 422, 267, 13, 51489],
+      "temperature": 0.0,
+      "avg_logprob": -0.09635092137934087,
+      "compression_ratio": 1.4721030042918455,
+      "no_speech_prob": 0.007184513378888369
+    },
+    {
+      "id": 28,
+      "seek": 11950,
+      "start": 142.0,
+      "end": 144.0,
+      "text": " No deep thinking here.",
+      "tokens": [51489, 883, 2452, 1953, 510, 13, 51589],
+      "temperature": 0.0,
+      "avg_logprob": -0.09635092137934087,
+      "compression_ratio": 1.4721030042918455,
+      "no_speech_prob": 0.007184513378888369
+    },
+    {
+      "id": 29,
+      "seek": 14400,
+      "start": 144.0,
+      "end": 150.5,
+      "text": " Planet Oat oat milk is rich, creamy and an excellent source of calcium with vitamins A and D.",
+      "tokens": [
+        50364, 22146, 422, 267, 36792, 5392, 307, 4593, 11, 23215, 293, 364, 7103, 4009, 295, 20918, 365, 27920, 316,
+        293, 413, 13, 50689
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1288298632191346,
+      "compression_ratio": 1.5533596837944663,
+      "no_speech_prob": 0.06213604658842087
+    },
+    {
+      "id": 30,
+      "seek": 14400,
+      "start": 150.5,
+      "end": 155.5,
+      "text": " Also, Planet Oats unsweetened varieties have zero grams of sugar.",
+      "tokens": [50689, 2743, 11, 22146, 422, 1720, 2693, 10354, 5320, 22092, 362, 4018, 11899, 295, 5076, 13, 50939],
+      "temperature": 0.0,
+      "avg_logprob": -0.1288298632191346,
+      "compression_ratio": 1.5533596837944663,
+      "no_speech_prob": 0.06213604658842087
+    },
+    {
+      "id": 31,
+      "seek": 14400,
+      "start": 155.5,
+      "end": 158.5,
+      "text": " Visit planetoat.com for more.",
+      "tokens": [50939, 24548, 5054, 78, 267, 13, 1112, 337, 544, 13, 51089],
+      "temperature": 0.0,
+      "avg_logprob": -0.1288298632191346,
+      "compression_ratio": 1.5533596837944663,
+      "no_speech_prob": 0.06213604658842087
+    },
+    {
+      "id": 32,
+      "seek": 14400,
+      "start": 158.5,
+      "end": 160.5,
+      "text": " All right Elsa, you're our guest.",
+      "tokens": [51089, 1057, 558, 36342, 11, 291, 434, 527, 8341, 13, 51189],
+      "temperature": 0.0,
+      "avg_logprob": -0.1288298632191346,
+      "compression_ratio": 1.5533596837944663,
+      "no_speech_prob": 0.06213604658842087
+    },
+    {
+      "id": 33,
+      "seek": 14400,
+      "start": 160.5,
+      "end": 164.5,
+      "text": " We want to make you feel welcome, you know, happy.",
+      "tokens": [51189, 492, 528, 281, 652, 291, 841, 2928, 11, 291, 458, 11, 2055, 13, 51389],
+      "temperature": 0.0,
+      "avg_logprob": -0.1288298632191346,
+      "compression_ratio": 1.5533596837944663,
+      "no_speech_prob": 0.06213604658842087
+    },
+    {
+      "id": 34,
+      "seek": 14400,
+      "start": 164.5,
+      "end": 166.5,
+      "text": " Which topic do you want to start with first?",
+      "tokens": [51389, 3013, 4829, 360, 291, 528, 281, 722, 365, 700, 30, 51489],
+      "temperature": 0.0,
+      "avg_logprob": -0.1288298632191346,
+      "compression_ratio": 1.5533596837944663,
+      "no_speech_prob": 0.06213604658842087
+    },
+    {
+      "id": 35,
+      "seek": 14400,
+      "start": 166.5,
+      "end": 169.5,
+      "text": " Well of course I want to start with the gesticulating chimpanzees.",
+      "tokens": [51489, 1042, 295, 1164, 286, 528, 281, 722, 365, 264, 7219, 299, 12162, 18375, 48410, 279, 13, 51639],
+      "temperature": 0.0,
+      "avg_logprob": -0.1288298632191346,
+      "compression_ratio": 1.5533596837944663,
+      "no_speech_prob": 0.06213604658842087
+    },
+    {
+      "id": 36,
+      "seek": 14400,
+      "start": 169.5,
+      "end": 170.5,
+      "text": " Right.",
+      "tokens": [51639, 1779, 13, 51689],
+      "temperature": 0.0,
+      "avg_logprob": -0.1288298632191346,
+      "compression_ratio": 1.5533596837944663,
+      "no_speech_prob": 0.06213604658842087
+    },
+    {
+      "id": 37,
+      "seek": 17050,
+      "start": 170.5,
+      "end": 175.0,
+      "text": " Yes, do they use their hands as much as I do to communicate?",
+      "tokens": [50364, 1079, 11, 360, 436, 764, 641, 2377, 382, 709, 382, 286, 360, 281, 7890, 30, 50589],
+      "temperature": 0.0,
+      "avg_logprob": -0.15031828880310058,
+      "compression_ratio": 1.5719844357976653,
+      "no_speech_prob": 0.09342053532600403
+    },
+    {
+      "id": 38,
+      "seek": 17050,
+      "start": 175.0,
+      "end": 177.0,
+      "text": " Okay, yeah chimps definitely do.",
+      "tokens": [50589, 1033, 11, 1338, 18375, 1878, 2138, 360, 13, 50689],
+      "temperature": 0.0,
+      "avg_logprob": -0.15031828880310058,
+      "compression_ratio": 1.5719844357976653,
+      "no_speech_prob": 0.09342053532600403
+    },
+    {
+      "id": 39,
+      "seek": 17050,
+      "start": 177.0,
+      "end": 179.0,
+      "text": " I mean they don't have full-blown language like we do,",
+      "tokens": [50689, 286, 914, 436, 500, 380, 362, 1577, 12, 5199, 648, 2856, 411, 321, 360, 11, 50789],
+      "temperature": 0.0,
+      "avg_logprob": -0.15031828880310058,
+      "compression_ratio": 1.5719844357976653,
+      "no_speech_prob": 0.09342053532600403
+    },
+    {
+      "id": 40,
+      "seek": 17050,
+      "start": 179.0,
+      "end": 181.5,
+      "text": " so gestures are really important for communication.",
+      "tokens": [50789, 370, 28475, 366, 534, 1021, 337, 6101, 13, 50914],
+      "temperature": 0.0,
+      "avg_logprob": -0.15031828880310058,
+      "compression_ratio": 1.5719844357976653,
+      "no_speech_prob": 0.09342053532600403
+    },
+    {
+      "id": 41,
+      "seek": 17050,
+      "start": 181.5,
+      "end": 183.0,
+      "text": " Can I show you a clip of that?",
+      "tokens": [50914, 1664, 286, 855, 291, 257, 7353, 295, 300, 30, 50989],
+      "temperature": 0.0,
+      "avg_logprob": -0.15031828880310058,
+      "compression_ratio": 1.5719844357976653,
+      "no_speech_prob": 0.09342053532600403
+    },
+    {
+      "id": 42,
+      "seek": 17050,
+      "start": 183.0,
+      "end": 186.0,
+      "text": " Oh yes, please.",
+      "tokens": [50989, 876, 2086, 11, 1767, 13, 51139],
+      "temperature": 0.0,
+      "avg_logprob": -0.15031828880310058,
+      "compression_ratio": 1.5719844357976653,
+      "no_speech_prob": 0.09342053532600403
+    },
+    {
+      "id": 43,
+      "seek": 17050,
+      "start": 186.0,
+      "end": 190.0,
+      "text": " Okay, so these are two chimpanzees in a tree.",
+      "tokens": [51139, 1033, 11, 370, 613, 366, 732, 18375, 48410, 279, 294, 257, 4230, 13, 51339],
+      "temperature": 0.0,
+      "avg_logprob": -0.15031828880310058,
+      "compression_ratio": 1.5719844357976653,
+      "no_speech_prob": 0.09342053532600403
+    },
+    {
+      "id": 44,
+      "seek": 17050,
+      "start": 190.0,
+      "end": 192.0,
+      "text": " They just had some conflict.",
+      "tokens": [51339, 814, 445, 632, 512, 6596, 13, 51439],
+      "temperature": 0.0,
+      "avg_logprob": -0.15031828880310058,
+      "compression_ratio": 1.5719844357976653,
+      "no_speech_prob": 0.09342053532600403
+    },
+    {
+      "id": 45,
+      "seek": 17050,
+      "start": 192.0,
+      "end": 197.0,
+      "text": " And you can see that one chimp reaches for the other chimp's hand like I'm sorry.",
+      "tokens": [
+        51439, 400, 291, 393, 536, 300, 472, 417, 8814, 14235, 337, 264, 661, 417, 8814, 311, 1011, 411, 286, 478, 2597,
+        13, 51689
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.15031828880310058,
+      "compression_ratio": 1.5719844357976653,
+      "no_speech_prob": 0.09342053532600403
+    },
+    {
+      "id": 46,
+      "seek": 19700,
+      "start": 197.0,
+      "end": 200.5,
+      "text": " After a pause, the other chimp gently taps their hand back.",
+      "tokens": [50364, 2381, 257, 10465, 11, 264, 661, 417, 8814, 13073, 42536, 641, 1011, 646, 13, 50539],
+      "temperature": 0.0,
+      "avg_logprob": -0.12227724393208822,
+      "compression_ratio": 1.5512367491166077,
+      "no_speech_prob": 0.006259482819586992
+    },
+    {
+      "id": 47,
+      "seek": 19700,
+      "start": 200.5,
+      "end": 202.5,
+      "text": " It looks so tender.",
+      "tokens": [50539, 467, 1542, 370, 15036, 13, 50639],
+      "temperature": 0.0,
+      "avg_logprob": -0.12227724393208822,
+      "compression_ratio": 1.5512367491166077,
+      "no_speech_prob": 0.006259482819586992
+    },
+    {
+      "id": 48,
+      "seek": 19700,
+      "start": 202.5,
+      "end": 205.0,
+      "text": " I'm watching this like they're really making up.",
+      "tokens": [50639, 286, 478, 1976, 341, 411, 436, 434, 534, 1455, 493, 13, 50764],
+      "temperature": 0.0,
+      "avg_logprob": -0.12227724393208822,
+      "compression_ratio": 1.5512367491166077,
+      "no_speech_prob": 0.006259482819586992
+    },
+    {
+      "id": 49,
+      "seek": 19700,
+      "start": 205.0,
+      "end": 206.0,
+      "text": " Is that happening?",
+      "tokens": [50764, 1119, 300, 2737, 30, 50814],
+      "temperature": 0.0,
+      "avg_logprob": -0.12227724393208822,
+      "compression_ratio": 1.5512367491166077,
+      "no_speech_prob": 0.006259482819586992
+    },
+    {
+      "id": 50,
+      "seek": 19700,
+      "start": 206.0,
+      "end": 207.5,
+      "text": " Yeah, I mean maybe.",
+      "tokens": [50814, 865, 11, 286, 914, 1310, 13, 50889],
+      "temperature": 0.0,
+      "avg_logprob": -0.12227724393208822,
+      "compression_ratio": 1.5512367491166077,
+      "no_speech_prob": 0.006259482819586992
+    },
+    {
+      "id": 51,
+      "seek": 19700,
+      "start": 207.5,
+      "end": 212.5,
+      "text": " So like gestural exchanges like this are the topic of a recent paper in the journal Current Biology.",
+      "tokens": [
+        50889, 407, 411, 7219, 1807, 27374, 411, 341, 366, 264, 4829, 295, 257, 5162, 3035, 294, 264, 6708, 15629,
+        48132, 13, 51139
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12227724393208822,
+      "compression_ratio": 1.5512367491166077,
+      "no_speech_prob": 0.006259482819586992
+    },
+    {
+      "id": 52,
+      "seek": 19700,
+      "start": 212.5,
+      "end": 218.5,
+      "text": " Gal Badihi is a postdoctoral research fellow at the University of St. Andrews in Scotland",
+      "tokens": [
+        51139, 7336, 363, 5688, 4954, 307, 257, 2183, 2595, 20946, 2132, 7177, 412, 264, 3535, 295, 745, 13, 10110, 82,
+        294, 11180, 51439
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12227724393208822,
+      "compression_ratio": 1.5512367491166077,
+      "no_speech_prob": 0.006259482819586992
+    },
+    {
+      "id": 53,
+      "seek": 19700,
+      "start": 218.5,
+      "end": 220.0,
+      "text": " and the lead author of this paper.",
+      "tokens": [51439, 293, 264, 1477, 3793, 295, 341, 3035, 13, 51514],
+      "temperature": 0.0,
+      "avg_logprob": -0.12227724393208822,
+      "compression_ratio": 1.5512367491166077,
+      "no_speech_prob": 0.006259482819586992
+    },
+    {
+      "id": 54,
+      "seek": 19700,
+      "start": 220.0,
+      "end": 223.0,
+      "text": " And my part was the East African chimpanzees.",
+      "tokens": [51514, 400, 452, 644, 390, 264, 6747, 7312, 18375, 48410, 279, 13, 51664],
+      "temperature": 0.0,
+      "avg_logprob": -0.12227724393208822,
+      "compression_ratio": 1.5512367491166077,
+      "no_speech_prob": 0.006259482819586992
+    },
+    {
+      "id": 55,
+      "seek": 22300,
+      "start": 223.0,
+      "end": 229.0,
+      "text": " Sweeping an enormous data set, Gal looked at exchanges among five wild chimpanzee populations.",
+      "tokens": [
+        50364, 29918, 10921, 364, 11322, 1412, 992, 11, 7336, 2956, 412, 27374, 3654, 1732, 4868, 18375, 48410, 68,
+        12822, 13, 50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08026910597278226,
+      "compression_ratio": 1.6797385620915033,
+      "no_speech_prob": 0.0025201858952641487
+    },
+    {
+      "id": 56,
+      "seek": 22300,
+      "start": 229.0,
+      "end": 233.0,
+      "text": " Usually these exchanges had like two parts, hand reach, hand tap back.",
+      "tokens": [50664, 11419, 613, 27374, 632, 411, 732, 3166, 11, 1011, 2524, 11, 1011, 5119, 646, 13, 50864],
+      "temperature": 0.0,
+      "avg_logprob": -0.08026910597278226,
+      "compression_ratio": 1.6797385620915033,
+      "no_speech_prob": 0.0025201858952641487
+    },
+    {
+      "id": 57,
+      "seek": 22300,
+      "start": 233.0,
+      "end": 238.0,
+      "text": " But sometimes these exchanges had up to seven parts, which was super exciting to see.",
+      "tokens": [
+        50864, 583, 2171, 613, 27374, 632, 493, 281, 3407, 3166, 11, 597, 390, 1687, 4670, 281, 536, 13, 51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08026910597278226,
+      "compression_ratio": 1.6797385620915033,
+      "no_speech_prob": 0.0025201858952641487
+    },
+    {
+      "id": 58,
+      "seek": 22300,
+      "start": 238.0,
+      "end": 243.0,
+      "text": " Because they seem to have this back and forth in a face-to-face communicative setup",
+      "tokens": [
+        51114, 1436, 436, 1643, 281, 362, 341, 646, 293, 5220, 294, 257, 1851, 12, 1353, 12, 2868, 3363, 1166, 8657,
+        51364
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08026910597278226,
+      "compression_ratio": 1.6797385620915033,
+      "no_speech_prob": 0.0025201858952641487
+    },
+    {
+      "id": 59,
+      "seek": 22300,
+      "start": 243.0,
+      "end": 246.5,
+      "text": " that kind of resembles human conversations a little bit more.",
+      "tokens": [51364, 300, 733, 295, 34433, 1952, 7315, 257, 707, 857, 544, 13, 51539],
+      "temperature": 0.0,
+      "avg_logprob": -0.08026910597278226,
+      "compression_ratio": 1.6797385620915033,
+      "no_speech_prob": 0.0025201858952641487
+    },
+    {
+      "id": 60,
+      "seek": 22300,
+      "start": 246.5,
+      "end": 248.0,
+      "text": " That's so cool.",
+      "tokens": [51539, 663, 311, 370, 1627, 13, 51614],
+      "temperature": 0.0,
+      "avg_logprob": -0.08026910597278226,
+      "compression_ratio": 1.6797385620915033,
+      "no_speech_prob": 0.0025201858952641487
+    },
+    {
+      "id": 61,
+      "seek": 22300,
+      "start": 248.0,
+      "end": 252.0,
+      "text": " And they're sure that it has nothing to do with the sounds that they're uttering towards each other.",
+      "tokens": [
+        51614, 400, 436, 434, 988, 300, 309, 575, 1825, 281, 360, 365, 264, 3263, 300, 436, 434, 17567, 278, 3030, 1184,
+        661, 13, 51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08026910597278226,
+      "compression_ratio": 1.6797385620915033,
+      "no_speech_prob": 0.0025201858952641487
+    },
+    {
+      "id": 62,
+      "seek": 25200,
+      "start": 252.0,
+      "end": 253.5,
+      "text": " It's just the gestures?",
+      "tokens": [50364, 467, 311, 445, 264, 28475, 30, 50439],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 63,
+      "seek": 25200,
+      "start": 253.5,
+      "end": 257.5,
+      "text": " Well, they are making sounds, but the gestures is what they were really paying attention to",
+      "tokens": [
+        50439, 1042, 11, 436, 366, 1455, 3263, 11, 457, 264, 28475, 307, 437, 436, 645, 534, 6229, 3202, 281, 50639
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 64,
+      "seek": 25200,
+      "start": 257.5,
+      "end": 260.5,
+      "text": " because of the pacing of the gestures.",
+      "tokens": [50639, 570, 295, 264, 43285, 295, 264, 28475, 13, 50789],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 65,
+      "seek": 25200,
+      "start": 260.5,
+      "end": 263.5,
+      "text": " Like the back and forth was really similar to human conversation.",
+      "tokens": [50789, 1743, 264, 646, 293, 5220, 390, 534, 2531, 281, 1952, 3761, 13, 50939],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 66,
+      "seek": 25200,
+      "start": 263.5,
+      "end": 269.5,
+      "text": " The pause between a gesture and a gestural response averaged to about 120 milliseconds.",
+      "tokens": [
+        50939, 440, 10465, 1296, 257, 22252, 293, 257, 7219, 1807, 4134, 18247, 2980, 281, 466, 10411, 34184, 13, 51239
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 67,
+      "seek": 25200,
+      "start": 269.5,
+      "end": 270.0,
+      "text": " Wow.",
+      "tokens": [51239, 3153, 13, 51264],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 68,
+      "seek": 25200,
+      "start": 270.0,
+      "end": 270.5,
+      "text": " It's really fast.",
+      "tokens": [51264, 467, 311, 534, 2370, 13, 51289],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 69,
+      "seek": 25200,
+      "start": 270.5,
+      "end": 273.0,
+      "text": " Okay, well how close is that to human response?",
+      "tokens": [51289, 1033, 11, 731, 577, 1998, 307, 300, 281, 1952, 4134, 30, 51414],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 70,
+      "seek": 25200,
+      "start": 273.0,
+      "end": 277.0,
+      "text": " Yeah, conversational turns and humans averaged to about 200 milliseconds across language.",
+      "tokens": [
+        51414, 865, 11, 2615, 1478, 4523, 293, 6255, 18247, 2980, 281, 466, 2331, 34184, 2108, 2856, 13, 51614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 71,
+      "seek": 25200,
+      "start": 277.0,
+      "end": 277.5,
+      "text": " No way.",
+      "tokens": [51614, 883, 636, 13, 51639],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 72,
+      "seek": 25200,
+      "start": 277.5,
+      "end": 279.5,
+      "text": " Again, all very rapid fire, all very fast.",
+      "tokens": [51639, 3764, 11, 439, 588, 7558, 2610, 11, 439, 588, 2370, 13, 51739],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 73,
+      "seek": 25200,
+      "start": 279.5,
+      "end": 281.0,
+      "text": " I had no idea there was a rate.",
+      "tokens": [51739, 286, 632, 572, 1558, 456, 390, 257, 3314, 13, 51814],
+      "temperature": 0.0,
+      "avg_logprob": -0.087604112095303,
+      "compression_ratio": 1.803921568627451,
+      "no_speech_prob": 0.0022012267727404833
+    },
+    {
+      "id": 74,
+      "seek": 28100,
+      "start": 281.0,
+      "end": 285.5,
+      "text": " Anyway, if chimps are supposed to be like one of our closest living relatives, right?",
+      "tokens": [
+        50364, 5684, 11, 498, 18375, 1878, 366, 3442, 281, 312, 411, 472, 295, 527, 13699, 2647, 18201, 11, 558, 30,
+        50589
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0822658775266537,
+      "compression_ratio": 1.6355421686746987,
+      "no_speech_prob": 0.00040101443300955
+    },
+    {
+      "id": 75,
+      "seek": 28100,
+      "start": 285.5,
+      "end": 289.5,
+      "text": " Like does this reveal anything about the evolution of how humans communicate?",
+      "tokens": [50589, 1743, 775, 341, 10658, 1340, 466, 264, 9303, 295, 577, 6255, 7890, 30, 50789],
+      "temperature": 0.0,
+      "avg_logprob": -0.0822658775266537,
+      "compression_ratio": 1.6355421686746987,
+      "no_speech_prob": 0.00040101443300955
+    },
+    {
+      "id": 76,
+      "seek": 28100,
+      "start": 289.5,
+      "end": 291.5,
+      "text": " It presents an intriguing possibility.",
+      "tokens": [50789, 467, 13533, 364, 32503, 7959, 13, 50889],
+      "temperature": 0.0,
+      "avg_logprob": -0.0822658775266537,
+      "compression_ratio": 1.6355421686746987,
+      "no_speech_prob": 0.00040101443300955
+    },
+    {
+      "id": 77,
+      "seek": 28100,
+      "start": 291.5,
+      "end": 297.5,
+      "text": " Yeah, that this kind of back and forth communication may have evolved before humans split off from great apes.",
+      "tokens": [
+        50889, 865, 11, 300, 341, 733, 295, 646, 293, 5220, 6101, 815, 362, 14178, 949, 6255, 7472, 766, 490, 869, 1882,
+        279, 13, 51189
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0822658775266537,
+      "compression_ratio": 1.6355421686746987,
+      "no_speech_prob": 0.00040101443300955
+    },
+    {
+      "id": 78,
+      "seek": 28100,
+      "start": 297.5,
+      "end": 302.5,
+      "text": " We don't know for sure, but several primatologists I spoke to who were not a part of the study",
+      "tokens": [
+        51189, 492, 500, 380, 458, 337, 988, 11, 457, 2940, 2886, 267, 12256, 286, 7179, 281, 567, 645, 406, 257, 644,
+        295, 264, 2979, 51439
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0822658775266537,
+      "compression_ratio": 1.6355421686746987,
+      "no_speech_prob": 0.00040101443300955
+    },
+    {
+      "id": 79,
+      "seek": 28100,
+      "start": 302.5,
+      "end": 309.5,
+      "text": " all felt this was an important contribution to understanding how turn-taking and communication dynamics evolved.",
+      "tokens": [
+        51439, 439, 2762, 341, 390, 364, 1021, 13150, 281, 3701, 577, 1261, 12, 48625, 293, 6101, 15679, 14178, 13,
+        51789
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.0822658775266537,
+      "compression_ratio": 1.6355421686746987,
+      "no_speech_prob": 0.00040101443300955
+    },
+    {
+      "id": 80,
+      "seek": 28100,
+      "start": 309.5,
+      "end": 310.5,
+      "text": " No language required.",
+      "tokens": [51789, 883, 2856, 4739, 13, 51839],
+      "temperature": 0.0,
+      "avg_logprob": -0.0822658775266537,
+      "compression_ratio": 1.6355421686746987,
+      "no_speech_prob": 0.00040101443300955
+    },
+    {
+      "id": 81,
+      "seek": 31050,
+      "start": 310.5,
+      "end": 313.0,
+      "text": " That is so fascinating.",
+      "tokens": [50364, 663, 307, 370, 10343, 13, 50489],
+      "temperature": 0.0,
+      "avg_logprob": -0.09824538230895996,
+      "compression_ratio": 1.6105263157894736,
+      "no_speech_prob": 0.0005560270510613918
+    },
+    {
+      "id": 82,
+      "seek": 31050,
+      "start": 313.0,
+      "end": 318.0,
+      "text": " Okay, now we're going to take a sharp turn and move to oxygen on the sea floor.",
+      "tokens": [
+        50489, 1033, 11, 586, 321, 434, 516, 281, 747, 257, 8199, 1261, 293, 1286, 281, 9169, 322, 264, 4158, 4123, 13,
+        50739
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09824538230895996,
+      "compression_ratio": 1.6105263157894736,
+      "no_speech_prob": 0.0005560270510613918
+    },
+    {
+      "id": 83,
+      "seek": 31050,
+      "start": 318.0,
+      "end": 320.5,
+      "text": " I take it that that is a weird thing, right?",
+      "tokens": [50739, 286, 747, 309, 300, 300, 307, 257, 3657, 551, 11, 558, 30, 50864],
+      "temperature": 0.0,
+      "avg_logprob": -0.09824538230895996,
+      "compression_ratio": 1.6105263157894736,
+      "no_speech_prob": 0.0005560270510613918
+    },
+    {
+      "id": 84,
+      "seek": 31050,
+      "start": 320.5,
+      "end": 322.5,
+      "text": " Otherwise we would not be talking about it.",
+      "tokens": [50864, 10328, 321, 576, 406, 312, 1417, 466, 309, 13, 50964],
+      "temperature": 0.0,
+      "avg_logprob": -0.09824538230895996,
+      "compression_ratio": 1.6105263157894736,
+      "no_speech_prob": 0.0005560270510613918
+    },
+    {
+      "id": 85,
+      "seek": 31050,
+      "start": 322.5,
+      "end": 326.0,
+      "text": " Yeah, so most of us oxygen is created through photosynthesis.",
+      "tokens": [50964, 865, 11, 370, 881, 295, 505, 9169, 307, 2942, 807, 5787, 45601, 13, 51139],
+      "temperature": 0.0,
+      "avg_logprob": -0.09824538230895996,
+      "compression_ratio": 1.6105263157894736,
+      "no_speech_prob": 0.0005560270510613918
+    },
+    {
+      "id": 86,
+      "seek": 31050,
+      "start": 326.0,
+      "end": 332.0,
+      "text": " That's when, you know, plants take in light, water and carbon dioxide and then they make like sugar and oxygen.",
+      "tokens": [
+        51139, 663, 311, 562, 11, 291, 458, 11, 5972, 747, 294, 1442, 11, 1281, 293, 5954, 19590, 293, 550, 436, 652,
+        411, 5076, 293, 9169, 13, 51439
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09824538230895996,
+      "compression_ratio": 1.6105263157894736,
+      "no_speech_prob": 0.0005560270510613918
+    },
+    {
+      "id": 87,
+      "seek": 31050,
+      "start": 332.0,
+      "end": 337.0,
+      "text": " But for over a decade, scientists were aware of traces of oxygen at the bottom of the ocean,",
+      "tokens": [
+        51439, 583, 337, 670, 257, 10378, 11, 7708, 645, 3650, 295, 26076, 295, 9169, 412, 264, 2767, 295, 264, 7810,
+        11, 51689
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09824538230895996,
+      "compression_ratio": 1.6105263157894736,
+      "no_speech_prob": 0.0005560270510613918
+    },
+    {
+      "id": 88,
+      "seek": 33700,
+      "start": 337.5,
+      "end": 343.5,
+      "text": " like three miles down where there's no light, no photosynthesis, so where did this oxygen come from?",
+      "tokens": [
+        50389, 411, 1045, 6193, 760, 689, 456, 311, 572, 1442, 11, 572, 5787, 45601, 11, 370, 689, 630, 341, 9169, 808,
+        490, 30, 50689
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09917431076367696,
+      "compression_ratio": 1.6050420168067228,
+      "no_speech_prob": 0.009027316235005856
+    },
+    {
+      "id": 89,
+      "seek": 33700,
+      "start": 343.5,
+      "end": 348.0,
+      "text": " And a new study in the journal Nature Geoscience may have an answer.",
+      "tokens": [50689, 400, 257, 777, 2979, 294, 264, 6708, 20159, 2876, 329, 6699, 815, 362, 364, 1867, 13, 50914],
+      "temperature": 0.0,
+      "avg_logprob": -0.09917431076367696,
+      "compression_ratio": 1.6050420168067228,
+      "no_speech_prob": 0.009027316235005856
+    },
+    {
+      "id": 90,
+      "seek": 33700,
+      "start": 348.0,
+      "end": 356.0,
+      "text": " It shows that oxygen produced with outlight called dark oxygen could be coming from bits of metal in the deep ocean.",
+      "tokens": [
+        50914, 467, 3110, 300, 9169, 7126, 365, 484, 2764, 1219, 2877, 9169, 727, 312, 1348, 490, 9239, 295, 5760, 294,
+        264, 2452, 7810, 13, 51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09917431076367696,
+      "compression_ratio": 1.6050420168067228,
+      "no_speech_prob": 0.009027316235005856
+    },
+    {
+      "id": 91,
+      "seek": 33700,
+      "start": 356.0,
+      "end": 361.5,
+      "text": " Wait, metal? What kind of metal is in the deep sea? Like how did it get all the way down there?",
+      "tokens": [
+        51314, 3802, 11, 5760, 30, 708, 733, 295, 5760, 307, 294, 264, 2452, 4158, 30, 1743, 577, 630, 309, 483, 439,
+        264, 636, 760, 456, 30, 51589
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.09917431076367696,
+      "compression_ratio": 1.6050420168067228,
+      "no_speech_prob": 0.009027316235005856
+    },
+    {
+      "id": 92,
+      "seek": 36150,
+      "start": 362.0,
+      "end": 368.0,
+      "text": " It's these clumps of metals like nickel, manganese, cobalt, iron that form these nodules on the sea floor.",
+      "tokens": [
+        50389, 467, 311, 613, 596, 16951, 295, 22548, 411, 30542, 11, 587, 1275, 1130, 11, 598, 2645, 83, 11, 6497, 300,
+        1254, 613, 15224, 3473, 322, 264, 4158, 4123, 13, 50689
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07226782185690743,
+      "compression_ratio": 1.6747967479674797,
+      "no_speech_prob": 0.005498635582625866
+    },
+    {
+      "id": 93,
+      "seek": 36150,
+      "start": 368.0,
+      "end": 372.0,
+      "text": " And they grow on top of stuff that falls to the bottom like shark teeth.",
+      "tokens": [50689, 400, 436, 1852, 322, 1192, 295, 1507, 300, 8804, 281, 264, 2767, 411, 13327, 7798, 13, 50889],
+      "temperature": 0.0,
+      "avg_logprob": -0.07226782185690743,
+      "compression_ratio": 1.6747967479674797,
+      "no_speech_prob": 0.005498635582625866
+    },
+    {
+      "id": 94,
+      "seek": 36150,
+      "start": 372.0,
+      "end": 377.0,
+      "text": " Yeah, I talked to physical chemist Franz Geiger about this and he's one of the paper's co-authors",
+      "tokens": [
+        50889, 865, 11, 286, 2825, 281, 4001, 4771, 468, 33084, 2876, 4810, 466, 341, 293, 415, 311, 472, 295, 264,
+        3035, 311, 598, 12, 40198, 830, 51139
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07226782185690743,
+      "compression_ratio": 1.6747967479674797,
+      "no_speech_prob": 0.005498635582625866
+    },
+    {
+      "id": 95,
+      "seek": 36150,
+      "start": 377.0,
+      "end": 380.0,
+      "text": " and he studied these clumps of metal in the lab.",
+      "tokens": [51139, 293, 415, 9454, 613, 596, 16951, 295, 5760, 294, 264, 2715, 13, 51289],
+      "temperature": 0.0,
+      "avg_logprob": -0.07226782185690743,
+      "compression_ratio": 1.6747967479674797,
+      "no_speech_prob": 0.005498635582625866
+    },
+    {
+      "id": 96,
+      "seek": 36150,
+      "start": 380.0,
+      "end": 386.0,
+      "text": " He specified it's not a rock and these nodules grow one millimeter per million years.",
+      "tokens": [
+        51289, 634, 22206, 309, 311, 406, 257, 3727, 293, 613, 15224, 3473, 1852, 472, 17942, 680, 2459, 924, 13, 51589
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.07226782185690743,
+      "compression_ratio": 1.6747967479674797,
+      "no_speech_prob": 0.005498635582625866
+    },
+    {
+      "id": 97,
+      "seek": 38600,
+      "start": 386.5,
+      "end": 392.5,
+      "text": " And these are a few centimeters big so these clumps of metal accumulated over millions and millions of years.",
+      "tokens": [
+        50389, 400, 613, 366, 257, 1326, 23300, 955, 370, 613, 596, 16951, 295, 5760, 31346, 670, 6803, 293, 6803, 295,
+        924, 13, 50689
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11494391855567393,
+      "compression_ratio": 1.6270491803278688,
+      "no_speech_prob": 0.0005528220208361745
+    },
+    {
+      "id": 98,
+      "seek": 38600,
+      "start": 392.5,
+      "end": 396.5,
+      "text": " Think of like a really, really slow game of Tetris.",
+      "tokens": [50689, 6557, 295, 411, 257, 534, 11, 534, 2964, 1216, 295, 31580, 5714, 13, 50889],
+      "temperature": 0.0,
+      "avg_logprob": -0.11494391855567393,
+      "compression_ratio": 1.6270491803278688,
+      "no_speech_prob": 0.0005528220208361745
+    },
+    {
+      "id": 99,
+      "seek": 38600,
+      "start": 396.5,
+      "end": 401.5,
+      "text": " Okay, so these clumps of metal grow very, very slowly.",
+      "tokens": [50889, 1033, 11, 370, 613, 596, 16951, 295, 5760, 1852, 588, 11, 588, 5692, 13, 51139],
+      "temperature": 0.0,
+      "avg_logprob": -0.11494391855567393,
+      "compression_ratio": 1.6270491803278688,
+      "no_speech_prob": 0.0005528220208361745
+    },
+    {
+      "id": 100,
+      "seek": 38600,
+      "start": 401.5,
+      "end": 406.5,
+      "text": " They glom together and how are they producing oxygen?",
+      "tokens": [51139, 814, 1563, 298, 1214, 293, 577, 366, 436, 10501, 9169, 30, 51389],
+      "temperature": 0.0,
+      "avg_logprob": -0.11494391855567393,
+      "compression_ratio": 1.6270491803278688,
+      "no_speech_prob": 0.0005528220208361745
+    },
+    {
+      "id": 101,
+      "seek": 38600,
+      "start": 406.5,
+      "end": 408.5,
+      "text": " Like I thought that is what plants do.",
+      "tokens": [51389, 1743, 286, 1194, 300, 307, 437, 5972, 360, 13, 51489],
+      "temperature": 0.0,
+      "avg_logprob": -0.11494391855567393,
+      "compression_ratio": 1.6270491803278688,
+      "no_speech_prob": 0.0005528220208361745
+    },
+    {
+      "id": 102,
+      "seek": 38600,
+      "start": 408.5,
+      "end": 413.5,
+      "text": " Right, so preliminary experiment suggests it's partly through electrolysis of seawater.",
+      "tokens": [
+        51489, 1779, 11, 370, 28817, 5120, 13409, 309, 311, 17031, 807, 39197, 17122, 295, 369, 1607, 771, 13, 51739
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.11494391855567393,
+      "compression_ratio": 1.6270491803278688,
+      "no_speech_prob": 0.0005528220208361745
+    },
+    {
+      "id": 103,
+      "seek": 41350,
+      "start": 413.5,
+      "end": 418.5,
+      "text": " So electric current in the middle chunk splits ocean water H2O into hydrogen and oxygen,",
+      "tokens": [
+        50364, 407, 5210, 2190, 294, 264, 2808, 16635, 37741, 7810, 1281, 389, 17, 46, 666, 12697, 293, 9169, 11, 50614
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12265378570556641,
+      "compression_ratio": 1.7006369426751593,
+      "no_speech_prob": 0.0010241677518934011
+    },
+    {
+      "id": 104,
+      "seek": 41350,
+      "start": 418.5,
+      "end": 423.5,
+      "text": " but the sensors they used only detect oxygen so they need more data before they can be like, sure this is happening.",
+      "tokens": [
+        50614, 457, 264, 14840, 436, 1143, 787, 5531, 9169, 370, 436, 643, 544, 1412, 949, 436, 393, 312, 411, 11, 988,
+        341, 307, 2737, 13, 50864
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12265378570556641,
+      "compression_ratio": 1.7006369426751593,
+      "no_speech_prob": 0.0010241677518934011
+    },
+    {
+      "id": 105,
+      "seek": 41350,
+      "start": 423.5,
+      "end": 424.5,
+      "text": " That's super cool.",
+      "tokens": [50864, 663, 311, 1687, 1627, 13, 50914],
+      "temperature": 0.0,
+      "avg_logprob": -0.12265378570556641,
+      "compression_ratio": 1.7006369426751593,
+      "no_speech_prob": 0.0010241677518934011
+    },
+    {
+      "id": 106,
+      "seek": 41350,
+      "start": 424.5,
+      "end": 430.5,
+      "text": " Yeah, it was surprising actually to the researchers, but there was another surprise that happened along the way.",
+      "tokens": [
+        50914, 865, 11, 309, 390, 8830, 767, 281, 264, 10309, 11, 457, 456, 390, 1071, 6365, 300, 2011, 2051, 264, 636,
+        13, 51214
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12265378570556641,
+      "compression_ratio": 1.7006369426751593,
+      "no_speech_prob": 0.0010241677518934011
+    },
+    {
+      "id": 107,
+      "seek": 41350,
+      "start": 430.5,
+      "end": 433.5,
+      "text": " Franz almost lost the nodules.",
+      "tokens": [51214, 33084, 1920, 2731, 264, 15224, 3473, 13, 51364],
+      "temperature": 0.0,
+      "avg_logprob": -0.12265378570556641,
+      "compression_ratio": 1.7006369426751593,
+      "no_speech_prob": 0.0010241677518934011
+    },
+    {
+      "id": 108,
+      "seek": 41350,
+      "start": 433.5,
+      "end": 440.5,
+      "text": " He got an email from customs about the package the nodules were in and they said that soil imports aren't allowed and they told him...",
+      "tokens": [
+        51364, 634, 658, 364, 3796, 490, 27330, 466, 264, 7372, 264, 15224, 3473, 645, 294, 293, 436, 848, 300, 6704,
+        41596, 3212, 380, 4350, 293, 436, 1907, 796, 485, 51714
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12265378570556641,
+      "compression_ratio": 1.7006369426751593,
+      "no_speech_prob": 0.0010241677518934011
+    },
+    {
+      "id": 109,
+      "seek": 41350,
+      "start": 440.5,
+      "end": 442.5,
+      "text": " The package will be destroyed.",
+      "tokens": [51714, 440, 7372, 486, 312, 8937, 13, 51814],
+      "temperature": 0.0,
+      "avg_logprob": -0.12265378570556641,
+      "compression_ratio": 1.7006369426751593,
+      "no_speech_prob": 0.0010241677518934011
+    },
+    {
+      "id": 110,
+      "seek": 44250,
+      "start": 442.5,
+      "end": 446.5,
+      "text": " And I was like, what? I wasn't at faculty meeting when that happened.",
+      "tokens": [50364, 400, 286, 390, 411, 11, 437, 30, 286, 2067, 380, 412, 6389, 3440, 562, 300, 2011, 13, 50564],
+      "temperature": 0.0,
+      "avg_logprob": -0.19379734736616894,
+      "compression_ratio": 1.54337899543379,
+      "no_speech_prob": 0.0010922770015895367
+    },
+    {
+      "id": 111,
+      "seek": 44250,
+      "start": 446.5,
+      "end": 448.5,
+      "text": " Oh, dang customs!",
+      "tokens": [50564, 876, 11, 21892, 27330, 0, 50664],
+      "temperature": 0.0,
+      "avg_logprob": -0.19379734736616894,
+      "compression_ratio": 1.54337899543379,
+      "no_speech_prob": 0.0010922770015895367
+    },
+    {
+      "id": 112,
+      "seek": 44250,
+      "start": 448.5,
+      "end": 458.5,
+      "text": " Yeah, well, okay, so he then like scour the shipping rules and found that soil of oceanic origins can be imported without any issues in this save the nodule samples.",
+      "tokens": [
+        50664, 865, 11, 731, 11, 1392, 11, 370, 415, 550, 411, 795, 396, 264, 14122, 4474, 293, 1352, 300, 6704, 295,
+        7810, 299, 22721, 393, 312, 25524, 1553, 604, 2663, 294, 341, 3155, 264, 15224, 2271, 10938, 13, 51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.19379734736616894,
+      "compression_ratio": 1.54337899543379,
+      "no_speech_prob": 0.0010922770015895367
+    },
+    {
+      "id": 113,
+      "seek": 44250,
+      "start": 458.5,
+      "end": 461.5,
+      "text": " Soil of oceanic origin loophole!",
+      "tokens": [51164, 407, 388, 295, 7810, 299, 4957, 6367, 14094, 0, 51314],
+      "temperature": 0.0,
+      "avg_logprob": -0.19379734736616894,
+      "compression_ratio": 1.54337899543379,
+      "no_speech_prob": 0.0010922770015895367
+    },
+    {
+      "id": 114,
+      "seek": 44250,
+      "start": 461.5,
+      "end": 462.5,
+      "text": " Yes, okay.",
+      "tokens": [51314, 1079, 11, 1392, 13, 51364],
+      "temperature": 0.0,
+      "avg_logprob": -0.19379734736616894,
+      "compression_ratio": 1.54337899543379,
+      "no_speech_prob": 0.0010922770015895367
+    },
+    {
+      "id": 115,
+      "seek": 44250,
+      "start": 462.5,
+      "end": 465.5,
+      "text": " Your legal background is coming through.",
+      "tokens": [51364, 2260, 5089, 3678, 307, 1348, 807, 13, 51514],
+      "temperature": 0.0,
+      "avg_logprob": -0.19379734736616894,
+      "compression_ratio": 1.54337899543379,
+      "no_speech_prob": 0.0010922770015895367
+    },
+    {
+      "id": 116,
+      "seek": 46550,
+      "start": 465.5,
+      "end": 473.5,
+      "text": " I want to stay in the ocean. Our final story is about waves gone rogue. What the heck, guys?",
+      "tokens": [
+        50364, 286, 528, 281, 1754, 294, 264, 7810, 13, 2621, 2572, 1657, 307, 466, 9417, 2780, 39100, 13, 708, 264,
+        12872, 11, 1074, 30, 50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.108133179800851,
+      "compression_ratio": 1.5884773662551441,
+      "no_speech_prob": 0.032034143805503845
+    },
+    {
+      "id": 117,
+      "seek": 46550,
+      "start": 473.5,
+      "end": 480.5,
+      "text": " Yeah, so row waves are these abnormally large waves that seem to come out of nowhere and they endanger ships at sea.",
+      "tokens": [
+        50764, 865, 11, 370, 5386, 9417, 366, 613, 47104, 379, 2416, 9417, 300, 1643, 281, 808, 484, 295, 11159, 293,
+        436, 31975, 11434, 412, 4158, 13, 51114
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.108133179800851,
+      "compression_ratio": 1.5884773662551441,
+      "no_speech_prob": 0.032034143805503845
+    },
+    {
+      "id": 118,
+      "seek": 46550,
+      "start": 480.5,
+      "end": 486.5,
+      "text": " Our colleague Nell Greenfield-Boys reported that advances in AI could someday help predict them.",
+      "tokens": [
+        51114, 2621, 13532, 426, 898, 6969, 7610, 12, 22493, 749, 7055, 300, 25297, 294, 7318, 727, 19412, 854, 6069,
+        552, 13, 51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.108133179800851,
+      "compression_ratio": 1.5884773662551441,
+      "no_speech_prob": 0.032034143805503845
+    },
+    {
+      "id": 119,
+      "seek": 46550,
+      "start": 486.5,
+      "end": 491.5,
+      "text": " Huh. Okay, so when you say abnormally large waves, like how big are we talking?",
+      "tokens": [
+        51414, 8063, 13, 1033, 11, 370, 562, 291, 584, 47104, 379, 2416, 9417, 11, 411, 577, 955, 366, 321, 1417, 30,
+        51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.108133179800851,
+      "compression_ratio": 1.5884773662551441,
+      "no_speech_prob": 0.032034143805503845
+    },
+    {
+      "id": 120,
+      "seek": 49150,
+      "start": 491.5,
+      "end": 497.5,
+      "text": " For a wave to be rogue, it has to be over twice the size of the surrounding waves at a given time.",
+      "tokens": [
+        50364, 1171, 257, 5772, 281, 312, 39100, 11, 309, 575, 281, 312, 670, 6091, 264, 2744, 295, 264, 11498, 9417,
+        412, 257, 2212, 565, 13, 50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05532960422703477,
+      "compression_ratio": 1.6624203821656052,
+      "no_speech_prob": 0.016446668654680252
+    },
+    {
+      "id": 121,
+      "seek": 49150,
+      "start": 497.5,
+      "end": 499.5,
+      "text": " So it depends on the size of the waves in the area.",
+      "tokens": [50664, 407, 309, 5946, 322, 264, 2744, 295, 264, 9417, 294, 264, 1859, 13, 50764],
+      "temperature": 0.0,
+      "avg_logprob": -0.05532960422703477,
+      "compression_ratio": 1.6624203821656052,
+      "no_speech_prob": 0.016446668654680252
+    },
+    {
+      "id": 122,
+      "seek": 49150,
+      "start": 499.5,
+      "end": 507.5,
+      "text": " For centuries, scientists thought these waves were a sailing myth until a scientific instrument managed to record one that measured 84 feet.",
+      "tokens": [
+        50764, 1171, 13926, 11, 7708, 1194, 613, 9417, 645, 257, 27452, 9474, 1826, 257, 8134, 7198, 6453, 281, 2136,
+        472, 300, 12690, 29018, 3521, 13, 51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05532960422703477,
+      "compression_ratio": 1.6624203821656052,
+      "no_speech_prob": 0.016446668654680252
+    },
+    {
+      "id": 123,
+      "seek": 49150,
+      "start": 507.5,
+      "end": 508.5,
+      "text": " Whoa!",
+      "tokens": [51164, 7521, 0, 51214],
+      "temperature": 0.0,
+      "avg_logprob": -0.05532960422703477,
+      "compression_ratio": 1.6624203821656052,
+      "no_speech_prob": 0.016446668654680252
+    },
+    {
+      "id": 124,
+      "seek": 49150,
+      "start": 508.5,
+      "end": 514.5,
+      "text": " Yeah, and rogue waves are dangerous. They can damage ships, infrastructure, cause power failures, and really hurt people.",
+      "tokens": [
+        51214, 865, 11, 293, 39100, 9417, 366, 5795, 13, 814, 393, 4344, 11434, 11, 6896, 11, 3082, 1347, 20774, 11,
+        293, 534, 4607, 561, 13, 51514
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05532960422703477,
+      "compression_ratio": 1.6624203821656052,
+      "no_speech_prob": 0.016446668654680252
+    },
+    {
+      "id": 125,
+      "seek": 49150,
+      "start": 514.5,
+      "end": 520.5,
+      "text": " A cruise ship passenger died and others were injured when a freak wave hit the Viking Polaris in 2022.",
+      "tokens": [
+        51514, 316, 17754, 5374, 18707, 4539, 293, 2357, 645, 13408, 562, 257, 21853, 5772, 2045, 264, 40375, 3635,
+        27489, 294, 20229, 13, 51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.05532960422703477,
+      "compression_ratio": 1.6624203821656052,
+      "no_speech_prob": 0.016446668654680252
+    },
+    {
+      "id": 126,
+      "seek": 52050,
+      "start": 520.5,
+      "end": 521.5,
+      "text": " Oh my god, that's terrible.",
+      "tokens": [50364, 876, 452, 3044, 11, 300, 311, 6237, 13, 50414],
+      "temperature": 0.0,
+      "avg_logprob": -0.1014238993326823,
+      "compression_ratio": 1.5606060606060606,
+      "no_speech_prob": 0.009944227524101734
+    },
+    {
+      "id": 127,
+      "seek": 52050,
+      "start": 521.5,
+      "end": 523.5,
+      "text": " Yeah. Yeah, there's no way of predicting them.",
+      "tokens": [50414, 865, 13, 865, 11, 456, 311, 572, 636, 295, 32884, 552, 13, 50514],
+      "temperature": 0.0,
+      "avg_logprob": -0.1014238993326823,
+      "compression_ratio": 1.5606060606060606,
+      "no_speech_prob": 0.009944227524101734
+    },
+    {
+      "id": 128,
+      "seek": 52050,
+      "start": 523.5,
+      "end": 531.5,
+      "text": " But a new study suggests that actually it may be possible to use information from floating buoys to give people some advanced warning.",
+      "tokens": [
+        50514, 583, 257, 777, 2979, 13409, 300, 767, 309, 815, 312, 1944, 281, 764, 1589, 490, 12607, 758, 44131, 281,
+        976, 561, 512, 7339, 9164, 13, 50914
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1014238993326823,
+      "compression_ratio": 1.5606060606060606,
+      "no_speech_prob": 0.009944227524101734
+    },
+    {
+      "id": 129,
+      "seek": 52050,
+      "start": 531.5,
+      "end": 539.5,
+      "text": " So researchers have developed a computer system that correctly predicted 73% of these rogue waves five minutes before they occurred,",
+      "tokens": [
+        50914, 407, 10309, 362, 4743, 257, 3820, 1185, 300, 8944, 19147, 28387, 4, 295, 613, 39100, 9417, 1732, 2077,
+        949, 436, 11068, 11, 51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1014238993326823,
+      "compression_ratio": 1.5606060606060606,
+      "no_speech_prob": 0.009944227524101734
+    },
+    {
+      "id": 130,
+      "seek": 52050,
+      "start": 539.5,
+      "end": 542.5,
+      "text": " which is valuable. It's like an earthquake warning, you know?",
+      "tokens": [51314, 597, 307, 8263, 13, 467, 311, 411, 364, 18778, 9164, 11, 291, 458, 30, 51464],
+      "temperature": 0.0,
+      "avg_logprob": -0.1014238993326823,
+      "compression_ratio": 1.5606060606060606,
+      "no_speech_prob": 0.009944227524101734
+    },
+    {
+      "id": 131,
+      "seek": 52050,
+      "start": 542.5,
+      "end": 548.5,
+      "text": " With some time, oil rig workers or ship passengers can seek shelter, perform emergency shutdowns, or evacuate.",
+      "tokens": [
+        51464, 2022, 512, 565, 11, 3184, 8329, 5600, 420, 5374, 18436, 393, 8075, 13341, 11, 2042, 7473, 34927, 82, 11,
+        420, 48570, 13, 51764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1014238993326823,
+      "compression_ratio": 1.5606060606060606,
+      "no_speech_prob": 0.009944227524101734
+    },
+    {
+      "id": 132,
+      "seek": 54850,
+      "start": 548.5,
+      "end": 549.5,
+      "text": " Yeah.",
+      "tokens": [50364, 865, 13, 50414],
+      "temperature": 0.0,
+      "avg_logprob": -0.06947844993067152,
+      "compression_ratio": 1.6516516516516517,
+      "no_speech_prob": 0.006535048596560955
+    },
+    {
+      "id": 133,
+      "seek": 54850,
+      "start": 549.5,
+      "end": 551.5,
+      "text": " If people on the ocean had a little more time, that would help.",
+      "tokens": [50414, 759, 561, 322, 264, 7810, 632, 257, 707, 544, 565, 11, 300, 576, 854, 13, 50514],
+      "temperature": 0.0,
+      "avg_logprob": -0.06947844993067152,
+      "compression_ratio": 1.6516516516516517,
+      "no_speech_prob": 0.006535048596560955
+    },
+    {
+      "id": 134,
+      "seek": 54850,
+      "start": 551.5,
+      "end": 555.5,
+      "text": " Wow. Well, how did these researchers figure out how to predict these waves?",
+      "tokens": [50514, 3153, 13, 1042, 11, 577, 630, 613, 10309, 2573, 484, 577, 281, 6069, 613, 9417, 30, 50714],
+      "temperature": 0.0,
+      "avg_logprob": -0.06947844993067152,
+      "compression_ratio": 1.6516516516516517,
+      "no_speech_prob": 0.006535048596560955
+    },
+    {
+      "id": 135,
+      "seek": 54850,
+      "start": 555.5,
+      "end": 567.5,
+      "text": " Yeah, so a researcher with the University of Maryland, Bala Balachandran, and his colleagues trained a neural network using data from 172 buoys off the coast of the continental U.S. and the Pacific Islands.",
+      "tokens": [
+        50714, 865, 11, 370, 257, 21751, 365, 264, 3535, 295, 19939, 11, 363, 5159, 13140, 608, 474, 4257, 11, 293, 702,
+        7734, 8895, 257, 18161, 3209, 1228, 1412, 490, 3282, 17, 758, 44131, 766, 264, 8684, 295, 264, 42479, 624, 13,
+        50, 13, 293, 264, 13335, 23492, 13, 51314
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06947844993067152,
+      "compression_ratio": 1.6516516516516517,
+      "no_speech_prob": 0.006535048596560955
+    },
+    {
+      "id": 136,
+      "seek": 54850,
+      "start": 567.5,
+      "end": 574.5,
+      "text": " All of that data helped train the computer system to recognize waves that occurred right before a rogue wave happened,",
+      "tokens": [
+        51314, 1057, 295, 300, 1412, 4254, 3847, 264, 3820, 1185, 281, 5521, 9417, 300, 11068, 558, 949, 257, 39100,
+        5772, 2011, 11, 51664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.06947844993067152,
+      "compression_ratio": 1.6516516516516517,
+      "no_speech_prob": 0.006535048596560955
+    },
+    {
+      "id": 137,
+      "seek": 54850,
+      "start": 574.5,
+      "end": 577.5,
+      "text": " and also to distinguish them from waves that weren't followed by a rogue wave.",
+      "tokens": [51664, 293, 611, 281, 20206, 552, 490, 9417, 300, 4999, 380, 6263, 538, 257, 39100, 5772, 13, 51814],
+      "temperature": 0.0,
+      "avg_logprob": -0.06947844993067152,
+      "compression_ratio": 1.6516516516516517,
+      "no_speech_prob": 0.006535048596560955
+    },
+    {
+      "id": 138,
+      "seek": 57750,
+      "start": 577.5,
+      "end": 580.5,
+      "text": " The scientists say they still have to improve the system's accuracy,",
+      "tokens": [50364, 440, 7708, 584, 436, 920, 362, 281, 3470, 264, 1185, 311, 14170, 11, 50514],
+      "temperature": 0.0,
+      "avg_logprob": -0.08326418059212821,
+      "compression_ratio": 1.6746031746031746,
+      "no_speech_prob": 0.019780084490776062
+    },
+    {
+      "id": 139,
+      "seek": 57750,
+      "start": 580.5,
+      "end": 586.5,
+      "text": " but this could be the start of a powerful tool that could even lead to better forecasting for other extreme events.",
+      "tokens": [
+        50514, 457, 341, 727, 312, 264, 722, 295, 257, 4005, 2290, 300, 727, 754, 1477, 281, 1101, 44331, 337, 661,
+        8084, 3931, 13, 50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08326418059212821,
+      "compression_ratio": 1.6746031746031746,
+      "no_speech_prob": 0.019780084490776062
+    },
+    {
+      "id": 140,
+      "seek": 57750,
+      "start": 586.5,
+      "end": 587.5,
+      "text": " That's pretty awesome.",
+      "tokens": [50814, 663, 311, 1238, 3476, 13, 50864],
+      "temperature": 0.0,
+      "avg_logprob": -0.08326418059212821,
+      "compression_ratio": 1.6746031746031746,
+      "no_speech_prob": 0.019780084490776062
+    },
+    {
+      "id": 141,
+      "seek": 57750,
+      "start": 587.5,
+      "end": 593.5,
+      "text": " Yeah, it really is. And Elsa, thank you so much for hanging out with us. You're always welcome. You're always amazing.",
+      "tokens": [
+        50864, 865, 11, 309, 534, 307, 13, 400, 36342, 11, 1309, 291, 370, 709, 337, 8345, 484, 365, 505, 13, 509, 434,
+        1009, 2928, 13, 509, 434, 1009, 2243, 13, 51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.08326418059212821,
+      "compression_ratio": 1.6746031746031746,
+      "no_speech_prob": 0.019780084490776062
+    },
+    {
+      "id": 142,
+      "seek": 57750,
+      "start": 593.5,
+      "end": 595.5,
+      "text": " Thank you. I always feel welcome.",
+      "tokens": [51164, 1044, 291, 13, 286, 1009, 841, 2928, 13, 51264],
+      "temperature": 0.0,
+      "avg_logprob": -0.08326418059212821,
+      "compression_ratio": 1.6746031746031746,
+      "no_speech_prob": 0.019780084490776062
+    },
+    {
+      "id": 143,
+      "seek": 57750,
+      "start": 595.5,
+      "end": 596.5,
+      "text": " I love it here.",
+      "tokens": [51264, 286, 959, 309, 510, 13, 51314],
+      "temperature": 0.0,
+      "avg_logprob": -0.08326418059212821,
+      "compression_ratio": 1.6746031746031746,
+      "no_speech_prob": 0.019780084490776062
+    },
+    {
+      "id": 144,
+      "seek": 57750,
+      "start": 596.5,
+      "end": 598.5,
+      "text": " This is the good place.",
+      "tokens": [51314, 639, 307, 264, 665, 1081, 13, 51414],
+      "temperature": 0.0,
+      "avg_logprob": -0.08326418059212821,
+      "compression_ratio": 1.6746031746031746,
+      "no_speech_prob": 0.019780084490776062
+    },
+    {
+      "id": 145,
+      "seek": 57750,
+      "start": 598.5,
+      "end": 600.5,
+      "text": " It is the good place.",
+      "tokens": [51414, 467, 307, 264, 665, 1081, 13, 51514],
+      "temperature": 0.0,
+      "avg_logprob": -0.08326418059212821,
+      "compression_ratio": 1.6746031746031746,
+      "no_speech_prob": 0.019780084490776062
+    },
+    {
+      "id": 146,
+      "seek": 60050,
+      "start": 600.5,
+      "end": 608.5,
+      "text": " You can catch more of Elsa doing her day job hosting the news on Consider This and Pair's afternoon news podcast.",
+      "tokens": [
+        50364, 509, 393, 3745, 544, 295, 36342, 884, 720, 786, 1691, 16058, 264, 2583, 322, 17416, 639, 293, 430, 1246,
+        311, 6499, 2583, 7367, 13, 50764
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1328678859099177,
+      "compression_ratio": 1.6537216828478964,
+      "no_speech_prob": 0.6430106163024902
+    },
+    {
+      "id": 147,
+      "seek": 60050,
+      "start": 608.5,
+      "end": 611.5,
+      "text": " Before we head out, a quick shout out to our Shore Wave Plus listeners.",
+      "tokens": [50764, 4546, 321, 1378, 484, 11, 257, 1702, 8043, 484, 281, 527, 47977, 28530, 7721, 23274, 13, 50914],
+      "temperature": 0.0,
+      "avg_logprob": -0.1328678859099177,
+      "compression_ratio": 1.6537216828478964,
+      "no_speech_prob": 0.6430106163024902
+    },
+    {
+      "id": 148,
+      "seek": 60050,
+      "start": 611.5,
+      "end": 614.5,
+      "text": " We appreciate you and we thank you for supporting our show.",
+      "tokens": [50914, 492, 4449, 291, 293, 321, 1309, 291, 337, 7231, 527, 855, 13, 51064],
+      "temperature": 0.0,
+      "avg_logprob": -0.1328678859099177,
+      "compression_ratio": 1.6537216828478964,
+      "no_speech_prob": 0.6430106163024902
+    },
+    {
+      "id": 149,
+      "seek": 60050,
+      "start": 614.5,
+      "end": 616.5,
+      "text": " Shore Wave Plus helps support our show.",
+      "tokens": [51064, 47977, 28530, 7721, 3665, 1406, 527, 855, 13, 51164],
+      "temperature": 0.0,
+      "avg_logprob": -0.1328678859099177,
+      "compression_ratio": 1.6537216828478964,
+      "no_speech_prob": 0.6430106163024902
+    },
+    {
+      "id": 150,
+      "seek": 60050,
+      "start": 616.5,
+      "end": 621.5,
+      "text": " And if you're a regular listener, we'd love for you to join so you can enjoy the show without sponsor interruptions.",
+      "tokens": [
+        51164, 400, 498, 291, 434, 257, 3890, 31569, 11, 321, 1116, 959, 337, 291, 281, 3917, 370, 291, 393, 2103, 264,
+        855, 1553, 16198, 12729, 626, 13, 51414
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.1328678859099177,
+      "compression_ratio": 1.6537216828478964,
+      "no_speech_prob": 0.6430106163024902
+    },
+    {
+      "id": 151,
+      "seek": 60050,
+      "start": 621.5,
+      "end": 624.5,
+      "text": " Find out more at plus.npr.org slash Shore Wave.",
+      "tokens": [51414, 11809, 484, 544, 412, 1804, 13, 77, 1424, 13, 4646, 17330, 47977, 28530, 13, 51564],
+      "temperature": 0.0,
+      "avg_logprob": -0.1328678859099177,
+      "compression_ratio": 1.6537216828478964,
+      "no_speech_prob": 0.6430106163024902
+    },
+    {
+      "id": 152,
+      "seek": 60050,
+      "start": 624.5,
+      "end": 629.5,
+      "text": " This episode was produced by Kira Wakeem and Rachel Carlson.",
+      "tokens": [51564, 639, 3500, 390, 7126, 538, 591, 4271, 343, 619, 443, 293, 14246, 14256, 3015, 13, 51814],
+      "temperature": 0.0,
+      "avg_logprob": -0.1328678859099177,
+      "compression_ratio": 1.6537216828478964,
+      "no_speech_prob": 0.6430106163024902
+    },
+    {
+      "id": 153,
+      "seek": 62950,
+      "start": 629.5,
+      "end": 632.5,
+      "text": " It was edited by Rebecca Ramirez and Christopher Intelyata.",
+      "tokens": [50364, 467, 390, 23016, 538, 19381, 9078, 50231, 293, 20649, 5681, 736, 3274, 13, 50514],
+      "temperature": 0.0,
+      "avg_logprob": -0.1748129653930664,
+      "compression_ratio": 1.365482233502538,
+      "no_speech_prob": 0.05280166491866112
+    },
+    {
+      "id": 154,
+      "seek": 62950,
+      "start": 632.5,
+      "end": 635.5,
+      "text": " Emily, Rebecca, Rachel and I checked the facts.",
+      "tokens": [50514, 15034, 11, 19381, 11, 14246, 293, 286, 10033, 264, 9130, 13, 50664],
+      "temperature": 0.0,
+      "avg_logprob": -0.1748129653930664,
+      "compression_ratio": 1.365482233502538,
+      "no_speech_prob": 0.05280166491866112
+    },
+    {
+      "id": 155,
+      "seek": 62950,
+      "start": 635.5,
+      "end": 640.5,
+      "text": " And the audio engineer was Valentino Rodriguez Sanchez.",
+      "tokens": [50664, 400, 264, 6278, 11403, 390, 17961, 2982, 37304, 5271, 30196, 13, 50914],
+      "temperature": 0.0,
+      "avg_logprob": -0.1748129653930664,
+      "compression_ratio": 1.365482233502538,
+      "no_speech_prob": 0.05280166491866112
+    },
+    {
+      "id": 156,
+      "seek": 62950,
+      "start": 640.5,
+      "end": 641.5,
+      "text": " I'm Regina Barber.",
+      "tokens": [50914, 286, 478, 48407, 4156, 607, 13, 50964],
+      "temperature": 0.0,
+      "avg_logprob": -0.1748129653930664,
+      "compression_ratio": 1.365482233502538,
+      "no_speech_prob": 0.05280166491866112
+    },
+    {
+      "id": 157,
+      "seek": 62950,
+      "start": 641.5,
+      "end": 642.5,
+      "text": " And I'm Emily Kwong.",
+      "tokens": [50964, 400, 286, 478, 15034, 43432, 556, 13, 51014],
+      "temperature": 0.0,
+      "avg_logprob": -0.1748129653930664,
+      "compression_ratio": 1.365482233502538,
+      "no_speech_prob": 0.05280166491866112
+    },
+    {
+      "id": 158,
+      "seek": 62950,
+      "start": 642.5,
+      "end": 646.5,
+      "text": " Thanks for listening to Shore Wave, the science podcast from NPR.",
+      "tokens": [51014, 2561, 337, 4764, 281, 47977, 28530, 11, 264, 3497, 7367, 490, 426, 15958, 13, 51214],
+      "temperature": 0.0,
+      "avg_logprob": -0.1748129653930664,
+      "compression_ratio": 1.365482233502538,
+      "no_speech_prob": 0.05280166491866112
+    },
+    {
+      "id": 159,
+      "seek": 65950,
+      "start": 659.5,
+      "end": 668.5,
+      "text": " With the smart and flexible Amex Business Gold Card, it's packed with benefits that help unlock more value from your business purchases.",
+      "tokens": [
+        50364, 2022, 264, 4069, 293, 11358, 316, 1398, 87, 10715, 6731, 11877, 11, 309, 311, 13265, 365, 5311, 300, 854,
+        11634, 544, 2158, 490, 428, 1606, 26762, 13, 50814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17416051864624024,
+      "compression_ratio": 1.4964788732394365,
+      "no_speech_prob": 0.9362651705741882
+    },
+    {
+      "id": 160,
+      "seek": 65950,
+      "start": 668.5,
+      "end": 673.5,
+      "text": " Learn more at americanexpress.com slash businessgoldcard.",
+      "tokens": [
+        50814, 17216, 544, 412, 16116, 299, 1929, 87, 11637, 13, 1112, 17330, 1606, 1571, 348, 22259, 13, 51064
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17416051864624024,
+      "compression_ratio": 1.4964788732394365,
+      "no_speech_prob": 0.9362651705741882
+    },
+    {
+      "id": 161,
+      "seek": 65950,
+      "start": 673.5,
+      "end": 681.5,
+      "text": " This message comes from NPR sponsor, UNI, introducing the Coda 2 Max, their biggest and most versatile oven yet,",
+      "tokens": [
+        51064, 639, 3636, 1487, 490, 426, 15958, 16198, 11, 8229, 40, 11, 15424, 264, 383, 13449, 568, 7402, 11, 641,
+        3880, 293, 881, 25057, 9090, 1939, 11, 51464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17416051864624024,
+      "compression_ratio": 1.4964788732394365,
+      "no_speech_prob": 0.9362651705741882
+    },
+    {
+      "id": 162,
+      "seek": 65950,
+      "start": 681.5,
+      "end": 688.5,
+      "text": " with two powerful independently controlled gas burners for side by side dual zone cooking at a range of temperatures.",
+      "tokens": [
+        51464, 365, 732, 4005, 21761, 10164, 4211, 5064, 433, 337, 1252, 538, 1252, 11848, 6668, 6361, 412, 257, 3613,
+        295, 12633, 13, 51814
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.17416051864624024,
+      "compression_ratio": 1.4964788732394365,
+      "no_speech_prob": 0.9362651705741882
+    },
+    {
+      "id": 163,
+      "seek": 68850,
+      "start": 688.5,
+      "end": 694.5,
+      "text": " The oven features a 24 inch wide cooking area, allowing you to bake one 20 inch New York style pizza,",
+      "tokens": [
+        50364, 440, 9090, 4122, 257, 4022, 7227, 4874, 6361, 1859, 11, 8293, 291, 281, 16562, 472, 945, 7227, 1873,
+        3609, 3758, 8298, 11, 50664
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12471475023211855,
+      "compression_ratio": 1.38860103626943,
+      "no_speech_prob": 0.09588056802749634
+    },
+    {
+      "id": 164,
+      "seek": 68850,
+      "start": 694.5,
+      "end": 698.5,
+      "text": " or multiple 10 to 12 inch pizzas simultaneously.",
+      "tokens": [50664, 420, 3866, 1266, 281, 2272, 7227, 44037, 16561, 13, 50864],
+      "temperature": 0.0,
+      "avg_logprob": -0.12471475023211855,
+      "compression_ratio": 1.38860103626943,
+      "no_speech_prob": 0.09588056802749634
+    },
+    {
+      "id": 165,
+      "seek": 68850,
+      "start": 698.5,
+      "end": 704.5,
+      "text": " It also comes with a glass visor for dramatic views, easily removable to accommodate larger dishes.",
+      "tokens": [
+        50864, 467, 611, 1487, 365, 257, 4276, 1452, 284, 337, 12023, 6809, 11, 3612, 44060, 281, 21410, 4833, 10814,
+        13, 51164
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.12471475023211855,
+      "compression_ratio": 1.38860103626943,
+      "no_speech_prob": 0.09588056802749634
+    },
+    {
+      "id": 166,
+      "seek": 68850,
+      "start": 704.5,
+      "end": 707.5,
+      "text": " More at ooni.com.",
+      "tokens": [51164, 5048, 412, 277, 17049, 13, 1112, 13, 51314],
+      "temperature": 0.0,
+      "avg_logprob": -0.12471475023211855,
+      "compression_ratio": 1.38860103626943,
+      "no_speech_prob": 0.09588056802749634
+    }
+  ],
+  "language": "en"
+}

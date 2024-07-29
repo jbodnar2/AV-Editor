@@ -1,0 +1,28 @@
+{
+  "name": "av-editor",
+  "version": "0.0.0",
+  "private": "true",
+  "type": "module",
+  "scripts": {
+    "start": "npm run serve-www",
+    "serve-www-and-db": "npm run serve-db & npm run serve-www",
+    "serve-www": "node ./serve-www.js",
+    "prettier": "npx prettier --write .",
+    "serve-python": "python3 -m http.server --directory ./www",
+    "serve-php": "php -S localhost:8000 -t './www'",
+    "serve-db": "npx json-server --port 3001 ./data/db.json"
+  },
+  "prettier": {
+    "singleQuote": false,
+    "trailingComma": "all",
+    "arrowParens": "avoid",
+    "printWidth": 120,
+    "tabWidth": 2,
+    "endOfLine": "auto",
+    "useTabs": false,
+    "semi": true
+  },
+  "devDependencies": {
+    "live-server": "^1.2.0"
+  }
+}

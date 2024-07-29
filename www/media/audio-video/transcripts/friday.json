@@ -1,0 +1,104 @@
+{
+  "text": " No, he'll be! Where, Hawaii? Tell me, is the Lord of the Universe in? Yes, he's in. In a bad humor. Somebody must have stolen the crown jewels.",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 0,
+      "start": 0.0,
+      "end": 0.84,
+      "text": " No, he'll be!",
+      "tokens": [50364, 883, 11, 415, 603, 312, 0, 50406],
+      "temperature": 0.0,
+      "avg_logprob": -0.4627992966595818,
+      "compression_ratio": 1.1916666666666667,
+      "no_speech_prob": 0.20828749239444733,
+      "words": [
+        { "word": " No,", "start": 0.0, "end": 0.28, "probability": 0.23083089292049408 },
+        { "word": " he'll", "start": 0.36, "end": 0.58, "probability": 0.7847173511981964 },
+        { "word": " be!", "start": 0.58, "end": 0.84, "probability": 0.971912145614624 }
+      ]
+    },
+    {
+      "id": 1,
+      "seek": 0,
+      "start": 0.94,
+      "end": 2.68,
+      "text": " Where, Hawaii? Tell me, is the Lord of the Universe in?",
+      "tokens": [50406, 2305, 11, 17930, 30, 5115, 385, 11, 307, 264, 3257, 295, 264, 18307, 294, 30, 50499],
+      "temperature": 0.0,
+      "avg_logprob": -0.4627992966595818,
+      "compression_ratio": 1.1916666666666667,
+      "no_speech_prob": 0.20828749239444733,
+      "words": [
+        { "word": " Where,", "start": 0.94, "end": 0.94, "probability": 0.24888454377651215 },
+        { "word": " Hawaii?", "start": 0.94, "end": 1.16, "probability": 0.7163258194923401 },
+        { "word": " Tell", "start": 1.34, "end": 1.48, "probability": 0.9549567103385925 },
+        { "word": " me,", "start": 1.48, "end": 1.62, "probability": 0.9776261448860168 },
+        { "word": " is", "start": 1.68, "end": 1.68, "probability": 0.9484350085258484 },
+        { "word": " the", "start": 1.68, "end": 1.8, "probability": 0.9787736535072327 },
+        { "word": " Lord", "start": 1.8, "end": 1.96, "probability": 0.6686382293701172 },
+        { "word": " of", "start": 1.96, "end": 2.08, "probability": 0.9791656136512756 },
+        { "word": " the", "start": 2.08, "end": 2.16, "probability": 0.992584764957428 },
+        { "word": " Universe", "start": 2.16, "end": 2.5, "probability": 0.18786978721618652 },
+        { "word": " in?", "start": 2.5, "end": 2.68, "probability": 0.923084020614624 }
+      ]
+    },
+    {
+      "id": 2,
+      "seek": 0,
+      "start": 2.76,
+      "end": 3.38,
+      "text": " Yes, he's in.",
+      "tokens": [50499, 1079, 11, 415, 311, 294, 13, 50534],
+      "temperature": 0.0,
+      "avg_logprob": -0.4627992966595818,
+      "compression_ratio": 1.1916666666666667,
+      "no_speech_prob": 0.20828749239444733,
+      "words": [
+        { "word": " Yes,", "start": 2.76, "end": 2.94, "probability": 0.8865904211997986 },
+        { "word": " he's", "start": 3.02, "end": 3.28, "probability": 0.7464853823184967 },
+        { "word": " in.", "start": 3.28, "end": 3.38, "probability": 0.9940053820610046 }
+      ]
+    },
+    {
+      "id": 3,
+      "seek": 0,
+      "start": 3.46,
+      "end": 4.22,
+      "text": " In a bad humor.",
+      "tokens": [50534, 682, 257, 1578, 14318, 13, 50581],
+      "temperature": 0.0,
+      "avg_logprob": -0.4627992966595818,
+      "compression_ratio": 1.1916666666666667,
+      "no_speech_prob": 0.20828749239444733,
+      "words": [
+        { "word": " In", "start": 3.46, "end": 3.56, "probability": 0.914503276348114 },
+        { "word": " a", "start": 3.56, "end": 3.7, "probability": 0.9961877465248108 },
+        { "word": " bad", "start": 3.7, "end": 3.94, "probability": 0.9804220795631409 },
+        { "word": " humor.", "start": 3.94, "end": 4.22, "probability": 0.3336707651615143 }
+      ]
+    },
+    {
+      "id": 4,
+      "seek": 0,
+      "start": 4.42,
+      "end": 5.84,
+      "text": " Somebody must have stolen the crown jewels.",
+      "tokens": [50581, 13463, 1633, 362, 15900, 264, 11841, 43256, 13, 50671],
+      "temperature": 0.0,
+      "avg_logprob": -0.4627992966595818,
+      "compression_ratio": 1.1916666666666667,
+      "no_speech_prob": 0.20828749239444733,
+      "words": [
+        { "word": " Somebody", "start": 4.42, "end": 4.62, "probability": 0.9461151361465454 },
+        { "word": " must", "start": 4.62, "end": 4.78, "probability": 0.9816758036613464 },
+        { "word": " have", "start": 4.78, "end": 4.88, "probability": 0.7483850717544556 },
+        { "word": " stolen", "start": 4.88, "end": 5.12, "probability": 0.9799631237983704 },
+        { "word": " the", "start": 5.12, "end": 5.32, "probability": 0.9829906225204468 },
+        { "word": " crown", "start": 5.32, "end": 5.52, "probability": 0.7843686938285828 },
+        { "word": " jewels.", "start": 5.52, "end": 5.84, "probability": 0.7291117906570435 }
+      ]
+    }
+  ],
+  "language": "en"
+}
