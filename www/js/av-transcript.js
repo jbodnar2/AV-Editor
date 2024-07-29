@@ -28,17 +28,15 @@ class AVTranscript extends HTMLElement {
     this.video.poster = this.poster;
     this.video.playbackRate = 2.5;
 
-    this.getTrackJSON(this.textURL)
-      .then(trackJSON => {
-        this.addTrackCues(trackJSON);
-        this.addFullTranscript();
-      })
-      .then(() => {
-        this.transcript.addEventListener("click", this.playPauseMedia.bind(this));
-        this.video.addEventListener("playing", this.updatePlayStatus.bind(this));
-        this.video.addEventListener("pause", this.updatePlayStatus.bind(this));
-        this.track.addEventListener("cuechange", this.focusCue.bind(this));
-      });
+    this.getTrackJSON(this.textURL).then(trackJSON => {
+      this.addTrackCues(trackJSON);
+      this.addFullTranscript();
+    });
+
+    this.transcript.addEventListener("click", this.playPauseMedia.bind(this));
+    this.video.addEventListener("playing", this.updatePlayStatus.bind(this));
+    this.video.addEventListener("pause", this.updatePlayStatus.bind(this));
+    this.track.addEventListener("cuechange", this.focusCue.bind(this));
   }
 
   updatePlayStatus(event) {

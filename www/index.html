@@ -8,35 +8,18 @@
     <title>Web-Apps-Lean</title>
   </head>
 
-  <body class="body">
-    <header class="header header--primary">
-      <div class="container">
-        <h1>Index</h1>
-      </div>
-    </header>
-    <nav class="nav nav--primary">
-      <div class="container"></div>
-    </nav>
-    <main class="main main--primary">
-      <div class="container">
-        <h2>Main Content</h2>
-        <!-- Main content -->
+  <body>
+    <main>
+      <!-- Main content start -->
 
-        <style></style>
+      <av-transcript
+        source="http://localhost:3000/media/audio-video/chimps.mp3"
+        text-url="http://localhost:3000/media/audio-video/transcripts/chimps.json"
+        poster="http://localhost:3000/media/images/atlanta-3.png"
+      ></av-transcript>
 
-        <av-transcript
-          source="http://localhost:3000/media/audio-video/chimps.mp3"
-          text-url="http://localhost:3000/media/audio-video/transcripts/chimps.json"
-          poster="http://localhost:3000/media/images/atlanta-3.png"
-        ></av-transcript>
-
-        <!-- Main content end -->
-      </div>
+      <!-- Main content end -->
     </main>
-    <footer class="footer footer--primary">
-      <div class="container"></div>
-    </footer>
-
     <!-- Scripts -->
     <script type="module" src="js/av-transcript.js" defer></script>
   </body>
