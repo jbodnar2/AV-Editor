@@ -14,14 +14,14 @@ class AVWriter extends HTMLElement {
     <style>
       av-writer {
       display: grid;
-      /* grid-template-columns: auto 1fr; */
+      grid-template-columns: auto 1fr;
       gap: 1rem;
       margin-top: 1rem;
       }
 
       video {
       display: block;
-      width: 300px;
+      width: 400px;
       height: auto;
       }
 
