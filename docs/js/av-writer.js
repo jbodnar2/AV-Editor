@@ -16,6 +16,7 @@ class AVWriter extends HTMLElement {
       display: grid;
       /* grid-template-columns: auto 1fr; */
       gap: 1rem;
+      margin-top: 1rem;
       }
 
       video {
@@ -96,13 +97,15 @@ class AVWriter extends HTMLElement {
     `;
 
     this.id = elemId;
-    this.videoElement = document.getElementById(videoId);
-    this.transcriptElement = document.getElementById(transcriptId);
+
+    this.videoElement = this.querySelector(`#${videoId}`);
+    this.transcriptElement = this.querySelector(`#${transcriptId}`);
 
     this.videoSource = this.getAttribute("source");
     this.transcriptURL = this.getAttribute("transcript-url");
     this.posterImage = this.getAttribute("poster");
     this.playbackRate = this.getAttribute("playback-rate");
+    this.showTranscript = this.getAttribute("show-transcript") === "true" ? "showing" : null;
 
     // NOTE: We might have multiple tracks in the future.
     this.track;
@@ -160,7 +163,7 @@ class AVWriter extends HTMLElement {
 
   addTrack(trackData) {
     this.track = this.videoElement.addTextTrack("captions", "English", "English");
-    this.track.mode = "showing";
+    this.track.mode = this.showTranscript;
 
     trackData.segments.forEach(({ id, start, end, text } = segments) => {
       const cue = new VTTCue(start, end, text);
@@ -197,7 +200,7 @@ class AVWriter extends HTMLElement {
   focusCueSegment(event) {
     if (!event.target.activeCues[0]) return;
 
-    const previousCues = document.querySelectorAll(".cue--focus");
+    const previousCues = this.querySelectorAll(".cue--focus");
 
     if (previousCues) {
       previousCues.forEach(previousCue => {
@@ -207,7 +210,7 @@ class AVWriter extends HTMLElement {
     }
 
     const scrollTargetID = `cue-${event.target.activeCues[0].id}`;
-    const scrollTarget = document.getElementById(scrollTargetID);
+    const scrollTarget = this.querySelector(`#${scrollTargetID}`);
     const timeButton = scrollTarget.querySelector(".cue-select-button");
 
     const isPlaying = !this.videoElement.paused;
