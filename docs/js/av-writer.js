@@ -3,6 +3,37 @@ class AVWriter extends HTMLElement {
     return ["source", "text-url", "poster", "playback-rate", "show-probabilities", "show-transcript", "show-controls"];
   }
 
+  attributeChangedCallback(name, oldVal, newVal) {
+    console.log(name, oldVal, newVal);
+
+    switch (name) {
+      case "source":
+        this.videoSource = newVal;
+        break;
+      case "text-url":
+        this.transcriptURL = newVal;
+        break;
+      case "poster":
+        this.posterImage = newVal;
+        break;
+      case "playback-rate":
+        this.playbackRate = newVal;
+        break;
+      case "show-probabilities":
+        this.showProbabilities = newVal;
+        break;
+      case "show-transcript":
+        this.showTranscript = newVal;
+        break;
+      case "show-controls":
+        this.showControls = newVal;
+        console.log(this.showControls);
+        break;
+    }
+
+    this.connectedCallback();
+  }
+
   constructor() {
     super();
 
@@ -114,8 +145,8 @@ class AVWriter extends HTMLElement {
     this.posterImage = this.getAttribute("poster");
     this.playbackRate = this.getAttribute("playback-rate");
     this.showTranscript = this.getAttribute("show-transcript") === "true" ? "showing" : "";
-    this.showProbabilities = this.getAttribute("show-probabilities") === "true" ? true : false;
-    this.showControls = this.getAttribute("show-controls") === "true" ? true : false;
+    this.showProbabilities = this.getAttribute("show-probabilities") === "true" ? true : null;
+    this.showControls = this.getAttribute("show-controls") === "true" ? true : null;
     this.track;
   }
 
