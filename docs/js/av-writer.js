@@ -165,7 +165,7 @@ class AVWriter extends HTMLElement {
     this.track = this.videoElement.addTextTrack("captions", "English", "English");
     this.track.mode = this.showTranscript;
 
-    trackData.segments.forEach(({ id, start, end, text } = segments) => {
+    trackData.segments.forEach(({ id, start, end, text } = segment) => {
       const cue = new VTTCue(start, end, text);
       cue.id = id;
       cue.formattedTime = AVWriter.getFormattedTimeFromSeconds(start);
