@@ -184,7 +184,7 @@ class AVWriter extends HTMLElement {
           <!--<button class="cue-pause-button" aria-label="Pause">⏸</button> -->
           <button class="cue-play-button" aria-label="Play"></button>
         </div>
-        <form action="" method="post" class="cue-form">
+        <form action="javascript:void(0);" method="" class="cue-form">
           <input 
             type="text"
             class="cue-input"
