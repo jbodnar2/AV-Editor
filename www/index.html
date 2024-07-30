@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/_reset.css" />
-    <link rel="stylesheet" href="css/style.css" />
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
     <title>Web-Apps-Lean</title>
   </head>
 
@@ -12,15 +12,17 @@
     <main>
       <!-- Main content start -->
 
-      <av-transcript
+      <av-writer
         source="http://localhost:3000/media/audio-video/chimps.mp3"
-        text-url="http://localhost:3000/media/audio-video/transcripts/chimps.json"
+        transcript-url="http://localhost:3000/media/audio-video/transcripts/chimps.json"
         poster="http://localhost:3000/media/images/atlanta-3.png"
-      ></av-transcript>
+        playback-rate="1.5"
+      >
+      </av-writer>
 
       <!-- Main content end -->
     </main>
     <!-- Scripts -->
-    <script type="module" src="js/av-transcript.js" defer></script>
+    <script type="module" src="js/av-writer.js" defer></script>
   </body>
 </html>
