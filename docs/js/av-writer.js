@@ -1,6 +1,6 @@
 class AVWriter extends HTMLElement {
   static get observedAttributes() {
-    return ["source", "text-url", "poster", "playback-rate"];
+    return ["source", "text-url", "poster", "playback-rate", "show-probabilities", "show-transcript"];
   }
 
   constructor() {
@@ -91,9 +91,9 @@ class AVWriter extends HTMLElement {
       gap: 0.25em;
       }
 
-      .cue-probability:not(:empty) {
+      .cue-average-probability:not(:empty) {
       font-size: 0.75em;
-      background-color: gray;
+      background-color: #111;
       padding: .25em .5em;
       border-radius: 5px;
       color: white;
@@ -113,9 +113,8 @@ class AVWriter extends HTMLElement {
     this.transcriptURL = this.getAttribute("transcript-url");
     this.posterImage = this.getAttribute("poster");
     this.playbackRate = this.getAttribute("playback-rate");
-    this.showTranscript = this.getAttribute("show-transcript") === "true" ? "showing" : null;
-
-    // NOTE: We might have multiple tracks in the future.
+    this.showTranscript = this.getAttribute("show-transcript") === "true" ? "showing" : "";
+    this.showProbabilities = this.getAttribute("show-probabilities") === "true" ? true : false;
     this.track;
   }
 
@@ -178,24 +177,55 @@ class AVWriter extends HTMLElement {
       cue.id = id;
       cue.formattedTime = AVWriter.getFormattedTimeFromSeconds(start);
 
-      if (words) {
+      if (this.showProbabilities && words) {
         const probabilities = words.map(word => word.probability);
         const averageProbability = probabilities.reduce((acc, prob) => acc + prob, 0) / probabilities.length;
+        const maxProbability = Math.max(...probabilities);
+        const minProbability = Math.min(...probabilities);
+        const medianProbability = this.findMedian(probabilities);
 
-        // cue.probability = Math.round(averageProbability * 1000) / 10;
-        cue.probability = Math.round(averageProbability * 1000) / 10;
+        cue.averageProbability = Math.round(averageProbability * 10000) / 100;
+        cue.medianProbability = Math.round(medianProbability * 10000) / 100;
+        cue.minProbability = Math.round(minProbability * 10000) / 100;
+        cue.maxProbability = Math.round(maxProbability * 10000) / 100;
       }
 
       this.track.addCue(cue);
     });
   }
 
+  findMedian(array) {
+    const sortedArray = array.sort((a, b) => a - b);
+    const middle = Math.floor(sortedArray.length / 2);
+    return sortedArray.length % 2 ? sortedArray[middle] : (sortedArray[middle - 1] + sortedArray[middle]) / 2;
+  }
+
   addTranscript() {
     const cues = Array.from(this.track.cues);
     const content = cues
-      .map(({ id, text, startTime, endTime, formattedTime, probability } = cue) => {
-        return `
-      <div id="cue-${id}" data-cue="${id}" data-start-time="${startTime}" data-end-time="${endTime}" data-probability="${probability || ""}" class="cue">
+      .map(
+        ({
+          id,
+          text,
+          startTime,
+          endTime,
+          formattedTime,
+          averageProbability,
+          minProbability,
+          maxProbability,
+          medianProbability,
+        } = cue) => {
+          return `
+      <div 
+        id="cue-${id}" 
+        data-cue="${id}" 
+        data-start-time="${startTime}" 
+        data-end-time="${endTime}" 
+        data-average-probability="${averageProbability || ""}" 
+        data-min-probability="${minProbability || ""}" 
+        data-max-probability="${maxProbability || ""}" 
+        data-median-probability="${medianProbability || ""}"
+        class="cue">
         <div class="cue-controls" >
           <button class="cue-select-button">${formattedTime}</button>
           <!--<button class="cue-pause-button" aria-label="Pause">⏸</button> -->
@@ -207,9 +237,14 @@ class AVWriter extends HTMLElement {
             class="cue-input"
             value="${text}" />
             </form>
-            <span class="cue-probability">${probability ? `${probability}%` : ""}</span>
+            ${
+              this.showProbabilities
+                ? `<span class="cue-average-probability">${averageProbability ? `Avg: ${averageProbability}%` : ""}</br>${minProbability ? `Min: ${minProbability}%` : ""}</br>${maxProbability ? `Max: ${maxProbability}%` : ""}</br>${medianProbability ? `Median: ${medianProbability}%` : ""}</span>`
+                : ""
+            }
       </div>`;
-      })
+        },
+      )
       .join("");
 
     this.transcriptElement.innerHTML = content;
