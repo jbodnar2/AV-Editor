@@ -1,8 +1,4 @@
 class AVWriter extends HTMLElement {
-  static get observedAttributes() {
-    return ["source", "text-url", "poster", "playback-rate"];
-  }
-
   constructor() {
     super();
 
@@ -124,6 +120,39 @@ class AVWriter extends HTMLElement {
       this.videoElement.addEventListener("playing", this.updatePlayState.bind(this));
       this.videoElement.addEventListener("pause", this.updatePlayState.bind(this));
     });
+  }
+
+  static get observedAttributes() {
+    return ["source", "transcript-url", "poster", "playback-rate", "show-transcript"];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (name === "source") {
+      this.videoSource = newValue;
+      this.videoElement.src = newValue;
+    }
+
+    if (name === "transcript-url") {
+      this.transcriptURL = newValue;
+      this.getTrackJSON(newValue).then(data => {
+        this.addTrack(data);
+        this.addTranscript();
+        this.track.addEventListener("cuechange", this.focusCueSegment.bind(this));
+        this.transcriptElement.addEventListener("click", this.playPauseMedia.bind(this));
+        this.videoElement.addEventListener("playing", this.updatePlayState.bind(this));
+        this.videoElement.addEventListener("pause", this.updatePlayState.bind(this));
+      });
+    }
+
+    if (name === "poster") {
+      this.posterImage = newValue;
+      this.videoElement.poster = newValue;
+    }
+
+    if (name === "playback-rate") {
+      this.playbackRate = newValue;
+      this.videoElement.playbackRate = newValue;
+    }
   }
 
   updatePlayState(event) {
