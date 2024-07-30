@@ -91,6 +91,14 @@ class AVWriter extends HTMLElement {
       gap: 0.25em;
       }
 
+      .cue-probability:not(:empty) {
+      font-size: 0.75em;
+      background-color: gray;
+      padding: .25em .5em;
+      border-radius: 5px;
+      color: white;
+      }
+
     </style>
     <video id="${videoId}" controls></video>
     <div id="${transcriptId}" class="transcript-wrapper"></div>
@@ -165,10 +173,19 @@ class AVWriter extends HTMLElement {
     this.track = this.videoElement.addTextTrack("captions", "English", "English");
     this.track.mode = this.showTranscript;
 
-    trackData.segments.forEach(({ id, start, end, text } = segment) => {
+    trackData.segments.forEach(({ id, start, end, text, words } = segment) => {
       const cue = new VTTCue(start, end, text);
       cue.id = id;
       cue.formattedTime = AVWriter.getFormattedTimeFromSeconds(start);
+
+      if (words) {
+        const probabilities = words.map(word => word.probability);
+        const averageProbability = probabilities.reduce((acc, prob) => acc + prob, 0) / probabilities.length;
+
+        // cue.probability = Math.round(averageProbability * 1000) / 10;
+        cue.probability = Math.round(averageProbability * 1000) / 10;
+      }
+
       this.track.addCue(cue);
     });
   }
@@ -176,9 +193,9 @@ class AVWriter extends HTMLElement {
   addTranscript() {
     const cues = Array.from(this.track.cues);
     const content = cues
-      .map(({ id, text, startTime, endTime, formattedTime } = cue) => {
+      .map(({ id, text, startTime, endTime, formattedTime, probability } = cue) => {
         return `
-      <div id="cue-${id}" data-cue="${id}" data-start-time="${startTime}" data-end-time="${endTime}" class="cue">
+      <div id="cue-${id}" data-cue="${id}" data-start-time="${startTime}" data-end-time="${endTime}" data-probability="${probability || ""}" class="cue">
         <div class="cue-controls" >
           <button class="cue-select-button">${formattedTime}</button>
           <!--<button class="cue-pause-button" aria-label="Pause">⏸</button> -->
@@ -189,7 +206,8 @@ class AVWriter extends HTMLElement {
             type="text"
             class="cue-input"
             value="${text}" />
-        </form>
+            </form>
+            <span class="cue-probability">${probability ? `${probability}%` : ""}</span>
       </div>`;
       })
       .join("");
