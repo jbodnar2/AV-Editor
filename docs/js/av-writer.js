@@ -219,8 +219,8 @@ class AVWriter extends HTMLElement {
   }
 
   static getFormattedTimeFromSeconds(seconds) {
-    const hours = (Math.round(seconds / 3600) % 24).toString().padStart(2, "0");
-    const minutes = Math.round((seconds % 3600) / 60)
+    const hours = (Math.floor(seconds / 3600) % 24).toString().padStart(2, "0");
+    const minutes = Math.floor((seconds % 3600) / 60)
       .toString()
       .padStart(2, "0");
     seconds = Math.floor(seconds % 60)

@@ -3,7 +3,7 @@ import liveServer from "live-server";
 liveServer.start({
   port: 3000,
   host: "localhost",
-  root: "www",
+  root: "docs",
   open: true,
   wait: 500,
   noCssInjection: true,
