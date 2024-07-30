@@ -1,6 +1,6 @@
 class AVWriter extends HTMLElement {
   static get observedAttributes() {
-    return ["source", "text-url", "poster", "playback-rate", "show-probabilities", "show-transcript"];
+    return ["source", "text-url", "poster", "playback-rate", "show-probabilities", "show-transcript", "show-controls"];
   }
 
   constructor() {
@@ -100,7 +100,7 @@ class AVWriter extends HTMLElement {
       }
 
     </style>
-    <video id="${videoId}" controls></video>
+    <video id="${videoId}"></video>
     <div id="${transcriptId}" class="transcript-wrapper"></div>
     `;
 
@@ -115,11 +115,13 @@ class AVWriter extends HTMLElement {
     this.playbackRate = this.getAttribute("playback-rate");
     this.showTranscript = this.getAttribute("show-transcript") === "true" ? "showing" : "";
     this.showProbabilities = this.getAttribute("show-probabilities") === "true" ? true : false;
+    this.showControls = this.getAttribute("show-controls") === "true" ? true : false;
     this.track;
   }
 
   connectedCallback() {
     this.videoElement.src = this.videoSource;
+    this.videoElement.controls = this.showControls;
     this.videoElement.poster = this.posterImage;
     this.videoElement.playbackRate = this.playbackRate;
 
