@@ -1,7 +1,7 @@
 [
   {
     "id": "b62bfbd2",
-    "media": "media/audio-video/plane.mp3",
+    "url": "media/audio-video/plane.mp3",
     "title": "Mad Max: The Road Warrior (clip)",
     "poster": "media/images/coffee-0.png",
     "transcripts": [
@@ -186,7 +186,7 @@
 
   {
     "id": "13662146",
-    "media": "media/audio-video/friday.mp4",
+    "url": "media/audio-video/friday.mp4",
     "title": "His Girl Friday (clip)",
     "poster": "media/images/coffee-1.png",
     "transcripts": [
@@ -300,7 +300,7 @@
   },
   {
     "id": "952ea70d",
-    "media": "media/audio-video/chimps.mp3",
+    "url": "media/audio-video/chimps.mp3",
     "title": "Shortwave: What Chimpanzee Gestures Reveal about Human Communication",
     "poster": "media/images/coffee-1.png",
     "transcripts": [
@@ -4707,7 +4707,7 @@
   },
   {
     "id": "478e2cb1",
-    "media": "media/audio-video/newscast.mp3",
+    "url": "media/audio-video/newscast.mp3",
     "title": "Up First: Thursday, July 25th",
     "poster": "media/images/coffee-2.png",
     "transcripts": [
@@ -11051,7 +11051,7 @@
   },
   {
     "id": "719a2d81",
-    "media": "media/audio-video/dream.mp3",
+    "url": "media/audio-video/dream.mp3",
     "title": "MLK Dream",
     "poster": "media/images/coffee-0.png",
     "transcripts": [

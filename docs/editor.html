@@ -33,26 +33,33 @@
     <footer></footer>
     <!-- Scripts -->
     <script type="module" defer>
-      import { getTranscripts } from "./js/components/api.js";
+      import { getMedia } from "./js/components/api.js";
 
       const app = document.querySelector("#app");
 
-      function transcriptHTML(transcripts) {
-        console.dir(transcripts);
-        const id = getTranscriptID();
-        if (!id) return noMediaHTML();
+      function mediaItemHTML(media) {
+        const mediaItemId = getMediaItemId();
 
-        const transcript = getTranscriptByID(transcripts, id);
-        if (!transcript) return noTranscriptHTML();
+        if (!mediaItemId) return noMediaItemHTML();
+
+        const mediaItem = getTranscriptByID(media, mediaItemId);
+        if (!mediaItem) return noMediaItemHTML();
+
+        const {
+          title,
+          url,
+          poster,
+          transcripts: [transcript, ...additionalTranscripts],
+        } = mediaItem;
 
         return `
-        <h1>${transcript.title}</h1>
-        <video src="${transcript.media}" controls poster="${encodeURIComponent(transcript.poster)}"></video>
+        <h1>${title}</h1>
+        <video src="${url}" controls poster="${encodeURIComponent(poster)}"></video>
         <div>
           <details>
             <summary>Full Text of Transcript</summary>
             <div>
-            ${transcript.transcripts[0].text}
+            ${transcript.text}
             </div>
           </details>
         </div>
@@ -60,13 +67,13 @@
       `;
       }
 
-      function noTranscriptHTML() {
+      function noMediaItemHTML() {
         return `
         <p>No transcript found.</p>
       `;
       }
 
-      function getTranscriptID() {
+      function getMediaItemId() {
         return new URL(window.location.href).searchParams.get("id");
       }
 
@@ -74,8 +81,8 @@
         return transcripts.find(transcript => transcript.id === id);
       }
 
-      getTranscripts().then(transcripts => {
-        app.innerHTML = transcriptHTML(transcripts);
+      getMedia().then(media => {
+        app.innerHTML = mediaItemHTML(media);
       });
     </script>
   </body>
