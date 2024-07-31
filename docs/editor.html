@@ -24,7 +24,7 @@
     <main>
       <div class="container">
         <!-- Main content start -->
-        <div id="app" class="media-wrapper"></div>
+        <div id="app"></div>
 
         <!-- Main content end -->
       </div>
@@ -46,7 +46,16 @@
         if (!transcript) return noTranscriptHTML();
 
         return `
+        <h1>${transcript.title}</h1>
         <video src="${transcript.media}" controls poster="${encodeURIComponent(transcript.poster)}"></video>
+        <div>
+          <details>
+            <summary>Full Text of Transcript</summary>
+            <div>
+            ${transcript.transcripts[0].text}
+            </div>
+          </details>
+        </div>
         
       `;
       }

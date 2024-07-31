@@ -68,3 +68,27 @@ nav {
     margin-top: 0.5rem;
   }
 }
+
+details {
+  margin-top: 1rem;
+  border: 1px solid #333;
+
+  div {
+    padding: 1rem;
+    max-height: 300px;
+    overflow-y: auto;
+    box-shadow:
+      inset 0px 0px 0px 1px hsl(0, 0%, 83%, 0.125),
+      inset 0px 0px 5px 5px hsl(0, 0%, 83%, 0.25);
+  }
+}
+
+details summary {
+  padding: 1rem;
+  color: white;
+  background-color: #333;
+}
+
+details summary:hover {
+  cursor: pointer;
+}
