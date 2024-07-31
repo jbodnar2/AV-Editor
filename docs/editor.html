@@ -24,7 +24,9 @@
     <main>
       <div class="container">
         <!-- Main content start -->
-        <div id="app"></div>
+
+        <div id="media-item"></div>
+        <div id="editor"></div>
 
         <!-- Main content end -->
       </div>
@@ -35,7 +37,8 @@
     <script type="module" defer>
       import { getMedia } from "./js/components/api.js";
 
-      const app = document.querySelector("#app");
+      const mediaItem = document.querySelector("#media-item");
+      const editor = document.querySelector("#editor");
 
       function mediaItemHTML(media) {
         const mediaItemId = getMediaItemId();
@@ -52,8 +55,8 @@
           transcripts: [transcript, ...additionalTranscripts],
         } = mediaItem;
 
-        return `
-        <h1>${title}</h1>
+        const mediaHTML = `
+        <h2>${title}</h2>
         <video src="${url}" controls poster="${encodeURIComponent(poster)}"></video>
         <div>
           <details>
@@ -62,9 +65,15 @@
             ${transcript.text}
             </div>
           </details>
+          <h3>Transcript</h3>
+          <div id="editor">Editor loading...</div>
         </div>
-        
       `;
+
+        return {
+          mediaHTML,
+          transcript,
+        };
       }
 
       function noMediaItemHTML() {
@@ -82,7 +91,8 @@
       }
 
       getMedia().then(media => {
-        app.innerHTML = mediaItemHTML(media);
+        const { mediaHTML, transcript } = mediaItemHTML(media);
+        mediaItem.innerHTML = mediaHTML;
       });
     </script>
   </body>
