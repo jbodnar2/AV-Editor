@@ -4,34 +4,13 @@ class AVWriter extends HTMLElement {
   }
 
   attributeChangedCallback(name, oldVal, newVal) {
-    console.log(name, oldVal, newVal);
-
-    switch (name) {
-      case "source":
-        this.videoSource = newVal;
-        break;
-      case "text-url":
-        this.transcriptURL = newVal;
-        break;
-      case "poster":
-        this.posterImage = newVal;
-        break;
-      case "playback-rate":
-        this.playbackRate = newVal;
-        break;
-      case "show-probabilities":
-        this.showProbabilities = newVal;
-        break;
-      case "show-transcript":
-        this.showTranscript = newVal;
-        break;
-      case "show-controls":
-        this.showControls = newVal;
-        console.log(this.showControls);
-        break;
+    if (name === "show-controls") {
+      if (newVal === "true") {
+        this.videoElement.controls = true;
+      } else {
+        this.videoElement.controls = false;
+      }
     }
-
-    this.connectedCallback();
   }
 
   constructor() {
@@ -42,95 +21,6 @@ class AVWriter extends HTMLElement {
     const transcriptId = `transcript-${elemId}`;
 
     this.innerHTML = `
-    <style>
-      av-writer {
-      display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 1rem;
-      margin-top: 1rem;
-      }
-
-      video {
-      display: block;
-      width: 400px;
-      height: auto;
-      }
-
-      form {
-      flex-grow: 1;
-      }
-
-      input {
-      width: 100%;
-      border: none;
-      padding: none;
-      font-size: 1rem;
-      }
-
-      *:focus {
-      outline: 3px solid dodgerblue;
-      outline-offset: 3px;
-      }
-
-      button {
-      background: transparent;
-      border: 1px solid lightgray;
-      padding: 0.25rem 0.5rem;
-      cursor: pointer;
-      }
-
-      .transcript-wrapper {
-      padding: 1rem;
-      height: 300px;
-      overflow-y: scroll;
-      border: 1px solid lightgray;
-      box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-      }
-
-      .cue--focus {
-      .cue-select-button {
-      background-color: #111;
-      color: white;
-      border-color: black;
-      }
-      }
-
-      .cue-pause-button {
-      display: none;
-      }
-
-      .cue-play-button::after {
-      content: "▶";
-      }
-
-      .is-playing {
-      .cue-play-button::after {
-      content: "⏸";
-      /* display: none; */
-      }
-
-      .cue-pause-button {
-      display: none;
-      }
-      }
-
-      .cue {
-      margin-block-end: 1rem;
-      display: flex;
-      justify-content: flex-start;
-      align-items: center;
-      gap: 0.25em;
-      }
-
-      .cue-average-probability:not(:empty) {
-      font-size: 0.75em;
-      background-color: #111;
-      padding: .25em .5em;
-      border-radius: 5px;
-      color: white;
-      }
-
-    </style>
     <video id="${videoId}"></video>
     <div id="${transcriptId}" class="transcript-wrapper"></div>
     `;
@@ -145,8 +35,8 @@ class AVWriter extends HTMLElement {
     this.posterImage = this.getAttribute("poster");
     this.playbackRate = this.getAttribute("playback-rate");
     this.showTranscript = this.getAttribute("show-transcript") === "true" ? "showing" : "";
-    this.showProbabilities = this.getAttribute("show-probabilities") === "true" ? true : null;
-    this.showControls = this.getAttribute("show-controls") === "true" ? true : null;
+    this.showProbabilities = this.getAttribute("show-probabilities") === "true" ? true : "";
+    this.showControls = this.getAttribute("show-controls") === "true" ? true : "";
     this.track;
   }
 
@@ -156,6 +46,7 @@ class AVWriter extends HTMLElement {
     this.videoElement.poster = this.posterImage;
     this.videoElement.playbackRate = this.playbackRate;
 
+    // Need a more targeted render function for updates without fetching new data and full UI update
     this.getTrackJSON(this.transcriptURL).then(data => {
       this.addTrack(data);
       this.addTranscript();

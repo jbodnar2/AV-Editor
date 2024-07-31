@@ -1,78 +1,85 @@
-av-writer,
-av-transcript {
+av-writer {
   display: grid;
-  /* grid-template-columns: auto 1fr; */
+  grid-template-columns: auto 1fr;
   gap: 1rem;
-}
+  margin-top: 2rem;
 
-video {
-  display: block;
-  width: 300px;
-  height: auto;
-}
-
-form {
-  flex-grow: 1;
-}
-
-input {
-  width: 100%;
-  border: none;
-  padding: none;
-  font-size: 1rem;
-}
-
-*:focus {
-  outline: 3px solid dodgerblue;
-  outline-offset: 3px;
-}
-
-button {
-  background: transparent;
-  border: 1px solid lightgray;
-  padding: 0.25rem 0.5rem;
-  cursor: pointer;
-}
-
-.transcript-wrapper {
-  padding: 1rem;
-  height: 300px;
-  overflow-y: scroll;
-  border: 1px solid lightgray;
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-
-.cue--focus {
-  .cue-select-button {
-    background-color: #111;
-    color: white;
-    border-color: black;
+  video {
+    display: block;
+    width: 300px;
+    height: auto;
   }
-}
 
-.cue-pause-button {
-  display: none;
-}
+  form {
+    flex-grow: 1;
+  }
 
-.cue-play-button::after {
-  content: "▶";
-}
+  input {
+    width: 100%;
+    border: none;
+    padding: none;
+    font-size: 1rem;
+  }
 
-.is-playing {
-  .cue-play-button::after {
-    content: "⏸";
-    /* display: none; */
+  *:focus {
+    outline: 3px solid dodgerblue;
+    outline-offset: 3px;
+  }
+
+  button {
+    background: transparent;
+    border: 1px solid lightgray;
+    padding: 0.25rem 0.5rem;
+    cursor: pointer;
+  }
+
+  .transcript-wrapper {
+    padding: 1rem;
+    height: 300px;
+    overflow-y: scroll;
+    border: 1px solid lightgray;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  }
+
+  .cue--focus {
+    .cue-select-button {
+      background-color: #111;
+      color: white;
+      border-color: black;
+    }
   }
 
   .cue-pause-button {
     display: none;
   }
-}
 
-.cue {
-  margin-block-end: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 0.25em;
+  .cue-play-button::after {
+    content: "▶";
+  }
+
+  .is-playing {
+    .cue-play-button::after {
+      content: "⏸";
+      /* display: none; */
+    }
+
+    .cue-pause-button {
+      display: none;
+    }
+  }
+
+  .cue {
+    margin-block-end: 1rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.25em;
+  }
+  .cue-average-probability:not(:empty) {
+    font-size: 0.75em;
+    background-color: #111;
+    padding: 0.25em 0.5em;
+    border-radius: 5px;
+    color: white;
+  }
 }
