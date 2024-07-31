@@ -74,7 +74,7 @@
         return transcripts.find(transcript => transcript.id === id);
       }
 
-      getTranscripts("data/av.json").then(transcripts => {
+      getTranscripts().then(transcripts => {
         app.innerHTML = transcriptHTML(transcripts);
       });
     </script>

@@ -34,27 +34,27 @@
     <footer></footer>
     <!-- Scripts -->
     <script type="module" defer>
-      import { getTranscripts } from "./js/components/api.js";
+      import { getMedia } from "./js/components/api.js";
 
-      const avEditor = document.querySelector("#app");
+      const app = document.querySelector("#app");
 
-      function transcriptsListHTML(transcripts) {
-        return transcripts
-          .map(transcript => {
+      function mediaHTML(media) {
+        return media
+          .map(({ poster, id, title }) => {
             return `
-          <figure class="media-option">
-        <img src="${transcript.poster}" alt="Atlanta" />
-        <figcaption><a href="editor.html?id=${encodeURIComponent(transcript.id)}">${transcript.title}</a></figcaption>
-      </figure>
-
-          `;
+              <figure class="media-option">
+                <img src="${poster}" alt="Atlanta" />
+                <figcaption>
+                  <a href="editor.html?id=${encodeURIComponent(id)}">${title}</a>
+                </figcaption>
+              </figure>`;
           })
           .join("");
       }
 
-      getTranscripts("data/av.json").then(transcripts => {
-        console.dir(transcripts);
-        avEditor.innerHTML = transcriptsListHTML(transcripts);
+      getMedia().then(media => {
+        console.dir(media);
+        app.innerHTML = mediaHTML(media);
       });
     </script>
   </body>

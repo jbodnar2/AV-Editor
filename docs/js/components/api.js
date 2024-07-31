@@ -1,33 +1,33 @@
-function saveTranscripts(transcripts) {
-  localStorage.setItem("transcripts", JSON.stringify(transcripts));
+function saveMedia(media) {
+  localStorage.setItem("media", JSON.stringify(media));
 }
 
-function getSavedTranscripts() {
+function getSavedMedia() {
   const saved = localStorage.getItem("transcripts");
   return saved ? JSON.parse(saved) : null;
 }
 
-async function getTranscripts(url) {
-  const saved = getSavedTranscripts();
+async function getMedia() {
+  const saved = getSavedMedia();
 
   if (saved) {
     return saved;
   }
 
   try {
-    const response = await fetch(url);
+    const response = await fetch("data/media.json");
 
     if (!response.ok) {
       throw new Error(`Error ${response.status}, ${response.statusText}`);
     }
 
-    const transcripts = await response.json();
-    saveTranscripts(transcripts);
+    const media = await response.json();
+    saveMedia(media);
 
-    return transcripts;
+    return media;
   } catch (error) {
     console.warn(error);
   }
 }
 
-export { getTranscripts };
+export { getMedia };
