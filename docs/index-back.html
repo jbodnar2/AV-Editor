@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/_reset.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Web-Apps-Lean</title>
+  </head>
+
+  <body>
+    <main>
+      <!-- Main content start -->
+
+      <av-writer
+        source="media/audio-video/newscast.mp3"
+        transcript-url="media/audio-video/transcripts/newscast.json"
+        poster="media/images/atlanta-4.png"
+        playback-rate="1"
+        show-transcript="true"
+        show-probabilities="true"
+        show-controls="true"
+      >
+      </av-writer>
+
+      <av-writer
+        source="media/audio-video/chimps.mp3"
+        transcript-url="media/audio-video/transcripts/chimps.json"
+        poster="media/images/atlanta-2.jpg"
+        playback-rate="1"
+        show-controls="true"
+      >
+      </av-writer>
+
+      <!-- Main content end -->
+    </main>
+    <!-- Scripts -->
+    <script type="module" src="js/av-writer.js" defer></script>
+  </body>
+</html>

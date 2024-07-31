@@ -1,3 +1,3 @@
 # Read Me
 
-General test for media player transcripts display
+General test for media transcripts display and edit

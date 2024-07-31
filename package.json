@@ -7,10 +7,8 @@
     "start": "npm run serve-docs",
     "serve-docs-and-db": "npm run serve-db & npm run serve-docs",
     "serve-docs": "node ./serve-docs.js",
-    "prettier": "npx prettier --write .",
-    "serve-python": "python3 -m http.server --directory ./docs",
-    "serve-php": "php -S localhost:8000 -t './docs'",
-    "serve-db": "npx json-server --port 3001 ./data/db.json"
+    "serve-db": "npx json-server --port 3001 ./data/db.json",
+    "prettier": "npx prettier --write ."
   },
   "prettier": {
     "singleQuote": false,
