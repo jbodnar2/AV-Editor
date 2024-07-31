@@ -5,22 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <title>AV-Editor</title>
+    <title>Home</title>
   </head>
 
   <body>
     <header>
-      <h1>Page Title</h1>
+      <div class="container">
+        <h1>Home</h1>
+      </div>
     </header>
-    <nav></nav>
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </div>
+    </nav>
     <main>
-      <!-- Main content start -->
+      <div class="container">
+        <!-- Main content start -->
 
-      <!-- Main content end -->
+        <div id="app" class="media-wrapper"></div>
+
+        <!-- Main content end -->
+      </div>
     </main>
 
     <footer></footer>
     <!-- Scripts -->
-    <script type="module" src="js/main.js" defer></script>
+    <script type="module" defer>
+      import { getTranscripts } from "./js/components/api.js";
+
+      const avEditor = document.querySelector("#app");
+
+      function transcriptsListHTML(transcripts) {
+        return transcripts
+          .map(transcript => {
+            return `
+          <figure class="media-option">
+        <img src="${transcript.poster}" alt="Atlanta" />
+        <figcaption><a href="editor.html?id=${encodeURIComponent(transcript.id)}">${transcript.title}</a></figcaption>
+      </figure>
+
+          `;
+          })
+          .join("");
+      }
+
+      getTranscripts("data/av.json").then(transcripts => {
+        console.dir(transcripts);
+        avEditor.innerHTML = transcriptsListHTML(transcripts);
+      });
+    </script>
   </body>
 </html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <title>AV Editor</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <h1>Editor</h1>
+      </div>
+    </header>
+    <nav>
+      <div class="container">
+        <ul>
+          <li><a href="/">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+    <main>
+      <div class="container">
+        <!-- Main content start -->
+        <div id="app" class="media-wrapper"></div>
+
+        <!-- Main content end -->
+      </div>
+    </main>
+
+    <footer></footer>
+    <!-- Scripts -->
+    <script type="module" defer>
+      import { getTranscripts } from "./js/components/api.js";
+
+      const app = document.querySelector("#app");
+
+      function transcriptHTML(transcripts) {
+        console.dir(transcripts);
+        const id = getTranscriptID();
+        if (!id) return noMediaHTML();
+
+        const transcript = getTranscriptByID(transcripts, id);
+        if (!transcript) return noTranscriptHTML();
+
+        return `
+        <video src="${transcript.media}" controls poster="${encodeURIComponent(transcript.poster)}"></video>
+        
+      `;
+      }
+
+      function noTranscriptHTML() {
+        return `
+        <p>No transcript found.</p>
+      `;
+      }
+
+      function getTranscriptID() {
+        return new URL(window.location.href).searchParams.get("id");
+      }
+
+      function getTranscriptByID(transcripts, id) {
+        return transcripts.find(transcript => transcript.id === id);
+      }
+
+      getTranscripts("data/av.json").then(transcripts => {
+        app.innerHTML = transcriptHTML(transcripts);
+      });
+    </script>
+  </body>
+</html>
