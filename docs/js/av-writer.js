@@ -1,18 +1,4 @@
 class AVWriter extends HTMLElement {
-  static get observedAttributes() {
-    return ["source", "text-url", "poster", "playback-rate", "show-probabilities", "show-transcript", "show-controls"];
-  }
-
-  attributeChangedCallback(name, oldVal, newVal) {
-    if (name === "show-controls") {
-      if (newVal === "true") {
-        this.videoElement.controls = true;
-      } else {
-        this.videoElement.controls = false;
-      }
-    }
-  }
-
   constructor() {
     super();
 
@@ -55,6 +41,14 @@ class AVWriter extends HTMLElement {
       this.videoElement.addEventListener("playing", this.updatePlayState.bind(this));
       this.videoElement.addEventListener("pause", this.updatePlayState.bind(this));
     });
+  }
+
+  static get observedAttributes() {
+    return ["source", "text-url", "poster", "show-probabilities", "show-controls"];
+  }
+
+  attributeChangedCallback(name, oldVal, newVal) {
+    // ...
   }
 
   updatePlayState(event) {

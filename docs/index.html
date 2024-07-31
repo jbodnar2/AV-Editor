@@ -12,13 +12,6 @@
     <main>
       <!-- Main content start -->
 
-      <form action="javascrit:void(0);" id="options-form" style="max-width: 300px">
-        <div>
-          <label for="show-controls">show controls?</label>
-          <input type="checkbox" name="show-controls" id="" />
-        </div>
-      </form>
-
       <av-writer
         source="media/audio-video/chimps.mp3"
         transcript-url="media/audio-video/transcripts/chimps.json"
@@ -38,31 +31,9 @@
       >
       </av-writer>
 
-      <av-writer
-        source="media/audio-video/friday.mp4"
-        transcript-url="media/audio-video/transcripts/friday.json"
-        poster=""
-        playback-rate="1"
-        show-transcript="true"
-      >
-      </av-writer>
-
       <!-- Main content end -->
     </main>
     <!-- Scripts -->
     <script type="module" src="js/av-writer.js" defer></script>
-    <script defer>
-      const optionsForm = document.getElementById("options-form");
-      const avWriters = document.querySelectorAll("av-writer");
-
-      optionsForm.addEventListener("change", event => {
-        const attribute = event.target.getAttribute("name");
-        const value = event.target.checked;
-
-        avWriters.forEach(avWriter => {
-          avWriter.setAttribute(attribute, value);
-        });
-      });
-    </script>
   </body>
 </html>
