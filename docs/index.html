@@ -22,13 +22,17 @@
       </div>
     </nav>
     <main>
-      <div id="app" class="container"></div>
+      <!-- Main content -->
+
+      <div id="media-wrapper" class="container"></div>
+
+      <!-- Main content end -->
     </main>
     <footer></footer>
     <script type="module" defer>
       import { getMedia } from "./js/components/api.js";
 
-      const app = document.querySelector("#app");
+      const mediaWrapper = document.querySelector("#media-wrapper");
       const template = document.createElement("template");
       template.innerHTML = `
         <figure class="media-option">
@@ -39,15 +43,15 @@
         </figure>
       `;
 
-      async function renderMedia() {
+      async function renderAllMedia() {
         const media = await getMedia();
 
         const fragment = document.createDocumentFragment();
         const wrapper = fragment.appendChild(document.createElement("div"));
-        wrapper.className = "media-wrapper";
+        wrapper.className = "media-grid";
 
-        media.forEach(item => {
-          const { poster, title, id } = item;
+        media.forEach(media => {
+          const { poster, title, id } = media;
           const clone = template.content.cloneNode(true);
           clone.querySelector("img").src = poster;
           clone.querySelector("img").alt = title;
@@ -56,10 +60,10 @@
           wrapper.appendChild(clone);
         });
 
-        app.appendChild(fragment);
+        mediaWrapper.appendChild(fragment);
       }
 
-      renderMedia();
+      renderAllMedia();
     </script>
   </body>
 </html>

@@ -49,7 +49,7 @@ nav {
   }
 }
 
-.media-wrapper {
+.media-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
@@ -69,30 +69,6 @@ nav {
   }
 }
 
-details {
-  margin-top: 1rem;
-  border: 1px solid #333;
-
-  div {
-    padding: 1rem;
-    max-height: 300px;
-    overflow-y: auto;
-    box-shadow:
-      inset 0px 0px 0px 1px hsl(0, 0%, 83%, 0.125),
-      inset 0px 0px 5px 5px hsl(0, 0%, 83%, 0.25);
-  }
-}
-
-details summary {
-  padding: 1rem;
-  color: white;
-  background-color: #333;
-}
-
-details summary:hover {
-  cursor: pointer;
-}
-
 .info {
   padding: 1rem;
   text-align: center;
@@ -106,5 +82,9 @@ details summary:hover {
     box-shadow:
       0 0 10px 0 rgba(0, 0, 0, 0.25),
       0 0 5px 0 rgba(0, 0, 0, 0.125);
+
+    a {
+      color: white;
+    }
   }
 }
