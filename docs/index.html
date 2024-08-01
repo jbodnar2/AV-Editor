@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
+
   <body>
     <header>
       <div class="container">
@@ -28,7 +29,6 @@
       import { getMedia } from "./js/components/api.js";
 
       const app = document.querySelector("#app");
-
       const template = document.createElement("template");
       template.innerHTML = `
         <figure class="media-option">
@@ -46,14 +46,15 @@
         const wrapper = fragment.appendChild(document.createElement("div"));
         wrapper.className = "media-wrapper";
 
-        for (const { poster, id, title } of media) {
+        media.forEach(item => {
+          const { poster, title, id } = item;
           const clone = template.content.cloneNode(true);
           clone.querySelector("img").src = poster;
           clone.querySelector("img").alt = title;
           clone.querySelector("a").href = `editor.html?id=${encodeURIComponent(id)}`;
           clone.querySelector("a").textContent = title;
           wrapper.appendChild(clone);
-        }
+        });
 
         app.appendChild(fragment);
       }
