@@ -1,14 +1,14 @@
-function saveMedia(media) {
-  localStorage.setItem("media", JSON.stringify(media));
+function saveSessionMedia(media) {
+  sessionStorage.setItem("media", JSON.stringify(media));
 }
 
-function getSavedMedia() {
-  const saved = localStorage.getItem("transcripts");
+function getSavedSessionMedia() {
+  const saved = sessionStorage.getItem("transcripts");
   return saved ? JSON.parse(saved) : null;
 }
 
 async function getMedia() {
-  const saved = getSavedMedia();
+  const saved = getSavedSessionMedia();
 
   if (saved) {
     return saved;
@@ -22,7 +22,7 @@ async function getMedia() {
     }
 
     const media = await response.json();
-    saveMedia(media);
+    saveSessionMedia(media);
 
     return media;
   } catch (error) {
