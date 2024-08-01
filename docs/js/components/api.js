@@ -1,6 +1,6 @@
 /**
  * Fetches media data from the server and caches it in session storage.
- * - Use session storage to avoid hitting the server on every page load.
+ * - Check sessionStorage to avoid hitting the server on every page load.
  *
  * @return {Promise<Object|null>} The fetched media data or null if the fetch fails.
  */
@@ -40,8 +40,8 @@ function extractMediaItemIdFromUrl() {
 
 /**
  * Retrieves a media item from the cache or fetches it from the server.
- * - Use sessionStorage to avoid hitting server on every page load.
  * - Check localStorage for edited version of media.
+ * - Check sessionStorage to avoid unnecessary hit on every page load.
  *
  * @return {Promise<Object|null>} The media item if found, null otherwise.
  */
@@ -53,7 +53,7 @@ async function getMediaItem() {
   }
 
   const cacheKey = `media-item-${id}`;
-  let mediaItem = JSON.parse(sessionStorage.getItem(cacheKey)) || JSON.parse(localStorage.getItem(cacheKey));
+  let mediaItem = JSON.parse(localStorage.getItem(cacheKey)) || JSON.parse(sessionStorage.getItem(cacheKey));
 
   if (!mediaItem) {
     const media = await fetchMedia();
