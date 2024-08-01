@@ -2,12 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Home</title>
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
-    <title>Home</title>
   </head>
-
   <body>
     <header>
       <div class="container">
@@ -17,46 +16,38 @@
     <nav>
       <div class="container">
         <ul>
-          <li><a href="/">Home</a></li>
+          <li><a href="#">Home</a></li>
         </ul>
       </div>
     </nav>
     <main>
-      <div class="container">
-        <!-- Main content start -->
-
-        <template id="template">
-          <figure class="media-option">
-            <img src="" alt="" />
-            <figcaption>
-              <a href=""></a>
-            </figcaption>
-          </figure>
-        </template>
-
-        <div id="app"></div>
-
-        <!-- Main content end -->
-      </div>
+      <div id="app" class="container"></div>
     </main>
-
     <footer></footer>
-    <!-- Scripts -->
     <script type="module" defer>
       import { getMedia } from "./js/components/api.js";
 
       const app = document.querySelector("#app");
 
+      const template = document.createElement("template");
+      template.innerHTML = `
+        <figure class="media-option">
+          <img src="" alt="" />
+            <figcaption>
+              <a href=""></a>
+            </figcaption>
+        </figure>
+      `;
+
       async function renderMedia() {
         const media = await getMedia();
-        const template = document.querySelector("#template").content;
 
         const fragment = document.createDocumentFragment();
         const wrapper = fragment.appendChild(document.createElement("div"));
         wrapper.className = "media-wrapper";
 
         for (const { poster, id, title } of media) {
-          const clone = template.cloneNode(true);
+          const clone = template.content.cloneNode(true);
           clone.querySelector("img").src = poster;
           clone.querySelector("img").alt = title;
           clone.querySelector("a").href = `editor.html?id=${encodeURIComponent(id)}`;
