@@ -1,6 +1,6 @@
 /**
  * Fetches media data from the server and caches it in session storage.
- * Uses session storage to avoid hitting the server on every page load.
+ * - Use session storage to avoid hitting the server on every page load.
  *
  * @return {Promise<Object|null>} The fetched media data or null if the fetch fails.
  */
@@ -40,8 +40,8 @@ function extractMediaItemIdFromUrl() {
 
 /**
  * Retrieves a media item from the cache or fetches it from the server.
- * Use session storage to avoid hitting server on every page load.
- * Checks local storage for saved edited version of media items transcript.
+ * - Use sessionStorage to avoid hitting server on every page load.
+ * - Check localStorage for edited version of media.
  *
  * @return {Promise<Object|null>} The media item if found, null otherwise.
  */
