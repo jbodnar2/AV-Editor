@@ -35,43 +35,30 @@
     <footer></footer>
     <!-- Scripts -->
     <script type="module" defer>
-      import { getMedia } from "./js/components/api.js";
+      import { getMediaItem } from "./js/components/api.js";
 
       const mediaWrapper = document.querySelector("#media-wrapper");
       const editor = document.querySelector("#editor");
-
-      function getMediaId() {
-        return new URL(window.location.href).searchParams.get("id");
-      }
-
-      function getMediaById(media, id) {
-        return media.find(media => media.id === id);
-      }
 
       function noMediaHTML() {
         return `<div class="info info--warning">Sorry. The item you're looking for isn't available. Feel free to <a href="/">browse our library</a> for a different item.</div>`;
       }
 
-      function mediaHTML(media) {
-        const mediaId = getMediaId();
+      async function renderMediaEditor() {
+        const mediaItem = await getMediaItem();
 
-        if (!mediaId) return noMediaHTML();
-
-        const mediaItem = getMediaById(media, mediaId);
-        if (!mediaItem) return noMediaHTML();
+        if (!mediaItem) {
+          mediaWrapper.innerHTML = noMediaHTML();
+          return;
+        }
 
         const { title, url, poster, transcript } = mediaItem;
+        const videoHTML = `
+          <h2>${title}</h2>
+          <video src="${url}" controls poster="${encodeURIComponent(poster)}"></video>
+        <div>`;
 
-        return `
-        <h2>${title}</h2>
-        <video src="${url}" controls poster="${encodeURIComponent(poster)}"></video>
-        <div>
-      `;
-      }
-
-      async function renderMediaEditor() {
-        const media = await getMedia();
-        mediaWrapper.innerHTML = mediaHTML(media);
+        mediaWrapper.innerHTML = videoHTML;
       }
 
       renderMediaEditor();
