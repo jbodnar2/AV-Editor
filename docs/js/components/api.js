@@ -17,8 +17,8 @@ function getSavedLocalMedia() {
 }
 
 async function getMedia() {
-  const saved = getSavedSessionMedia();
-  console.log(saved);
+  const saved = getSavedLocalMedia() || getSavedSessionMedia();
+  console.log("saved", saved);
 
   if (saved) {
     return saved;
