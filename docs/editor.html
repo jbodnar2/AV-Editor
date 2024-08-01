@@ -26,7 +26,7 @@
         <!-- Main content start -->
 
         <div id="media-wrapper"></div>
-        <div id="editor"></div>
+        <div id="editor-wrapper"></div>
 
         <!-- Main content end -->
       </div>
@@ -38,27 +38,32 @@
       import { getMediaItem } from "./js/components/api.js";
 
       const mediaWrapper = document.querySelector("#media-wrapper");
-      const editor = document.querySelector("#editor");
-
-      function noMediaHTML() {
-        return `<div class="info info--warning">Sorry. The item you're looking for isn't available. Feel free to <a href="/">browse our library</a> for a different item.</div>`;
-      }
+      const editorWrapper = document.querySelector("#editor-wrapper");
 
       async function renderMediaEditor() {
         const mediaItem = await getMediaItem();
 
         if (!mediaItem) {
-          mediaWrapper.innerHTML = noMediaHTML();
+          mediaWrapper.innerHTML = createNoMediaHTML();
           return;
         }
 
-        const { title, url, poster, transcript } = mediaItem;
-        const videoHTML = `
-          <h2>${title}</h2>
-          <video src="${url}" controls poster="${encodeURIComponent(poster)}"></video>
-        <div>`;
+        const { title, url, poster } = mediaItem;
+        const video = document.createElement("video");
+        video.controls = true;
+        video.poster = poster;
+        video.src = url;
 
-        mediaWrapper.innerHTML = videoHTML;
+        const h2 = document.createElement("h2");
+        h2.textContent = title;
+
+        mediaWrapper.textContent = "";
+        mediaWrapper.appendChild(h2);
+        mediaWrapper.appendChild(video);
+      }
+
+      function createNoMediaHTML() {
+        return '<div class="info info--warning">Sorry. The item you\'re looking for isn\'t available. You can <a href="/">browse our library</a> for a different item.</div>';
       }
 
       renderMediaEditor();
