@@ -48,12 +48,7 @@
         const mediaItem = getTranscriptByID(media, mediaItemId);
         if (!mediaItem) return noMediaItemHTML();
 
-        const {
-          title,
-          url,
-          poster,
-          transcripts: [transcript, ...additionalTranscripts],
-        } = mediaItem;
+        const { title, url, poster, transcript } = mediaItem;
 
         const mediaHTML = `
         <h2>${title}</h2>
