@@ -30,7 +30,7 @@
     </main>
     <footer></footer>
     <script type="module" defer>
-      import { getMedia } from "./js/components/api.js";
+      import { fetchMedia } from "./js/components/api.js";
 
       const mediaWrapper = document.querySelector("#media-wrapper");
       const template = document.createElement("template");
@@ -44,7 +44,7 @@
       `;
 
       async function renderAllMedia() {
-        const media = await getMedia();
+        const media = await fetchMedia();
 
         const fragment = document.createDocumentFragment();
         const wrapper = fragment.appendChild(document.createElement("div"));

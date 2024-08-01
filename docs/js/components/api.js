@@ -1,49 +1,49 @@
-const mediaCacheKey = "media-cache";
-const itemCacheKey = "editor-cache";
+async function fetchMedia() {
+  const cacheKey = "media";
+  const cachedData = JSON.parse(localStorage.getItem(cacheKey)) || JSON.parse(sessionStorage.getItem(cacheKey));
 
-async function getMedia() {
-  let media = JSON.parse(localStorage.getItem(mediaCacheKey)) || JSON.parse(sessionStorage.getItem(mediaCacheKey));
-
-  if (!media) {
-    try {
-      const response = await fetch("data/media.json");
-
-      if (!response.ok) {
-        throw new Error(`Error ${response.status}, ${response.statusText}`);
-      }
-
-      media = await response.json();
-      sessionStorage.setItem(mediaCacheKey, JSON.stringify(media));
-    } catch (error) {
-      console.warn(error);
-    }
+  if (cachedData) {
+    return cachedData;
   }
 
-  return media;
+  try {
+    const response = await fetch("data/media.json");
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch media: ${response.status} ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    sessionStorage.setItem(cacheKey, JSON.stringify(data));
+    return data;
+  } catch (error) {
+    return null;
+  }
 }
 
-function getMediaItemId() {
-  const url = new URL(window.location.href);
-  const params = new URLSearchParams(url.search);
-  return params.get("id");
+function extractMediaItemIdFromUrl() {
+  const currentUrl = new URL(window.location.href);
+  const urlSearchParams = new URLSearchParams(currentUrl.search);
+  return urlSearchParams.get("id");
 }
 
 async function getMediaItem() {
-  const itemId = getMediaItemId();
-  let mediaItem;
-  let media;
+  const id = extractMediaItemIdFromUrl();
 
-  if (!itemId) return null;
+  if (!id) {
+    return null;
+  }
 
-  mediaItem = JSON.parse(localStorage.getItem(itemCacheKey)) || JSON.parse(sessionStorage.getItem(itemCacheKey));
-  if (mediaItem) return mediaItem;
+  const cacheKey = `media-item-${id}`;
+  let mediaItem = JSON.parse(sessionStorage.getItem(cacheKey)) || JSON.parse(localStorage.getItem(cacheKey));
 
-  media = await getMedia();
-  mediaItem = media.find(item => item.id === itemId);
-
-  sessionStorage.setItem(itemCacheKey, JSON.stringify(mediaItem));
+  if (!mediaItem) {
+    const media = await fetchMedia();
+    mediaItem = media.find(item => item.id === id);
+    sessionStorage.setItem(cacheKey, JSON.stringify(mediaItem));
+  }
 
   return mediaItem;
 }
 
-export { getMedia, getMediaItem };
+export { fetchMedia, getMediaItem };
