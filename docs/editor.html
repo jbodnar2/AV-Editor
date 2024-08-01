@@ -77,9 +77,9 @@
       }
 
       function noMediaItemHTML() {
-        return `
-        <div class="info info--warning">No transcript found.</div>
-      `;
+        const mediaHTML = `<div class="info info--warning">No transcript found.</div>`;
+
+        return { mediaHTML };
       }
 
       function getMediaItemId() {
