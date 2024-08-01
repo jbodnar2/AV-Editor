@@ -25,7 +25,16 @@
       <div class="container">
         <!-- Main content start -->
 
-        <div id="app" class="media-wrapper"></div>
+        <template id="template">
+          <figure class="media-option">
+            <img src="" alt="" />
+            <figcaption>
+              <a href=""></a>
+            </figcaption>
+          </figure>
+        </template>
+
+        <div id="app"></div>
 
         <!-- Main content end -->
       </div>
@@ -38,24 +47,27 @@
 
       const app = document.querySelector("#app");
 
-      function mediaHTML(media) {
-        return media
-          .map(({ poster, id, title }) => {
-            return `
-              <figure class="media-option">
-                <img src="${poster}" alt="Atlanta" />
-                <figcaption>
-                  <a href="editor.html?id=${encodeURIComponent(id)}">${title}</a>
-                </figcaption>
-              </figure>`;
-          })
-          .join("");
+      async function renderMedia() {
+        const media = await getMedia();
+        const template = document.querySelector("#template").content;
+
+        const fragment = document.createDocumentFragment();
+        const wrapper = fragment.appendChild(document.createElement("div"));
+        wrapper.className = "media-wrapper";
+
+        for (const { poster, id, title } of media) {
+          const clone = template.cloneNode(true);
+          clone.querySelector("img").src = poster;
+          clone.querySelector("img").alt = title;
+          clone.querySelector("a").href = `editor.html?id=${encodeURIComponent(id)}`;
+          clone.querySelector("a").textContent = title;
+          wrapper.appendChild(clone);
+        }
+
+        app.appendChild(fragment);
       }
 
-      getMedia().then(media => {
-        console.dir(media);
-        app.innerHTML = mediaHTML(media);
-      });
+      renderMedia();
     </script>
   </body>
 </html>
