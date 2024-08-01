@@ -3,7 +3,7 @@ function saveMediaToSession(media) {
 }
 
 function getSavedSessionMedia() {
-  const saved = sessionStorage.getItem("transcripts");
+  const saved = sessionStorage.getItem("media");
   return saved ? JSON.parse(saved) : null;
 }
 
@@ -18,6 +18,7 @@ function getSavedLocalMedia() {
 
 async function getMedia() {
   const saved = getSavedSessionMedia();
+  console.log(saved);
 
   if (saved) {
     return saved;
