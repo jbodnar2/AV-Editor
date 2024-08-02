@@ -1,3 +1,12 @@
+import {
+  setSessionMedia,
+  getSessionMedia,
+  setSessionMediaItem,
+  getSessionMediaItem,
+  deleteSessionMediaItem,
+  deleteLocalMediaItem,
+  getLocalMediaItem,
+} from "./store.js";
 /**
  * Fetches media data from the server and caches it in session storage.
  *
@@ -9,15 +18,12 @@
  * @return {Promise<Object|null>} The fetched media data or null if the fetch fails.
  */
 async function fetchMedia() {
-  // Key used to store the media data in sessionStorage
-  const cacheKey = "media";
-
   // Retrieve the cached media data from sessionStorage
-  const cachedData = JSON.parse(sessionStorage.getItem(cacheKey));
+  const cachedMedia = getSessionMedia();
 
   // If the media data is already cached, return it
-  if (cachedData) {
-    return cachedData;
+  if (cachedMedia) {
+    return cachedMedia;
   }
 
   try {
@@ -30,13 +36,13 @@ async function fetchMedia() {
     }
 
     // Parse the fetched JSON data
-    const data = await response.json();
+    const media = await response.json();
 
     // Cache the media data in sessionStorage
-    sessionStorage.setItem(cacheKey, JSON.stringify(data));
+    setSessionMedia(media);
 
     // Return the fetched media data
-    return data;
+    return media;
   } catch (error) {
     // If the fetch fails, return null
     return null;
@@ -92,29 +98,16 @@ async function getMediaItem() {
     return null;
   }
 
-  // Construct the cache key using the media item ID
-  const cacheKey = `media-item-${id}`;
-
   // Check if the item is already cached in localStorage or sessionStorage
-  const cache = localStorage.getItem(cacheKey) || sessionStorage.getItem(cacheKey);
+  let mediaItem = getLocalMediaItem(id) || getSessionMediaItem(id);
 
-  // If the item key is fouund but cached data is corrup, delete bad cache and return null
-  if (cache === "undefined") {
-    sessionStorage.removeItem(cacheKey);
-    localStorage.removeItem(cacheKey);
-    return null;
-  }
-
-  // Parse the cached item
-  let mediaItem = JSON.parse(cache);
-
-  // If the item is not found or is null, fetch the media data and search for the item
-  if (!mediaItem || mediaItem === null) {
+  // If the item is not found, fetch the media data and search for the item
+  if (!mediaItem) {
     const media = await fetchMedia();
     mediaItem = media.find(item => item.id === id);
 
     // Store the item in the cache
-    sessionStorage.setItem(cacheKey, JSON.stringify(mediaItem));
+    setSessionMediaItem(id, mediaItem);
   }
 
   // Return the media item
