@@ -83,6 +83,7 @@
         return `${hours}:${minutes}:${seconds}`;
       }
 
+      // Helper to get avg, min, max from array of nums between 0 and 1
       function getWordProbabilities(words) {
         const probabilities = words.map(word => word.probability);
         const avg =
@@ -94,11 +95,11 @@
       }
 
       // Add transcript track and cues to video
-      function addTrack(video, transcript, itemId) {
+      function addTrack(video, transcript) {
         const track = video.addTextTrack("captions", transcript.label, transcript.language);
         track.mode = "showing";
 
-        transcript.segments.forEach(segment => {
+        let cues = transcript.segments.map(segment => {
           const { id, start, end, text, words } = segment;
 
           const cue = new VTTCue(start, end, text);
@@ -109,16 +110,26 @@
           cue.maxProb = max;
           cue.minProb = min;
           track.addCue(cue);
-          console.log(cue);
+          return cue;
         });
+
+        return { track, cues };
+      }
+
+      function addTranscript({ track, cues }) {
+        // ...
       }
 
       // Render media then add track from transcript
-      renderMedia().then(data => {
-        if (!data) return;
-        const { transcript, id: itemId, video } = data;
+      renderMedia().then(mediaData => {
+        if (!mediaData) return;
+        const { transcript, id: itemId, video } = mediaData;
 
-        addTrack(video, transcript, itemId);
+        // Add track and cues to video from transcript and segments
+        const { track, cues } = addTrack(video, transcript);
+
+        // Generate, render transcript editor code
+        addTranscript({ track, cues });
       });
     </script>
   </body>
