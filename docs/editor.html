@@ -34,27 +34,42 @@
         <div id="editor-wrapper" class="editor-wrapper">
           <!-- Transcript & Editor Content Start -->
 
-          <div
-            id="cue-${id}"
-            data-cue="${id}"
-            data-start-time="${startTime}"
-            data-end-time="${endTime}"
-            data-average-probability=""
-            data-min-probability=""
-            data-max-probability=""
-            data-median-probability=""
-            class="cue"
-          >
-            <div class="cue-controls">
-              <button class="cue-select-button">HH:MM:SS</button>
-
-              <button class="cue-play-button" aria-label="Play and Pause"></button>
+          <form action="javascript:void(0);" method="" class="cue-form">
+            <div
+              id="cue-${id}"
+              class="cue"
+              data-cue="${id}"
+              data-start-time="${startTime}"
+              data-end-time="${endTime}"
+              data-avg-prob="${avgProb}"
+              data-min-prob="${minProb}"
+            >
+              <div class="cue-controls">
+                <button class="button cue-select-button">HH:MM:SS</button>
+                <button class="button cue-play-button" aria-label="Play and Pause"></button>
+              </div>
+              <textarea id="cue-${id}-text" class="cue-text" rows="" cols="">
+This is a line of text that exceeds the width of the text area.</textarea
+              >
             </div>
-            <form action="javascript:void(0);" method="" class="cue-form">
-              <input type="text" class="cue-input" value="This is a line of text in the editor" />
-            </form>
-          </div>
-
+            <div
+              id="cue-${id}"
+              class="cue"
+              data-cue="${id}"
+              data-start-time="${startTime}"
+              data-end-time="${endTime}"
+              data-avg-prob="${avgProb}"
+              data-min-prob="${minProb}"
+            >
+              <div class="cue-controls">
+                <button class="button cue-select-button">HH:MM:SS</button>
+                <button class="button cue-play-button" aria-label="Play and Pause"></button>
+              </div>
+              <textarea id="cue-${id}-text" class="cue-text" rows="" cols="">
+This is a line of text that exceeds the width of the text area. What will happen when it loads and what does it do?</textarea
+              >
+            </div>
+          </form>
           <!-- Transcript & Editor Content End-->
         </div>
         <!-- Main content end -->
