@@ -61,7 +61,7 @@ function deleteSessionMedia() {
  */
 function setSessionMediaItem(id, value) {
   // Construct the key for storing the media item in the session storage
-  const key = `media-item-${id}`;
+  const key = `media-${id}`;
 
   // Store the media item as a JSON string in the session storage
   sessionStorage.setItem(key, JSON.stringify(value));
@@ -71,7 +71,7 @@ function setSessionMediaItem(id, value) {
  * Retrieves a media item from the session storage.
  *
  * This function extracts a media item from the session storage based on the provided ID.
- * It constructs a key by concatenating the string "media-item-" with the ID and retrieves
+ * It constructs a key by concatenating the string "media-" with the ID and retrieves
  * the item from the session storage. If the item exists, it is parsed from a JSON string
  * and returned. Otherwise, null is returned.
  *
@@ -80,7 +80,7 @@ function setSessionMediaItem(id, value) {
  */
 function getSessionMediaItem(id) {
   // Construct the key based on the provided ID
-  const key = `media-item-${id}`;
+  const key = `media-${id}`;
 
   try {
     // Retrieve the item from the session storage
@@ -106,7 +106,7 @@ function getSessionMediaItem(id) {
  */
 function deleteSessionMediaItem(id) {
   // Construct the key based on the provided ID
-  const key = `media-item-${id}`;
+  const key = `media-${id}`;
 
   // Remove the media item from the session storage
   sessionStorage.removeItem(key);
@@ -124,7 +124,7 @@ function deleteSessionMediaItem(id) {
  */
 function setLocalMediaItem(id, value) {
   // Construct the key for storing the media item in the local storage
-  const key = `media-item-${id}`;
+  const key = `media-${id}`;
 
   // Convert the media item to a JSON string and store it in the local storage
   localStorage.setItem(key, JSON.stringify(value));
@@ -143,7 +143,7 @@ function setLocalMediaItem(id, value) {
  */
 function getLocalMediaItem(id) {
   // Construct the key based on the provided ID
-  const key = `media-item-${id}`;
+  const key = `media-${id}`;
 
   try {
     // Retrieve the item from the local storage
@@ -165,7 +165,7 @@ function getLocalMediaItem(id) {
  */
 function deleteLocalMediaItem(id) {
   // Construct the key based on the provided ID
-  const key = `media-item-${id}`;
+  const key = `media-${id}`;
 
   // Remove the media item from the local storage
   localStorage.removeItem(key);
