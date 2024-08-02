@@ -1,15 +1,4 @@
-av-writer {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1rem;
-  margin-top: 2rem;
-
-  video {
-    display: block;
-    width: 300px;
-    height: auto;
-  }
-
+.editor {
   form {
     flex-grow: 1;
   }

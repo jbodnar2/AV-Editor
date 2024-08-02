@@ -3,8 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/_reset.css" />
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>AV Editor</title>
   </head>
 
@@ -22,12 +23,40 @@
       </div>
     </nav>
     <main>
-      <div class="container">
+      <div class="container editor">
         <!-- Main content start -->
+        <h2 id="page-title">Video Title</h2>
 
-        <div id="media-wrapper"></div>
-        <div id="editor-wrapper"></div>
+        <div id="media-wrapper" class="media-wrapper">
+          <!-- Media & Global Controls Content -->
+        </div>
 
+        <div id="editor-wrapper" class="editor-wrapper">
+          <!-- Transcript & Editor Content Start -->
+
+          <div
+            id="cue-${id}"
+            data-cue="${id}"
+            data-start-time="${startTime}"
+            data-end-time="${endTime}"
+            data-average-probability=""
+            data-min-probability=""
+            data-max-probability=""
+            data-median-probability=""
+            class="cue"
+          >
+            <div class="cue-controls">
+              <button class="cue-select-button">HH:MM:SS</button>
+
+              <button class="cue-play-button" aria-label="Play and Pause"></button>
+            </div>
+            <form action="javascript:void(0);" method="" class="cue-form">
+              <input type="text" class="cue-input" value="This is a line of text in the editor" />
+            </form>
+          </div>
+
+          <!-- Transcript & Editor Content End-->
+        </div>
         <!-- Main content end -->
       </div>
     </main>
@@ -37,6 +66,7 @@
     <script type="module" defer>
       import { getMediaItem } from "./js/components/api.js";
 
+      const pageTitle = document.querySelector("#page-title");
       const mediaWrapper = document.querySelector("#media-wrapper");
       const editorWrapper = document.querySelector("#editor-wrapper");
 
@@ -56,11 +86,11 @@
         video.src = url;
         video.id = `video-${id}`;
 
-        const h2 = document.createElement("h2");
-        h2.textContent = title;
+        pageTitle.textContent = title;
+        document.title = `${title} | ${document.title}`;
 
         mediaWrapper.textContent = "";
-        mediaWrapper.appendChild(h2);
+
         mediaWrapper.appendChild(video);
 
         return { transcript, id, video };
@@ -85,6 +115,8 @@
 
       // Helper to get avg, min, max from array of nums between 0 and 1
       function getWordProbabilities(words) {
+        if (!words) return;
+
         const probabilities = words.map(word => word.probability);
         const avg =
           Math.round((probabilities.reduce((acc, prob) => acc + prob, 0) / probabilities.length) * 1000) / 1000;
@@ -98,6 +130,9 @@
       function addTrack(video, transcript) {
         const track = video.addTextTrack("captions", transcript.label, transcript.language);
         track.mode = "showing";
+        // Flag to check if track has been edited, and saved to local storage
+        // If edited, probs calculated already and won't have words, etc
+        track.edited = false;
 
         let cues = transcript.segments.map(segment => {
           const { id, start, end, text, words } = segment;
@@ -105,11 +140,19 @@
           const cue = new VTTCue(start, end, text);
           cue.id = id;
           cue.formattedTime = getFormattedTimeFromSeconds(start);
-          const { avg, min, max } = getWordProbabilities(words);
-          cue.avgProb = avg;
-          cue.maxProb = max;
-          cue.minProb = min;
+
+          // Only compute probs if word-level time stamps are available
+          // Perhaps update session store function to modify on initial store to
+          // avoid recalcuation on each refresh. Replace "words" with "probabilities"?
+          if (words) {
+            const { avg, min, max } = getWordProbabilities(words, track.edited);
+            cue.avgProb = avg;
+            cue.maxProb = max;
+            cue.minProb = min;
+          }
+
           track.addCue(cue);
+
           return cue;
         });
 
