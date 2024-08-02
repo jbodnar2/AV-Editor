@@ -91,8 +91,12 @@
           cue.id = id;
           cue.formattedTime = getFormattedTimeFromSeconds(start);
           const probabilities = words.map(word => word.probability);
+          const averageProbability =
+            Math.round((probabilities.reduce((acc, prob) => acc + prob, 0) / probabilities.length) * 1000) / 1000;
+          cue.averageProbability = averageProbability;
           const minProbability = Math.min(...probabilities);
-          cue.accuracy = Math.round(minProbability * 1000) / 1000;
+          cue.minProbability = Math.round(minProbability * 1000) / 1000;
+          console.log(cue);
           track.addCue(cue);
         });
       }
