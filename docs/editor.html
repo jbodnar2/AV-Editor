@@ -34,7 +34,8 @@
         <div id="editor-wrapper" class="editor-wrapper">
           <!-- Transcript & Editor Content Start -->
 
-          <form action="javascript:void(0);" method="" class="cue-form">
+          <!-- <form action="javascript:void(0);" method="" class="cue-form"> -->
+          <template id="que-template">
             <div
               id="cue-${id}"
               class="cue"
@@ -49,27 +50,11 @@
                 <button class="button cue-play-button" aria-label="Play and Pause"></button>
               </div>
               <textarea id="cue-${id}-text" class="cue-text" rows="" cols="">
-This is a line of text that exceeds the width of the text area.</textarea
+This is a line of text from a transcript.</textarea
               >
             </div>
-            <div
-              id="cue-${id}"
-              class="cue"
-              data-cue="${id}"
-              data-start-time="${startTime}"
-              data-end-time="${endTime}"
-              data-avg-prob="${avgProb}"
-              data-min-prob="${minProb}"
-            >
-              <div class="cue-controls">
-                <button class="button cue-select-button">HH:MM:SS</button>
-                <button class="button cue-play-button" aria-label="Play and Pause"></button>
-              </div>
-              <textarea id="cue-${id}-text" class="cue-text" rows="" cols="">
-This is a line of text that exceeds the width of the text area. What will happen when it loads and what does it do?</textarea
-              >
-            </div>
-          </form>
+          </template>
+          <!-- </form> -->
           <!-- Transcript & Editor Content End-->
         </div>
         <!-- Main content end -->
@@ -152,7 +137,7 @@ This is a line of text that exceeds the width of the text area. What will happen
         let cues = transcript.segments.map(segment => {
           const { id, start, end, text, words } = segment;
 
-          const cue = new VTTCue(start, end, text);
+          const cue = new VTTCue(start, end, text.trim());
           cue.id = id;
           cue.formattedTime = getFormattedTimeFromSeconds(start);
 
@@ -175,7 +160,26 @@ This is a line of text that exceeds the width of the text area. What will happen
       }
 
       function addTranscript({ track, cues }) {
-        // ...
+        const transcriptForm = document.createElement("form");
+        transcriptForm.className = "cue-form";
+
+        const cuesHTML = cues
+          .map(cue => {
+            const { id, startTime, endTime, avgProb, minProb, formattedTime, text } = cue;
+
+            return `<div id="cue-${id}" class="cue" data-cue="${id}" data-start-time="${startTime}" data-end-time="${endTime}"
+            data-avg-prob="${avgProb}" data-min-prob="${minProb}">
+            <div class="cue-controls">
+              <button class="button cue-select-button">${formattedTime}</button>
+              <button class="button cue-play-button" aria-label="Play and Pause"></button>
+            </div>
+            <textarea id="cue-${id}-text" class="cue-text" rows="" cols="">${text}</textarea>
+          </div>`;
+          })
+          .join("");
+
+        transcriptForm.innerHTML = cuesHTML;
+        editorWrapper.appendChild(transcriptForm);
       }
 
       // Render media then add track from transcript
