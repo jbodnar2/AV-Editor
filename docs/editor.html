@@ -69,10 +69,40 @@
         return '<div class="info info--warning">Sorry. The item you\'re looking for isn\'t available. You can <a href="/">browse our library</a> for a different item.</div>';
       }
 
+      function getFormattedTimeFromSeconds(seconds) {
+        const hours = (Math.floor(seconds / 3600) % 24).toString().padStart(2, "0");
+        const minutes = Math.floor((seconds % 3600) / 60)
+          .toString()
+          .padStart(2, "0");
+        seconds = Math.floor(seconds % 60)
+          .toString()
+          .padStart(2, "0");
+        return `${hours}:${minutes}:${seconds}`;
+      }
+
+      function addTrack(video, transcript) {
+        const track = video.addTextTrack("captions", transcript.label, transcript.language);
+        track.mode = "showing";
+
+        transcript.segments.forEach(segment => {
+          const { id, start, end, text, words } = segment;
+
+          const cue = new VTTCue(start, end, text);
+          cue.id = id;
+          cue.formattedTime = getFormattedTimeFromSeconds(start);
+          const probabilities = words.map(word => word.probability);
+          const minProbability = Math.min(...probabilities);
+          cue.accuracy = Math.round(minProbability * 1000) / 1000;
+          track.addCue(cue);
+        });
+      }
+
       renderMedia().then(data => {
         if (!data) return;
 
         const { transcript, id, video } = data;
+
+        addTrack(video, transcript);
         // Do all of the transcript stufff...
       });
     </script>
