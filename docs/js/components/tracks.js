@@ -61,7 +61,7 @@ function formatTime(totalSeconds) {
   const minutes = String(Math.floor(totalSeconds / 60) % 60).padStart(2, "0");
 
   // Calculate the number of seconds
-  const seconds = String(Math.round(totalSeconds % 60)).padStart(2, "0");
+  const seconds = String(Math.floor(totalSeconds % 60)).padStart(2, "0");
 
   // Return the formatted time string in the format HH:MM:SS
   return `${hours}:${minutes}:${seconds}`;
