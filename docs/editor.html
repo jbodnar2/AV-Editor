@@ -47,119 +47,226 @@
       import { addTrack } from "./js/components/tracks.js";
       import { addTranscript } from "./js/components/transcripts.js";
 
+      /**
+       * DOM elements:
+       * - pageTitle: The element containing the title of the video being edited.
+       * - mediaWrapper: The element wrapping the media (video) element (and global conrols).
+       * - editorWrapper: The element wrapping the editor content.
+       */
       const pageTitle = document.querySelector("#page-title");
       const mediaWrapper = document.querySelector("#media-wrapper");
       const editorWrapper = document.querySelector("#editor-wrapper");
 
+      /**
+       * Displays a warning message when there is no media item available.
+       * The message informs the user that the item they are looking for is not available
+       * and provides a link to browse the library for a different item.
+       */
       function showNoMediaMessage() {
-        document.querySelector("main").innerHTML =
-          '<div class="info info--warning">Sorry. The item you\'re looking for isn\'t available. You can <a href="/">browse our library</a> for a different item.</div>';
+        // Get the main element
+        const mainElement = document.querySelector("main");
+
+        // Set the innerHTML of the main element to the warning message
+        mainElement.innerHTML = `
+          <div class="info info--warning">
+            Sorry. The item you're looking for isn't available.
+            You can <a href="/">browse our library</a> for a different item.
+          </div>
+        `;
       }
 
+      /**
+       * Renders the media item by fetching it, creating a video element and
+       * setting its attributes, updating the page title and appending it to
+       * the media wrapper. Returns an object containing the transcript,
+       * media item ID and the video element.
+       *
+       * @return {Promise<Object>} An object containing the transcript, media
+       * item ID, and video element.
+       */
       async function renderMedia() {
+        // Fetch the media item
         const mediaItem = await getMediaItem();
 
+        // If the media item is not found, show a warning message and return
         if (!mediaItem) {
           showNoMediaMessage();
           return;
         }
 
+        // Destructure the media item properties
         const { id, title, url, poster, transcript } = mediaItem;
+
+        // Create a video element and set its attributes
         const video = document.createElement("video");
         Object.assign(video, {
-          controls: true,
-          poster,
-          src: url,
-          id: `video-${id}`,
+          controls: true, // Enable video controls
+          poster, // Set the poster image URL
+          src: url, // Set the video source URL
+          id: `video-${id}`, // Set the video ID
         });
 
+        // Update the page title
         Object.assign(pageTitle, { textContent: title });
         document.title = `${title} | ${document.title}`;
 
+        // Clear the media wrapper and append the video element
         mediaWrapper.textContent = "";
         mediaWrapper.appendChild(video);
 
+        // Return an object containing the transcript, media item ID and video element
         return { transcript, id, video };
       }
 
+      /**
+       * Highlights the currently active cue segment in the editor.
+       *
+       * @param {Event} event - The event object.
+       * @param {HTMLVideoElement} video - The video element.
+       */
       function highlightCueSegment(event, video) {
+        // Get the first active cue from the event target
         const activeCue = event.target.activeCues?.[0];
+
+        // If there is no active cue, return
         if (!activeCue) return;
 
+        // Construct the scroll target ID and query selector
         const scrollTargetID = `cue-${activeCue.id}`;
         const scrollTarget = editorWrapper.querySelector(`#${scrollTargetID}`);
+
+        // Query the time button element within the scroll target
         const timeButton = scrollTarget?.querySelector(".cue-select-button");
 
+        // Check if the video is currently playing
         const isPlaying = video.paused;
 
+        // Get all previous cues with the class "cue--focus"
         const previousCues = [...editorWrapper.querySelectorAll(".cue--focus")];
+
+        // Remove the class "cue--focus" and the class "cue-select-button--playing" from each previous cue
         previousCues.forEach(previousCue => {
           previousCue.classList.remove("cue--focus");
           previousCue.querySelector(".cue-select-button")?.classList.toggle("cue-select-button--playing", false);
         });
 
+        // Add the class "cue--focus" to the scroll target
         scrollTarget?.classList.add("cue--focus");
+
+        // Toggle the class "cue-select-button--playing" on the time button based on whether the video is playing or not
         timeButton?.classList.toggle("cue-select-button--playing", isPlaying);
 
+        // Scroll the scroll target into view with smooth behavior and center block alignment
         scrollTarget?.scrollIntoView({ behavior: "smooth", block: "center" });
       }
 
+      /**
+       * Sets the current time of the video element to the start time of the clicked cue.
+       *
+       * @param {Event} event - The event object.
+       * @param {HTMLVideoElement} video - The video element.
+       */
       function setToTime(event, video) {
+        // Get the closest cue element to the clicked target
         const target = event.target.closest(".cue");
+
+        // If there is no cue element, return
         if (!target) return;
 
+        // Get the start time of the cue from the data attribute
         const cueTime = target.dataset.startTime;
+
+        // If there is no start time, return
         if (!cueTime) return;
 
+        // Set the current time of the video element to the start time of the cue
         video.currentTime = parseFloat(cueTime);
       }
 
+      /**
+       * Plays or pauses the video based on its current state when a cue is clicked.
+       *
+       * @param {Event} event - The event object.
+       * @param {HTMLVideoElement} video - The video element.
+       * @param {HTMLElement} editorWrapper - The wrapper element for the editor.
+       */
       function playPauseMedia(event, video, editorWrapper) {
+        // Set the video to the start time of the clicked cue
         setToTime(event, video);
+
+        // Toggle the "is-playing" class on the editor wrapper based on whether the video is playing or not
         const isPlaying = video.paused;
         editorWrapper.classList.toggle("is-playing", !isPlaying);
 
+        // If the clicked element is not a play or pause button, return
         if (!event.target.matches(".cue-play-button, .cue-pause-button")) return;
 
+        // Play or pause the video based on its current state
         isPlaying ? video.play() : video.pause();
       }
 
+      /**
+       * Updates the play state of the video and the editor wrapper.
+       *
+       * @param {Event} event - The event object.
+       * @param {HTMLVideoElement} video - The video element.
+       * @param {HTMLElement} editorWrapper - The wrapper element for the editor.
+       */
       function updatePlayState(event, video, editorWrapper) {
+        // Determine if the video is currently playing
         const isPlaying = !video.paused;
+
+        // Toggle the "is-playing" class on the editor wrapper based on the video's play state
         editorWrapper.classList.toggle("is-playing", isPlaying);
       }
 
+      // When DOM loaded, render the media, add listeners, and handle form submission
       document.addEventListener("DOMContentLoaded", () => {
+        // Render the media and get the media data
         renderMedia().then(mediaData => {
           if (!mediaData) return;
 
+          // Destructure the media data
           const { transcript, id: itemId, video } = mediaData;
+
+          // Add the track and get the track and cues
           const { track, cues } = addTrack(video, transcript);
+
+          // Add the transcript form and get the form element
           const form = addTranscript({ track, cues, itemId, editorWrapper });
 
+          // Define event handlers
           const eventHandlers = {
+            // Highlight the selected cue segment when the cue changes
             cuechange: highlightCueSegment,
+            // Update the play state when the video starts playing
             playing: updatePlayState,
+            // Update the play state when the video is paused
             pause: updatePlayState,
           };
 
+          // Add event listeners for the track events
           for (const [type, handler] of Object.entries(eventHandlers)) {
             track.addEventListener(type, event => handler(event, video));
           }
 
+          // Define delegated event handlers
           const delegatedHandlers = {
+            // Play or pause the video when a cue is clicked
             click: event => playPauseMedia(event, video, editorWrapper),
           };
 
+          // Add event listeners for the delegated events
           for (const [type, handler] of Object.entries(delegatedHandlers)) {
             editorWrapper.addEventListener(type, handler);
           }
 
+          // Add event listeners for the video events
           ["playing", "pause"].forEach(type => {
             video.addEventListener(type, event => updatePlayState(event, video, editorWrapper));
           });
 
-          // TODO: Figure out how to submit, update changes to localstorage
+          // Prevent form submission and log the form data when the form changes
           form.addEventListener("submit", event => event.preventDefault());
           form.addEventListener("change", event => {
             const data = new FormData(form);
