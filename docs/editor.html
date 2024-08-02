@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./favicon.ico">
+    <link rel="icon" href="./favicon.ico" />
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/main.css" />
     <title>AV Editor</title>
@@ -31,7 +31,7 @@
           <!-- Media & Global Controls Content -->
         </div>
 
-        <div id="editor-wrapper" class="editor-wrapper">
+        <div id="editor-wrapper" class="editor-wrapper" data-show-end="true">
           <!-- Transcript & Editor Content Start -->
 
           <!-- <form action="javascript:void(0);" method="" class="cue-form"> -->
@@ -171,6 +171,7 @@
         if (cueTemplate) {
           cues.forEach(cue => {
             const { id, startTime, endTime, avgProb, minProb, formattedTime, endFormattedTime, text } = cue;
+            const showEndTime = editorWrapper.dataset.showEnd === "true";
 
             const clone = cueTemplate.content.cloneNode(true);
             const cueWrapper = clone.getElementById("cue-wrapper");
@@ -189,7 +190,8 @@
             cueText.name = `${id}`;
 
             cueText.value = text;
-            timeButton.textContent = formattedTime + " - " + endFormattedTime;
+            timeButton.textContent = formattedTime;
+            timeButton.textContent = `${formattedTime} ${showEndTime ? "- " + endFormattedTime : ""}`;
 
             transcriptForm.appendChild(clone);
           });
