@@ -49,7 +49,7 @@
                 <button id="time-button" class="button cue-select-button">${formattedTime}</button>
                 <button id="play-pause-button" class="button cue-play-button" aria-label="Play and Pause"></button>
               </div>
-              <textarea id="cue-text" class="cue-text" rows="" cols="">${text}</textarea>
+              <textarea id="cue-text" name="cue-text" class="cue-text" rows="" cols="">${text}</textarea>
             </div>
           </template>
           <!-- </form> -->
@@ -84,6 +84,9 @@
         video.src = url;
         video.id = `video-${id}`;
 
+        // video.autoplay = true;
+        // video.playbackRate = 2;
+
         pageTitle.textContent = title;
         document.title = `${title} | ${document.title}`;
 
@@ -106,7 +109,7 @@
         const minutes = Math.floor((seconds % 3600) / 60)
           .toString()
           .padStart(2, "0");
-        seconds = Math.floor(seconds % 60)
+        seconds = Math.round(seconds % 60)
           .toString()
           .padStart(2, "0");
         return `${hours}:${minutes}:${seconds}`;
@@ -158,9 +161,10 @@
         return { track, cues };
       }
 
-      function addTranscript({ track, cues }) {
+      function addTranscript({ track, cues, itemId }) {
         const cueTemplate = document.querySelector("#cue-template");
         const transcriptForm = document.createElement("form");
+        transcriptForm.id = `transcript-form-${itemId}`;
         transcriptForm.className = "cue-form";
 
         if (cueTemplate) {
@@ -176,10 +180,13 @@
 
             cueWrapper.id = `cue-${id}`;
             cueWrapper.dataset.cue = id;
-            cueWrapper.dataset.startTmie = startTime;
+            cueWrapper.dataset.startTime = startTime;
             cueWrapper.dataset.endTime = endTime;
             cueWrapper.dataset.avgProb = avgProb;
             cueWrapper.dataset.minProb = minProb;
+            cueText.id = `cue-text-${id}`;
+            cueText.name = `${id}`;
+
             cueText.value = text;
             timeButton.textContent = formattedTime;
 
@@ -187,26 +194,91 @@
           });
 
           editorWrapper.appendChild(transcriptForm);
-          return;
+          return transcriptForm;
         }
 
         const cuesHTML = cues
           .map(cue => {
             const { id, startTime, endTime, avgProb, minProb, formattedTime, text } = cue;
 
-            return `<div id="cue-${id}" class="cue" data-cue="${id}" data-start-time="${startTime}" data-end-time="${endTime}"
-          data-avg-prob="${avgProb}" data-min-prob="${minProb}">
-          <div class="cue-controls">
-            <button class="button cue-select-button">${formattedTime}</button>
-            <button class="button cue-play-button" aria-label="Play and Pause"></button>
-          </div>
-          <textarea id="cue-${id}-text" class="cue-text" rows="" cols="">${text}</textarea>
-        </div>`;
+            return `
+              <div 
+                  id="cue-${id}" 
+                  class="cue" 
+                  data-cue="${id}" 
+                  data-start-time="${startTime}" 
+                  data-end-time="${endTime}"
+                  data-avg-prob="${avgProb}" 
+                  data-min-prob="${minProb}">
+                <div class="cue-controls">
+                  <button class="button cue-select-button">${formattedTime}</button>
+                  <button class="button cue-play-button" aria-label="Play and Pause"></button>
+                </div>
+                <textarea id="cue-${id}-text" name="${id}" class="cue-text" rows="2" cols="">${text}</textarea>
+              </div>`;
           })
           .join("");
 
         transcriptForm.innerHTML = cuesHTML;
         editorWrapper.appendChild(transcriptForm);
+        return transcriptForm;
+      }
+
+      function highlightCueSegment(event, video) {
+        if (!event.target.activeCues[0]) return;
+        const previousCues = editorWrapper.querySelectorAll(".cue--focus");
+
+        if (previousCues) {
+          previousCues.forEach(previousCue => {
+            previousCue.classList.remove("cue--focus");
+            previousCue.querySelector(".cue-select-button").classList.toggle("cue-select-button--playing");
+          });
+        }
+
+        const scrollTargetID = `cue-${event.target.activeCues[0].id}`;
+        const scrollTarget = editorWrapper.querySelector(`#${scrollTargetID}`);
+        const timeButton = scrollTarget.querySelector(".cue-select-button");
+
+        const isPlaying = video.paused;
+
+        scrollTarget.classList.add("cue--focus");
+        timeButton.classList.toggle("cue-select-button--playing", isPlaying);
+
+        scrollTarget.scrollIntoView({ behavior: "smooth", block: "center" });
+      }
+
+      function setToTime(event, video) {
+        console.log;
+        if (!event.target.matches(".cue *")) return;
+
+        const cueTime = event.target.closest("[data-cue]").dataset.startTime || null;
+        if (!cueTime) return;
+
+        video.currentTime = cueTime;
+      }
+
+      function playPauseMedia(event, video, editorWrapper) {
+        setToTime(event, video);
+        const isPlaying = !video.paused;
+        editorWrapper.classList.toggle("is-playing", isPlaying);
+
+        if (!event.target.matches(".cue-play-button, .cue-pause-button")) return;
+
+        isPlaying ? video.pause() : video.play();
+      }
+
+      function updatePlayState(event, video, editorWrapper) {
+        const isPlaying = !video.paused;
+        editorWrapper.classList.toggle("is-playing", isPlaying);
+      }
+
+      function addListeners(track, video, editorWrapper) {
+        track.addEventListener("cuechange", event => highlightCueSegment(event, video));
+
+        editorWrapper.addEventListener("click", event => playPauseMedia(event, video, editorWrapper));
+
+        video.addEventListener("playing", event => updatePlayState());
+        video.addEventListener("pause", event => updatePlayState());
       }
 
       // Render media then add track from transcript
@@ -218,7 +290,19 @@
         const { track, cues } = addTrack(video, transcript);
 
         // Generate, render transcript editor code
-        addTranscript({ track, cues });
+        const form = addTranscript({ track, cues, itemId });
+
+        // Add event listeners
+
+        track.addEventListener("cuechange", event => highlightCueSegment(event, video));
+        editorWrapper.addEventListener("click", event => playPauseMedia(event, video, editorWrapper));
+        video.addEventListener("playing", event => updatePlayState(event, video, editorWrapper));
+        video.addEventListener("pause", event => updatePlayState(event, video, editorWrapper));
+        form.addEventListener("submit", event => event.preventDefault());
+        form.addEventListener("change", event => {
+          const data = new FormData(form);
+          console.log(data);
+        });
       });
     </script>
   </body>
