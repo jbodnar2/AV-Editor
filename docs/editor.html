@@ -40,11 +40,12 @@
       const mediaWrapper = document.querySelector("#media-wrapper");
       const editorWrapper = document.querySelector("#editor-wrapper");
 
+      // Get the media data and render video
       async function renderMedia() {
         const mediaItem = await getMediaItem();
 
         if (!mediaItem) {
-          mediaWrapper.innerHTML = getNoMediaHTML();
+          mediaWrapper.innerHTML = showNoMediaMessage();
           return;
         }
 
@@ -65,10 +66,12 @@
         return { transcript, id, video };
       }
 
-      function getNoMediaHTML() {
+      // Returns no media message if media item is not found
+      function showNoMediaMessage() {
         return '<div class="info info--warning">Sorry. The item you\'re looking for isn\'t available. You can <a href="/">browse our library</a> for a different item.</div>';
       }
 
+      // Helper to convert track cue seconds to HH:MM:SS format
       function getFormattedTimeFromSeconds(seconds) {
         const hours = (Math.floor(seconds / 3600) % 24).toString().padStart(2, "0");
         const minutes = Math.floor((seconds % 3600) / 60)
@@ -80,7 +83,18 @@
         return `${hours}:${minutes}:${seconds}`;
       }
 
-      function addTrack(video, transcript) {
+      function getWordProbabilities(words) {
+        const probabilities = words.map(word => word.probability);
+        const avg =
+          Math.round((probabilities.reduce((acc, prob) => acc + prob, 0) / probabilities.length) * 1000) / 1000;
+        const min = Math.round(Math.min(...probabilities) * 1000) / 1000;
+        const max = Math.round(Math.max(...probabilities) * 1000) / 1000;
+
+        return { avg, min, max };
+      }
+
+      // Add transcript track and cues to video
+      function addTrack(video, transcript, itemId) {
         const track = video.addTextTrack("captions", transcript.label, transcript.language);
         track.mode = "showing";
 
@@ -90,23 +104,21 @@
           const cue = new VTTCue(start, end, text);
           cue.id = id;
           cue.formattedTime = getFormattedTimeFromSeconds(start);
-          const probabilities = words.map(word => word.probability);
-          const averageProbability =
-            Math.round((probabilities.reduce((acc, prob) => acc + prob, 0) / probabilities.length) * 1000) / 1000;
-          cue.averageProbability = averageProbability;
-          const minProbability = Math.min(...probabilities);
-          cue.minProbability = Math.round(minProbability * 1000) / 1000;
-          console.log(cue);
+          const { avg, min, max } = getWordProbabilities(words);
+          cue.avgProb = avg;
+          cue.maxProb = max;
+          cue.minProb = min;
           track.addCue(cue);
+          console.log(cue);
         });
       }
 
+      // Render media then add track from transcript
       renderMedia().then(data => {
         if (!data) return;
+        const { transcript, id: itemId, video } = data;
 
-        const { transcript, id, video } = data;
-
-        addTrack(video, transcript);
+        addTrack(video, transcript, itemId);
       });
     </script>
   </body>

@@ -91,7 +91,8 @@ async function getMediaItem() {
     return null;
   }
 
-  // Check if the item is already cached in localStorage or sessionStorage
+  // Check if the item is already cached in localStorage (ie, it was edited)
+  // or sessionStorage (ie, loaded earlier in session but has not been edited).
   let mediaItem = store.getLocalMediaItem(id) || store.getSessionMediaItem(id);
 
   // If the item is not found, fetch the media data and search for the item
