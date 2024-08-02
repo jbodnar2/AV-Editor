@@ -20,19 +20,34 @@ cueTemplate.innerHTML = `
   </div>
 `;
 
+/**
+ * Adds a transcript to an editor wrapper.
+ *
+ * @param {Object} options - The options for adding the transcript.
+ * @param {TextTrack} options.track - The track object for the transcript.
+ * @param {Array} options.cues - The array of cues for the transcript.
+ * @param {string} options.itemId - The ID for the transcript form.
+ * @param {HTMLElement} options.editorWrapper - The wrapper element for the transcript.
+ * @returns {HTMLFormElement} The transcript form element.
+ */
 function addTranscript({ track, cues, itemId, editorWrapper }) {
   const transcriptForm = document.createElement("form");
+
+  // Set the ID and class for the transcript form.
   transcriptForm.id = `transcript-form-${itemId}`;
   transcriptForm.className = "cue-form";
 
   cues.forEach(cue => {
+    // Destructure the cue properties.
     const { id, startTime, endTime, avgProbability, minProbability, startTimeFormatted, endTimeFormatted, text } = cue;
 
+    // Clone the cue template.
     const clone = cueTemplate.content.cloneNode(true);
     const cueWrapper = clone.getElementById("cue-wrapper");
     const timeButton = clone.getElementById("time-button");
     const cueText = clone.getElementById("cue-text");
 
+    // Set the IDs and dataset attributes for the cue wrapper.
     cueWrapper.id = `cue-${id}`;
     cueWrapper.dataset.cue = id;
     cueWrapper.dataset.startTime = startTime;
@@ -42,13 +57,20 @@ function addTranscript({ track, cues, itemId, editorWrapper }) {
     cueText.id = `cue-text-${id}`;
     cueText.name = `${id}`;
 
+    // Set the value of the cue text input.
     cueText.value = text;
+
+    // Update the innerHTML of the time button.
     timeButton.innerHTML = `<span class="start-time">${startTimeFormatted}</span class="end-time"><span class='end-time'> - ${endTimeFormatted} </span>`;
 
+    // Append the cloned cue to the transcript form.
     transcriptForm.appendChild(clone);
   });
 
+  // Append the transcript form to the editor wrapper.
   editorWrapper.appendChild(transcriptForm);
+
+  // Return the transcript form.
   return transcriptForm;
 }
 
