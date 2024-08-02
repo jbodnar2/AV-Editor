@@ -142,6 +142,7 @@
           const cue = new VTTCue(start, end, text.trim());
           cue.id = id;
           cue.formattedTime = getFormattedTimeFromSeconds(start);
+          cue.endFormattedTime = getFormattedTimeFromSeconds(end);
 
           // Only compute probs if word-level time stamps are available
           // Perhaps update session store function to modify on initial store to
@@ -169,7 +170,7 @@
 
         if (cueTemplate) {
           cues.forEach(cue => {
-            const { id, startTime, endTime, avgProb, minProb, formattedTime, text } = cue;
+            const { id, startTime, endTime, avgProb, minProb, formattedTime, endFormattedTime, text } = cue;
 
             const clone = cueTemplate.content.cloneNode(true);
             const cueWrapper = clone.getElementById("cue-wrapper");
@@ -188,7 +189,7 @@
             cueText.name = `${id}`;
 
             cueText.value = text;
-            timeButton.textContent = formattedTime;
+            timeButton.textContent = formattedTime + " - " + endFormattedTime;
 
             transcriptForm.appendChild(clone);
           });
