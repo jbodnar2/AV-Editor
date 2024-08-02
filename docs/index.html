@@ -33,39 +33,58 @@
     <script type="module" defer>
       import { fetchMedia } from "./js/components/api.js";
 
-      const mediaWrapper = document.querySelector("#media-wrapper");
-      mediaWrapper.classList.add("media-grid");
+      // Select the media list element and adds class for styling.
+      const mediaListElement = document.querySelector("#media-wrapper");
+      mediaListElement.classList.add("media-grid");
 
-      async function renderAllMedia() {
-        const media = await fetchMedia();
+      /**
+       * Creates a media item element with an image, caption link, and class.
+       * @param {string} posterUrl - The URL of the poster image.
+       * @param {string} title - The title of the media item.
+       * @param {string} itemId - The ID of the media item.
+       * @returns {HTMLElement} - The media item element.
+       */
+      function createMediaItem(posterUrl, title, itemId) {
+        const mediaItem = document.createElement("figure");
+        mediaItem.className = "media-option";
 
-        const frag = document.createDocumentFragment();
+        const image = document.createElement("img");
+        image.src = posterUrl;
+        image.alt = title;
 
-        media.forEach(({ poster, title, id }) => {
-          const mediaItem = document.createElement("figure");
-          mediaItem.className = "media-option";
+        const caption = document.createElement("figcaption");
 
-          const img = document.createElement("img");
-          img.src = poster;
-          img.alt = title;
+        const link = document.createElement("a");
+        link.href = `editor.html?id=${encodeURIComponent(itemId)}`;
+        link.textContent = title;
 
-          const figCaption = document.createElement("figcaption");
+        caption.appendChild(link);
+        mediaItem.appendChild(image);
+        mediaItem.appendChild(caption);
 
-          const a = document.createElement("a");
-          a.href = `editor.html?id=${encodeURIComponent(id)}`;
-          a.textContent = title;
-
-          figCaption.appendChild(a);
-          mediaItem.appendChild(img);
-          mediaItem.appendChild(figCaption);
-          mediaWrapper.appendChild(mediaItem);
-          frag.appendChild(mediaItem);
-        });
-
-        mediaWrapper.appendChild(frag);
+        return mediaItem;
       }
 
-      renderAllMedia();
+      /**
+       * Renders the media list by fetching media items and creating media item elements.
+       */
+      async function renderMediaList() {
+        const mediaItems = await fetchMedia();
+
+        const fragment = document.createDocumentFragment();
+
+        // For each media item, create a media item element and append it to the fragment.
+        mediaItems.forEach(({ poster, title, id }) => {
+          const mediaItem = createMediaItem(poster, title, id);
+          fragment.appendChild(mediaItem);
+        });
+
+        // Append the fragment with all the media item elements to the media list element.
+        mediaListElement.appendChild(fragment);
+      }
+
+      // Call the function to render the media list.
+      renderMediaList();
     </script>
   </body>
 </html>
