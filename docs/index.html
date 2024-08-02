@@ -34,34 +34,35 @@
       import { fetchMedia } from "./js/components/api.js";
 
       const mediaWrapper = document.querySelector("#media-wrapper");
-      const template = document.createElement("template");
-      template.innerHTML = `
-        <figure class="media-option">
-          <img src="" alt="" />
-            <figcaption>
-              <a href=""></a>
-            </figcaption>
-        </figure>
-      `;
+      mediaWrapper.classList.add("media-grid");
 
       async function renderAllMedia() {
         const media = await fetchMedia();
 
-        const fragment = document.createDocumentFragment();
-        const wrapper = fragment.appendChild(document.createElement("div"));
-        wrapper.className = "media-grid";
+        const frag = document.createDocumentFragment();
 
-        media.forEach(media => {
-          const { poster, title, id } = media;
-          const clone = template.content.cloneNode(true);
-          clone.querySelector("img").src = poster;
-          clone.querySelector("img").alt = title;
-          clone.querySelector("a").href = `editor.html?id=${encodeURIComponent(id)}`;
-          clone.querySelector("a").textContent = title;
-          wrapper.appendChild(clone);
+        media.forEach(({ poster, title, id }) => {
+          const mediaItem = document.createElement("figure");
+          mediaItem.className = "media-option";
+
+          const img = document.createElement("img");
+          img.src = poster;
+          img.alt = title;
+
+          const figCaption = document.createElement("figcaption");
+
+          const a = document.createElement("a");
+          a.href = `editor.html?id=${encodeURIComponent(id)}`;
+          a.textContent = title;
+
+          figCaption.appendChild(a);
+          mediaItem.appendChild(img);
+          mediaItem.appendChild(figCaption);
+          mediaWrapper.appendChild(mediaItem);
+          frag.appendChild(mediaItem);
         });
 
-        mediaWrapper.appendChild(fragment);
+        mediaWrapper.appendChild(frag);
       }
 
       renderAllMedia();
