@@ -25,36 +25,15 @@
     <main>
       <div class="container editor">
         <!-- Main content start -->
+
         <h2 id="page-title">Video Title</h2>
 
         <div id="media-wrapper" class="media-wrapper">
           <!-- Media & Global Controls Content -->
         </div>
 
-        <div id="editor-wrapper" class="editor-wrapper" data-show-end>
-          <!-- Transcript & Editor Content Start -->
+        <div id="editor-wrapper" class="editor-wrapper" data-show-end></div>
 
-          <!-- <form action="javascript:void(0);" method="" class="cue-form"> -->
-          <template id="cue-template">
-            <div
-              id="cue-wrapper"
-              class="cue"
-              data-cue="${id}"
-              data-start-time="${startTime}"
-              data-end-time="${endTime}"
-              data-avg-prob="${avgProb}"
-              data-min-prob="${minProb}"
-            >
-              <div id="cue-controls" class="cue-controls">
-                <button id="time-button" class="button cue-select-button">${formattedTime}</button>
-                <button id="play-pause-button" class="button cue-play-button" aria-label="Play and Pause"></button>
-              </div>
-              <textarea id="cue-text" name="cue-text" class="cue-text" rows="" cols="">${text}</textarea>
-            </div>
-          </template>
-          <!-- </form> -->
-          <!-- Transcript & Editor Content End-->
-        </div>
         <!-- Main content end -->
       </div>
     </main>

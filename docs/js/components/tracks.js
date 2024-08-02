@@ -1,45 +1,52 @@
-// Helper to get avg, min, max from array of nums between 0 and 1
-function getWordProbabilities(words) {
-  if (!words) return;
+function getWordProbabilities(wordList) {
+  if (!wordList) {
+    return;
+  }
 
-  const probabilities = words.map(word => word.probability);
-  const avg = Math.round((probabilities.reduce((acc, prob) => acc + prob, 0) / probabilities.length) * 1000) / 1000;
-  const min = Math.round(Math.min(...probabilities) * 1000) / 1000;
-  const max = Math.round(Math.max(...probabilities) * 1000) / 1000;
+  const probabilities = wordList.map(word => word.probability);
+  const averageProbability = calculateAverageProbability(probabilities);
+  const minimumProbability = Math.min(...probabilities);
+  const maximumProbability = Math.max(...probabilities);
 
-  return { avg, min, max };
+  return {
+    average: averageProbability,
+    minimum: minimumProbability,
+    maximum: maximumProbability,
+  };
 }
 
-function getFormattedTimeFromSeconds(seconds) {
-  const hours = (Math.floor(seconds / 3600) % 24).toString().padStart(2, "0");
-  const minutes = Math.floor((seconds % 3600) / 60)
-    .toString()
-    .padStart(2, "0");
-  seconds = Math.round(seconds % 60)
-    .toString()
-    .padStart(2, "0");
+function calculateAverageProbability(probabilitiesArray) {
+  const sum = probabilitiesArray.reduce((total, currentProbability) => total + currentProbability, 0);
+  const averageProbability = sum / probabilitiesArray.length;
+  return averageProbability;
+}
+
+function formatTime(totalSeconds) {
+  const hours = String(Math.floor(totalSeconds / 3600) % 24).padStart(2, "0");
+  const minutes = String(Math.floor(totalSeconds / 60) % 60).padStart(2, "0");
+  const seconds = String(Math.round(totalSeconds % 60)).padStart(2, "0");
+
   return `${hours}:${minutes}:${seconds}`;
 }
 
-function addTrack(video, transcript) {
-  const track = video.addTextTrack("captions", transcript.label, transcript.language);
+function addTrack(videoElement, transcript) {
+  const track = videoElement.addTextTrack("captions", transcript.label, transcript.language);
   track.mode = "showing";
-
   track.edited = false;
 
-  let cues = transcript.segments.map(segment => {
+  const cues = transcript.segments.map(segment => {
     const { id, start, end, text, words } = segment;
 
     const cue = new VTTCue(start, end, text.trim());
     cue.id = id;
-    cue.formattedTime = getFormattedTimeFromSeconds(start);
-    cue.endFormattedTime = getFormattedTimeFromSeconds(end);
+    cue.startTimeFormatted = formatTime(start);
+    cue.endTimeFormatted = formatTime(end);
 
     if (words) {
-      const { avg, min, max } = getWordProbabilities(words, track.edited);
-      cue.avgProb = avg;
-      cue.maxProb = max;
-      cue.minProb = min;
+      const wordProbabilities = getWordProbabilities(words);
+      cue.avgProbability = wordProbabilities.average;
+      cue.maxProbability = wordProbabilities.maximum;
+      cue.minProbability = wordProbabilities.minimum;
     }
 
     track.addCue(cue);
