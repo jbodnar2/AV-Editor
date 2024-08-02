@@ -40,12 +40,16 @@
   }
 }
 
+.cue-controls {
+  min-width: max-content;
+}
+
 .cue {
   margin-block-end: 1rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  gap: 0.25em;
+  gap: 1em;
 }
 
 .cue-text {

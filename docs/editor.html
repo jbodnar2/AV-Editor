@@ -35,9 +35,9 @@
           <!-- Transcript & Editor Content Start -->
 
           <!-- <form action="javascript:void(0);" method="" class="cue-form"> -->
-          <template id="que-template">
+          <template id="cue-template">
             <div
-              id="cue-${id}"
+              id="cue-wrapper"
               class="cue"
               data-cue="${id}"
               data-start-time="${startTime}"
@@ -45,13 +45,11 @@
               data-avg-prob="${avgProb}"
               data-min-prob="${minProb}"
             >
-              <div class="cue-controls">
-                <button class="button cue-select-button">HH:MM:SS</button>
-                <button class="button cue-play-button" aria-label="Play and Pause"></button>
+              <div id="cue-controls" class="cue-controls">
+                <button id="time-button" class="button cue-select-button">${formattedTime}</button>
+                <button id="play-pause-button" class="button cue-play-button" aria-label="Play and Pause"></button>
               </div>
-              <textarea id="cue-${id}-text" class="cue-text" rows="" cols="">
-This is a line of text from a transcript.</textarea
-              >
+              <textarea id="cue-text" class="cue-text" rows="" cols="">${text}</textarea>
             </div>
           </template>
           <!-- </form> -->
@@ -75,7 +73,7 @@ This is a line of text from a transcript.</textarea
         const mediaItem = await getMediaItem();
 
         if (!mediaItem) {
-          mediaWrapper.innerHTML = showNoMediaMessage();
+          showNoMediaMessage();
           return;
         }
 
@@ -98,7 +96,8 @@ This is a line of text from a transcript.</textarea
 
       // Returns no media message if media item is not found
       function showNoMediaMessage() {
-        return '<div class="info info--warning">Sorry. The item you\'re looking for isn\'t available. You can <a href="/">browse our library</a> for a different item.</div>';
+        document.querySelector("main").innerHTML =
+          '<div class="info info--warning">Sorry. The item you\'re looking for isn\'t available. You can <a href="/">browse our library</a> for a different item.</div>';
       }
 
       // Helper to convert track cue seconds to HH:MM:SS format
@@ -160,21 +159,49 @@ This is a line of text from a transcript.</textarea
       }
 
       function addTranscript({ track, cues }) {
+        const cueTemplate = document.querySelector("#cue-template");
         const transcriptForm = document.createElement("form");
         transcriptForm.className = "cue-form";
+
+        if (cueTemplate) {
+          cues.forEach(cue => {
+            const { id, startTime, endTime, avgProb, minProb, formattedTime, text } = cue;
+
+            const clone = cueTemplate.content.cloneNode(true);
+            const cueWrapper = clone.getElementById("cue-wrapper");
+            const cueControls = clone.getElementById("cue-controls");
+            const timeButton = clone.getElementById("time-button");
+            const playPauseButton = clone.getElementById("play-pause-button");
+            const cueText = clone.getElementById("cue-text");
+
+            cueWrapper.id = `cue-${id}`;
+            cueWrapper.dataset.cue = id;
+            cueWrapper.dataset.startTmie = startTime;
+            cueWrapper.dataset.endTime = endTime;
+            cueWrapper.dataset.avgProb = avgProb;
+            cueWrapper.dataset.minProb = minProb;
+            cueText.value = text;
+            timeButton.textContent = formattedTime;
+
+            transcriptForm.appendChild(clone);
+          });
+
+          editorWrapper.appendChild(transcriptForm);
+          return;
+        }
 
         const cuesHTML = cues
           .map(cue => {
             const { id, startTime, endTime, avgProb, minProb, formattedTime, text } = cue;
 
             return `<div id="cue-${id}" class="cue" data-cue="${id}" data-start-time="${startTime}" data-end-time="${endTime}"
-            data-avg-prob="${avgProb}" data-min-prob="${minProb}">
-            <div class="cue-controls">
-              <button class="button cue-select-button">${formattedTime}</button>
-              <button class="button cue-play-button" aria-label="Play and Pause"></button>
-            </div>
-            <textarea id="cue-${id}-text" class="cue-text" rows="" cols="">${text}</textarea>
-          </div>`;
+          data-avg-prob="${avgProb}" data-min-prob="${minProb}">
+          <div class="cue-controls">
+            <button class="button cue-select-button">${formattedTime}</button>
+            <button class="button cue-play-button" aria-label="Play and Pause"></button>
+          </div>
+          <textarea id="cue-${id}-text" class="cue-text" rows="" cols="">${text}</textarea>
+        </div>`;
           })
           .join("");
 
