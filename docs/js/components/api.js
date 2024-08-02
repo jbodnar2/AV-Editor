@@ -1,12 +1,5 @@
-import {
-  setSessionMedia,
-  getSessionMedia,
-  setSessionMediaItem,
-  getSessionMediaItem,
-  deleteSessionMediaItem,
-  deleteLocalMediaItem,
-  getLocalMediaItem,
-} from "./store.js";
+import * as store from "./store.js";
+
 /**
  * Fetches media data from the server and caches it in session storage.
  *
@@ -19,7 +12,7 @@ import {
  */
 async function fetchMedia() {
   // Retrieve the cached media data from sessionStorage
-  const cachedMedia = getSessionMedia();
+  const cachedMedia = store.getSessionMedia();
 
   // If the media data is already cached, return it
   if (cachedMedia) {
@@ -39,7 +32,7 @@ async function fetchMedia() {
     const media = await response.json();
 
     // Cache the media data in sessionStorage
-    setSessionMedia(media);
+    store.setSessionMedia(media);
 
     // Return the fetched media data
     return media;
@@ -99,7 +92,7 @@ async function getMediaItem() {
   }
 
   // Check if the item is already cached in localStorage or sessionStorage
-  let mediaItem = getLocalMediaItem(id) || getSessionMediaItem(id);
+  let mediaItem = store.getLocalMediaItem(id) || store.getSessionMediaItem(id);
 
   // If the item is not found, fetch the media data and search for the item
   if (!mediaItem) {
@@ -107,7 +100,7 @@ async function getMediaItem() {
     mediaItem = media.find(item => item.id === id);
 
     // Store the item in the cache
-    setSessionMediaItem(id, mediaItem);
+    store.setSessionMediaItem(id, mediaItem);
   }
 
   // Return the media item
