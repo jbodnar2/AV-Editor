@@ -31,7 +31,7 @@
           <!-- Media & Global Controls Content -->
         </div>
 
-        <div id="editor-wrapper" class="editor-wrapper" data-show-end="true">
+        <div id="editor-wrapper" class="editor-wrapper">
           <!-- Transcript & Editor Content Start -->
 
           <!-- <form action="javascript:void(0);" method="" class="cue-form"> -->
@@ -191,7 +191,7 @@
 
             cueText.value = text;
             timeButton.textContent = formattedTime;
-            timeButton.textContent = `${formattedTime} ${showEndTime ? "- " + endFormattedTime : ""}`;
+            timeButton.innerHTML = `<span class="start-time">${formattedTime}</span class="end-time"><span class='end-time'> - ${endFormattedTime} </span>`;
 
             transcriptForm.appendChild(clone);
           });
