@@ -94,7 +94,7 @@
         return { avg, min, max };
       }
 
-      // Add transcript track and cues to video
+      // Add track and cues to video from transcript segments
       function addTrack(video, transcript) {
         const track = video.addTextTrack("captions", transcript.label, transcript.language);
         track.mode = "showing";
@@ -125,7 +125,7 @@
         if (!mediaData) return;
         const { transcript, id: itemId, video } = mediaData;
 
-        // Add track and cues to video from transcript and segments
+        // Add track and cues to video from transcript segments
         const { track, cues } = addTrack(video, transcript);
 
         // Generate, render transcript editor code
