@@ -221,63 +221,119 @@
         editorWrapper.classList.toggle("is-playing", isPlaying);
       }
 
-      function notifySuccessfulEdit(cueId, updatedText, previousText) {
+      /**
+       * Updates the local media item in the storage.
+       *
+       * @param {string} mediaItemId - The ID of the media item to be updated.
+       * @param {Object} mediaItem - The updated media item.
+       */
+      function updateLocalMediaItem(mediaItemId, mediaItem) {
+        // Call the setLocalMediaItem function to update the media item in the storage
+        setLocalMediaItem(mediaItemId, mediaItem);
+      }
+
+      /**
+       * Shows a success notification for a text edit.
+       *
+       * @param {string} cueId - The ID of the cue.
+       * @param {string} updatedText - The updated text.
+       * @param {string} previousText - The previous text.
+       */
+      function showEditSuccessNotification(cueId, updatedText, previousText) {
+        // Get the notification element for the cue
         const notification = document.querySelector(`#cue-notification-${cueId}`);
-        notification.style =
-          "padding: .2em .5em; color: white; color: darkgreen; font-size: small; font-weight: bold;display: inline-block; border-radius: 25px; border: 1px solid darkgreen;";
+
+        // Set the notification style
+        notification.style = `
+          padding: .2em .5em; /* Padding */
+          color: white; /* Text color */
+          background-color: #0097b8; /* Background color */
+          font-size: small; /* Font size */
+          font-weight: bold; /* Font weight */
+          display: inline-block; /* Display type */
+          border-radius: 25px; /* Border radius */
+        `;
+
+        // Set the notification text
         notification.textContent = "Edit saved 👍";
 
-        window.setTimeout(() => {
+        // Clear the notification after 2.5 seconds
+        setTimeout(() => {
           notification.textContent = "";
           notification.style = "";
         }, 2500);
       }
 
-      function handleTextChange(event, mediaItem, video) {
+      /**
+       * Handles the text change event.
+       *
+       * @param {Event} event - The event object.
+       * @param {Object} media - The media object.
+       * @param {HTMLVideoElement} video - The video element.
+       */
+      function handleTextChange(event, media, video) {
+        // Get the cue element that triggered the event
         const cue = event.target.closest("[data-cue]");
+
+        // Get the ID of the cue
         const cueId = cue && cue.dataset.cue;
 
+        // If there is no cue ID, return
         if (!cueId) {
           return;
         }
 
+        // Get the updated text from the textarea
         const updatedText = event.target.value.trim();
 
+        // If there is no updated text, return
         if (!updatedText) {
           return;
         }
 
+        // Get the media item ID from the URL
         const mediaItemId = extractMediaItemIdFromUrl();
 
+        // If there is no media item ID, return
         if (!mediaItemId) {
           return;
         }
 
+        // Get the media item and update the transcript segment
         getMediaItem(mediaItemId).then(mediaItem => {
           const transcript = mediaItem.transcript;
           const segment = transcript.segments[cueId];
 
+          // If there is a segment
           if (segment) {
+            // Get the previous text from the segment
             const previousText = segment.text.trim();
 
+            // Update the segment text with the updated text
             segment.text = updatedText;
 
+            // If the segment does not have edits, initialize it
             if (!segment.edits) {
               segment.edits = [];
             }
 
+            // Add the previous text to the segment edits
             segment.edits.push(previousText);
 
-            setLocalMediaItem(mediaItemId, mediaItem);
+            // Update the local media item
+            updateLocalMediaItem(mediaItemId, mediaItem);
 
+            // Get the text track and active cue
             const track = video.textTracks[0];
             const activeCue = track.activeCues[0];
 
+            // If there is an active cue, update its text
             if (activeCue) {
               activeCue.text = updatedText;
             }
 
-            notifySuccessfulEdit(cueId, updatedText, previousText);
+            // Show a success notification
+            showEditSuccessNotification(cueId, updatedText, previousText);
           }
         });
       }
