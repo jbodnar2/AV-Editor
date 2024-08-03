@@ -1,6 +1,7 @@
 const cueTemplate = document.createElement("template");
 
 cueTemplate.innerHTML = `
+  <div id="cue-notification-id" aria-live="polite"></div>
   <div
     id="cue-wrapper"
     class="cue"
@@ -43,11 +44,13 @@ function addTranscript({ track, cues, itemId, editorWrapper }) {
 
     // Clone the cue template.
     const clone = cueTemplate.content.cloneNode(true);
+    const cueNotification = clone.getElementById("cue-notification-id");
     const cueWrapper = clone.getElementById("cue-wrapper");
     const timeButton = clone.getElementById("time-button");
     const cueText = clone.getElementById("cue-text");
 
     // Set the IDs and dataset attributes for the cue wrapper.
+    cueNotification.id = `cue-notification-${id}`;
     cueWrapper.id = `cue-${id}`;
     cueWrapper.dataset.cue = id;
     cueWrapper.dataset.startTime = startTime;
