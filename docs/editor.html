@@ -221,6 +221,22 @@
         editorWrapper.classList.toggle("is-playing", isPlaying);
       }
 
+      function handleTextChange(event, mediaItem, video) {
+        const cueId = event.target.closest("[data-cue]").dataset.cue;
+        const updatedText = event.target.value.trim();
+        const mediaItemId = extractMediaItemIdFromUrl();
+
+        if (!cueId || !updatedText || !mediaItemId) {
+          return;
+        }
+
+        getMediaItem(mediaItemId).then(mediaItem => {
+          mediaItem.transcript.segments[cueId].text = updatedText;
+          setLocalMediaItem(mediaItemId, mediaItem);
+          video.textTracks[0].activeCues[0].text = updatedText;
+        });
+      }
+
       // When DOM loaded, render the media, add listeners, and handle form submission
       document.addEventListener("DOMContentLoaded", () => {
         // Render the media and get the media data
@@ -267,20 +283,10 @@
             video.addEventListener(type, event => updatePlayState(event, video, editorWrapper));
           });
 
-          // TODO: Fake operational form submission / changes
+          // Add event listeners to manage editing the transcript
           form.addEventListener("submit", event => event.preventDefault());
           form.addEventListener("change", event => {
-            const segmentId = event.target.closest("[data-cue]").dataset.cue;
-            const changedText = event.target.value.trim();
-            const mediaItemId = extractMediaItemIdFromUrl();
-            if (!segmentId || !changedText || !mediaItemId) {
-              return;
-            }
-
-            getMediaItem().then(mediaItem => {
-              mediaItem.transcript.segments[segmentId].text = changedText;
-              setLocalMediaItem(mediaItemId, mediaItem);
-            });
+            handleTextChange(event, mediaData, video);
           });
         });
       });
