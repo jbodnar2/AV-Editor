@@ -43,9 +43,10 @@
     <footer></footer>
     <!-- Scripts -->
     <script type="module" defer>
-      import { getMediaItem } from "./js/components/api.js";
+      import { getMediaItem, extractMediaItemIdFromUrl } from "./js/components/api.js";
       import { addTrack } from "./js/components/tracks.js";
       import { addTranscript } from "./js/components/transcripts.js";
+      import { setLocalMediaItem } from "./js/components/store.js";
 
       /**
        * DOM elements:
@@ -269,8 +270,22 @@
           // Prevent form submission and log the form data when the form changes
           form.addEventListener("submit", event => event.preventDefault());
           form.addEventListener("change", event => {
-            const data = new FormData(form);
-            console.log(data);
+            const itemId = extractMediaItemIdFromUrl();
+
+            const segmentId = event.target.closest("[data-cue]").dataset.cue;
+
+            const newText = event.target.value;
+
+            if (!segmentId || !newText || !itemId) {
+              console.warn("Missing segment id or new text");
+              return;
+            }
+
+            getMediaItem().then(mediaItem => {
+              mediaItem.transcript.segments[segmentId].text = newText.trim();
+
+              setLocalMediaItem(itemId, mediaItem);
+            });
           });
         });
       });

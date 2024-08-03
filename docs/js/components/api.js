@@ -108,4 +108,4 @@ async function getMediaItem() {
   return mediaItem;
 }
 
-export { fetchMedia, getMediaItem };
+export { fetchMedia, getMediaItem, extractMediaItemIdFromUrl };
