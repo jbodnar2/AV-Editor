@@ -222,18 +222,49 @@
       }
 
       function handleTextChange(event, mediaItem, video) {
-        const cueId = event.target.closest("[data-cue]").dataset.cue;
+        const cue = event.target.closest("[data-cue]");
+        const cueId = cue && cue.dataset.cue;
+
+        if (!cueId) {
+          return;
+        }
+
         const updatedText = event.target.value.trim();
+
+        if (!updatedText) {
+          return;
+        }
+
         const mediaItemId = extractMediaItemIdFromUrl();
 
-        if (!cueId || !updatedText || !mediaItemId) {
+        if (!mediaItemId) {
           return;
         }
 
         getMediaItem(mediaItemId).then(mediaItem => {
-          mediaItem.transcript.segments[cueId].text = updatedText;
-          setLocalMediaItem(mediaItemId, mediaItem);
-          video.textTracks[0].activeCues[0].text = updatedText;
+          const transcript = mediaItem.transcript;
+          const segment = transcript.segments[cueId];
+
+          if (segment) {
+            const previousText = segment.text.trim();
+
+            segment.text = updatedText;
+
+            if (!segment.edits) {
+              segment.edits = [];
+            }
+
+            segment.edits.push(previousText);
+
+            setLocalMediaItem(mediaItemId, mediaItem);
+
+            const track = video.textTracks[0];
+            const activeCue = track.activeCues[0];
+
+            if (activeCue) {
+              activeCue.text = updatedText;
+            }
+          }
         });
       }
 
@@ -252,31 +283,13 @@
           // Add the transcript form and get the form element
           const form = addTranscript({ track, cues, itemId, editorWrapper });
 
-          // Define event handlers
-          const eventHandlers = {
-            // Highlight the selected cue segment when the cue changes
-            cuechange: highlightCueSegment,
-            // Update the play state when the video starts playing
-            playing: updatePlayState,
-            // Update the play state when the video is paused
-            pause: updatePlayState,
-          };
+          // Add event listeners for the cue change
+          track.addEventListener("cuechange", event => {
+            highlightCueSegment(event, video);
+          });
 
-          // Add event listeners for the track events
-          for (const [type, handler] of Object.entries(eventHandlers)) {
-            track.addEventListener(type, event => handler(event, video));
-          }
-
-          // Define delegated event handlers
-          const delegatedHandlers = {
-            // Play or pause the video when a cue is clicked
-            click: event => playPauseMedia(event, video, editorWrapper),
-          };
-
-          // Add event listeners for the delegated events
-          for (const [type, handler] of Object.entries(delegatedHandlers)) {
-            editorWrapper.addEventListener(type, handler);
-          }
+          // Add event listeners for the play and pause buttons
+          editorWrapper.addEventListener("click", event => playPauseMedia(event, video, editorWrapper));
 
           // Add event listeners for the video events
           ["playing", "pause"].forEach(type => {
