@@ -267,24 +267,19 @@
             video.addEventListener(type, event => updatePlayState(event, video, editorWrapper));
           });
 
-          // Prevent form submission and log the form data when the form changes
+          // TODO: Fake operational form submission / changes
           form.addEventListener("submit", event => event.preventDefault());
           form.addEventListener("change", event => {
-            const itemId = extractMediaItemIdFromUrl();
-
             const segmentId = event.target.closest("[data-cue]").dataset.cue;
-
-            const newText = event.target.value;
-
-            if (!segmentId || !newText || !itemId) {
-              console.warn("Missing segment id or new text");
+            const changedText = event.target.value.trim();
+            const mediaItemId = extractMediaItemIdFromUrl();
+            if (!segmentId || !changedText || !mediaItemId) {
               return;
             }
 
             getMediaItem().then(mediaItem => {
-              mediaItem.transcript.segments[segmentId].text = newText.trim();
-
-              setLocalMediaItem(itemId, mediaItem);
+              mediaItem.transcript.segments[segmentId].text = changedText;
+              setLocalMediaItem(mediaItemId, mediaItem);
             });
           });
         });
