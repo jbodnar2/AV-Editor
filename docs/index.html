@@ -20,23 +20,18 @@
         <ul>
           <li><a href="./">Home</a></li>
           <li>
-            <button id="clear-session-storage" onclick="clearSessionStorage()" style="cursor: pointer; height: 100%">
+            <button
+              id="clear-session-storage"
+              onclick="clearSessionStorage()"
+              style="cursor: pointer; height: 100%; background-color: inherit; border: none; color: white"
+            >
               Reset Media
             </button>
           </li>
-          <li>
-            <button id="clear-local-storage" onclick="clearLocalStorage()" style="cursor: pointer; height: 100%">
-              Revert Edits
-            </button>
-          </li>
+
           <script defer>
             function clearLocalStorage() {
               localStorage.clear();
-              location.reload();
-            }
-
-            function clearSessionStorage() {
-              sessionStorage.clear();
               location.reload();
             }
           </script>
