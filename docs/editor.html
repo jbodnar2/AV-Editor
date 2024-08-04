@@ -19,6 +19,27 @@
       <div class="container">
         <ul>
           <li><a href="./">Home</a></li>
+          <li>
+            <button id="clear-session-storage" onclick="clearSessionStorage()" style="cursor: pointer; height: 100%">
+              Reset Media
+            </button>
+          </li>
+          <li>
+            <button id="clear-local-storage" onclick="clearLocalStorage()" style="cursor: pointer; height: 100%">
+              Revert Edits
+            </button>
+          </li>
+          <script defer>
+            function clearLocalStorage() {
+              localStorage.clear();
+              location.reload();
+            }
+
+            function clearSessionStorage() {
+              sessionStorage.clear();
+              location.reload();
+            }
+          </script>
         </ul>
       </div>
     </nav>
@@ -26,6 +47,7 @@
       <div class="container editor">
         <!-- Main content start -->
 
+        <!-- Page title -->
         <h2 id="page-title">Video Title</h2>
 
         <div id="media-wrapper" class="media-wrapper">
@@ -101,14 +123,16 @@
         // Create a video element and set its attributes
         const video = document.createElement("video");
         Object.assign(video, {
-          controls: true, // Enable video controls
-          poster, // Set the poster image URL
+          controls: false, // Enable video controls
+          poster: poster, // Set the poster image URL
           src: url, // Set the video source URL
           id: `video-${id}`, // Set the video ID
+          preload: "auto", // Set the preload attribute
+          height: 300,
         });
 
         // Update the page title
-        Object.assign(pageTitle, { textContent: title });
+        pageTitle.textContent = title;
         document.title = `${title} | ${document.title}`;
 
         // Clear the media wrapper and append the video element
@@ -124,6 +148,7 @@
        *
        * @param {Event} event - The event object.
        * @param {HTMLVideoElement} video - The video element.
+       *
        */
       function highlightCueSegment(event, video) {
         // Get the first active cue from the event target
@@ -170,18 +195,21 @@
       function setToTime(event, video) {
         // Get the closest cue element to the clicked target
         const target = event.target.closest(".cue");
+        console.log(target);
 
         // If there is no cue element, return
         if (!target) return;
 
-        // Get the start time of the cue from the data attribute
-        const cueTime = target.dataset.startTime;
+        // Get the start time of the cue from the data attribute and add a little to it
+        // NOTE: Adding a fraction of a second to the star time is done to handle Chrome / Firefox selection discrepancy,
+        // cf. README.md note I
+        let cueStartTime = parseFloat(target.dataset.startTime) + 0.00001;
 
         // If there is no start time, return
-        if (!cueTime) return;
+        if (!cueStartTime) return;
 
         // Set the current time of the video element to the start time of the cue
-        video.currentTime = parseFloat(cueTime);
+        video.currentTime = parseFloat(cueStartTime);
       }
 
       /**
