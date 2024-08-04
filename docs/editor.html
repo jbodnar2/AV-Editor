@@ -250,14 +250,13 @@
 
       function notifySuccessfulEdit(cueId, updatedText, previousText) {
         const notification = document.querySelector(`#cue-notification-${cueId}`);
-        notification.style =
-          "padding: .2em .5em; color: white; color: darkgreen; font-size: small; font-weight: bold;display: inline-block; border-radius: 25px; border: 1px solid darkgreen;";
         notification.textContent = "Edit saved 👍";
+        notification.classList.add("cue-notification--success");
 
         window.setTimeout(() => {
           notification.textContent = "";
-          notification.style = "";
-        }, 2500);
+          notification.classList.remove("cue-notification--success");
+        }, 2000);
       }
 
       function handleTextChange(event, mediaItem, video) {

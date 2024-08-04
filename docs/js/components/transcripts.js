@@ -1,7 +1,7 @@
 const cueTemplate = document.createElement("template");
 
 cueTemplate.innerHTML = `
-  <div id="cue-notification-id" aria-live="polite"></div>
+  <div id="cue-notification-id" aria-live="polite" class="cue-notification"></div>
   <div
     id="cue-wrapper"
     class="cue"

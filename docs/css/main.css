@@ -153,6 +153,22 @@ nav {
   min-width: max-content;
 }
 
+.cue-notification {
+  display: none;
+}
+
+.cue-notification--success {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  color: white;
+  color: #666;
+  font-size: small;
+  font-weight: bold;
+  display: inline-block;
+  border-radius: 25px;
+  border: 1px solid gray;
+}
+
 .cue {
   margin-block-end: 1rem;
   display: flex;
