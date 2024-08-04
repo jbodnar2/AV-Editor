@@ -197,3 +197,7 @@ nav {
 .editor-wrapper[data-show-end] .end-time {
   display: inline;
 }
+
+::cue {
+  position: top;
+}

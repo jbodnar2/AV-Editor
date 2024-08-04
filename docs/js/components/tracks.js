@@ -98,6 +98,8 @@ function addTrack(videoElement, transcript) {
     cue.id = id;
     cue.startTimeFormatted = formatTime(start);
     cue.endTimeFormatted = formatTime(end);
+    // Avoid Chrome cue / controls overlap--set cue display to top of video.
+    cue.line = 1;
 
     // If the segment has words, calculate and set the probabilities of the words
     if (words) {
