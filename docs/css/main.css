@@ -115,6 +115,44 @@ nav {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
 
+.cue {
+  margin-block-end: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1em;
+}
+
+.cue[data-min-prob*="0.1"] 
+, .cue[data-min-prob*="0.2"] 
+, .cue[data-min-prob*="0.3"] 
+, .cue[data-min-prob*="0.4"] 
+, .cue[data-min-prob*="0.5"] 
+/* , .cue[data-min-prob*="0.6"]  */
+/* , .cue[data-min-prob*="0.7"]  */
+/* , .cue[data-min-prob*="0.8"]  */
+/* , .cue[data-min-prob*="0.9"]  */ {
+  &::after {
+    content: "⚠️";
+    display: inline-block;
+  }
+}
+
+.cue[data-avg-prob*="0.1"] 
+, .cue[data-avg-prob*="0.2"] 
+, .cue[data-avg-prob*="0.3"] 
+, .cue[data-avg-prob*="0.4"] 
+, .cue[data-avg-prob*="0.5"] 
+, .cue[data-avg-prob*="0.6"] 
+, .cue[data-avg-prob*="0.7"] 
+/* , .cue[data-avg-prob*="0.8"]  */
+/* , .cue[data-avg-prob*="0.9"]  */ {
+  &::after {
+    content: "⚠️";
+    display: inline-block;
+  }
+}
+
 .cue--focus {
   .cue-select-button {
     background-color: #111;
@@ -169,14 +207,6 @@ nav {
   border: 1px solid gray;
 }
 
-.cue {
-  margin-block-end: 1rem;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 1em;
-}
-
 .cue-text {
   flex-grow: 1;
   resize: none;
@@ -199,5 +229,5 @@ nav {
 }
 
 ::cue {
-  position: top;
+  font-size: 1.125rem;
 }
