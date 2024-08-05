@@ -22,19 +22,11 @@
           <li>
             <button
               id="clear-session-storage"
-              onclick="clearSessionStorage()"
               style="cursor: pointer; height: 100%; background-color: inherit; border: none; color: white"
             >
               Reset Media
             </button>
           </li>
-
-          <script defer>
-            function clearSessionStorage() {
-              sessionStorage.clear();
-              location.reload();
-            }
-          </script>
         </ul>
       </div>
     </nav>
@@ -48,6 +40,7 @@
     <footer></footer>
     <script type="module" defer>
       import { fetchMedia } from "./js/components/api.js";
+      import { deleteSessionMedia } from "./js/components/store.js";
 
       // Select the media list element and adds class for styling.
       const mediaListElement = document.querySelector("#media-wrapper");
@@ -96,11 +89,18 @@
         });
 
         // Append the fragment with all the media item elements to the media list element.
+        mediaListElement.innerHTML = "";
         mediaListElement.appendChild(fragment);
       }
 
       // Call the function to render the media list.
       renderMediaList();
+
+      document.addEventListener("click", event => {
+        if (!event.target.matches("#clear-session-storage")) return;
+        deleteSessionMedia();
+        renderMediaList();
+      });
     </script>
   </body>
 </html>
