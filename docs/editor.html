@@ -60,9 +60,9 @@
     <!-- Scripts -->
     <script type="module" defer>
       import { getMediaItem, extractMediaItemIdFromUrl } from "./js/components/api.js";
+      import { setLocalMediaItem } from "./js/components/store.js";
       import { addTrack } from "./js/components/tracks.js";
       import { addTranscript } from "./js/components/transcripts.js";
-      import { setLocalMediaItem } from "./js/components/store.js";
 
       /**
        * DOM elements:
@@ -90,6 +90,26 @@
             You can <a href="/">browse our library</a> for a different item.
           </div>
         `;
+      }
+
+      function renderControls(id, mediaWrapper) {
+        // Create the controls?
+        const controls = document.createElement("div");
+        Object.assign(controls, {
+          id: `controls-${id}`, // Set the controls ID
+          class: "controls", // Set the controls class
+        });
+        controls.innerHTML = `
+        <fieldset>
+          <legend>Settings</legend>
+          <div>
+            <input type="checkbox" id="show-problems" name="problems" />
+            <label for="show-problems">Mark low-probability segments?</label>
+          </div>
+        </fieldset>`;
+
+        mediaWrapper.appendChild(controls);
+        return controls;
       }
 
       /**
@@ -133,8 +153,11 @@
         mediaWrapper.textContent = "";
         mediaWrapper.appendChild(video);
 
+        // Render the controls for video
+        const controls = renderControls(id, mediaWrapper);
+
         // Return an object containing the transcript, media item ID and video element
-        return { transcript, id, video };
+        return { transcript, id, video, controls };
       }
 
       /**
@@ -354,7 +377,7 @@
           if (!mediaData) return;
 
           // Destructure the media data
-          const { transcript, id: itemId, video } = mediaData;
+          const { transcript, id: itemId, video, controls } = mediaData;
 
           // Add the track and get the track and cues
           const { track, cues } = addTrack(video, transcript);
@@ -379,6 +402,13 @@
           form.addEventListener("submit", event => event.preventDefault());
           form.addEventListener("change", event => {
             handleTextChange(event, mediaData, video);
+          });
+
+          controls.addEventListener("change", event => {
+            if (!event.target.matches("#show-problems")) return;
+            const isChecked = event.target.checked;
+
+            editorWrapper.classList.toggle("show-problems", isChecked);
           });
         });
       });
