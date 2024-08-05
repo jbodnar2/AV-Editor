@@ -133,8 +133,14 @@ nav {
 /* , .cue[data-min-prob*="0.8"]  */
 /* , .cue[data-min-prob*="0.9"]  */ {
   &::after {
-    content: "⚠️";
-    display: inline-block;
+    /* content: "⚠️"; */
+    display: block;
+    background-image: url("../media/images/warn-icon.jpg");
+    width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 }
 
@@ -148,8 +154,14 @@ nav {
 /* , .cue[data-avg-prob*="0.8"]  */
 /* , .cue[data-avg-prob*="0.9"]  */ {
   &::after {
-    content: "⚠️";
-    display: inline-block;
+    /* content: "⚠️"; */
+    display: block;
+    content: url("../media/images/warn-icon.jpg");
+    width: 12px;
+    height: 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 }
 
