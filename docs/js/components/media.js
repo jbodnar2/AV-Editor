@@ -1,4 +1,5 @@
-import { getMediaItem, extractMediaItemIdFromUrl } from "./api.js";
+import { getMediaItem } from "./api.js";
+import { addTrack } from "./tracks.js";
 
 function showNoMediaMessage() {
   // Get the main element
@@ -56,6 +57,9 @@ async function renderMedia(pageTitle, mediaWrapper) {
     preload: "auto", // Set the preload attribute
     height: 300, // Set the height of the video
   });
+
+  // Add the track and get the track and cues
+  addTrack(video, transcript);
 
   // Update the page title
   pageTitle.textContent = title;

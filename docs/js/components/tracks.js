@@ -115,9 +115,6 @@ function addTrack(videoElement, transcript) {
     track.addCue(cue);
     return cue;
   });
-
-  // Return the track and the array of cues
-  return { track, cues };
 }
 
 export { addTrack };
