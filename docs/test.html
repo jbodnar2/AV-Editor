@@ -27,11 +27,18 @@
 
       <video controls>
         <source src="media/audio-video/plane.mp3" type="video/mp4" />
-        <track default kind="captions" srclang="de" src="data/max-de-captions.vtt" />
+        <track default kind="captions" srclang="de" src="data/plane-de.vtt" />
+        <track kind="captions" srclang="en" src="data/plane-en.vtt" />
       </video>
 
       <!-- Main content end -->
     </main>
     <footer></footer>
+
+    <script>
+      const video = document.querySelector("video");
+      const tracks = video.textTracks;
+      console.log(tracks);
+    </script>
   </body>
 </html>
