@@ -12,7 +12,7 @@ cueTemplate.innerHTML = `
     data-min-prob="minProb"
   >
     <div id="cue-controls" class="cue-controls">
-      <button id="time-button" class="button cue-select-button">
+      <button id="time-button" class="button cue-select-button" aria-label="Move to time [star time]">
         <span class="start-time">00:00:02</span><span class="end-time"> - 00:00:02 </span>
       </button>
       <button id="play-pause-button" class="button cue-play-button" aria-label="Play and Pause"></button>
@@ -44,9 +44,12 @@ function addTranscript({ track, cues, itemId, editorWrapper }) {
 
     // Clone the cue template.
     const clone = cueTemplate.content.cloneNode(true);
+    // NOTE: Can only select with doc fragments by ID
     const cueNotification = clone.getElementById("cue-notification-id");
     const cueWrapper = clone.getElementById("cue-wrapper");
+    const cueControls = clone.getElementById("cue-controls");
     const timeButton = clone.getElementById("time-button");
+    const playPauseButton = clone.getElementById("play-pause-button");
     const cueText = clone.getElementById("cue-text");
 
     // Set the IDs and dataset attributes for the cue wrapper.
@@ -60,10 +63,16 @@ function addTranscript({ track, cues, itemId, editorWrapper }) {
     cueText.id = `cue-text-${id}`;
     cueText.name = `${id}`;
 
+    cueControls.id = `cue-controls-${id}`;
+
     // Set the value of the cue text input.
     cueText.value = text;
 
+    playPauseButton.id = `play-pause-button-${id}`;
+
     // Update the innerHTML of the time button.
+    timeButton.id = `time-button-${id}`;
+    timeButton["aria-label"] = `Move to time [${startTimeFormatted}]`;
     timeButton.innerHTML = `<span class="start-time">${startTimeFormatted}</span class="end-time"><span class='end-time'> - ${endTimeFormatted} </span>`;
 
     // Append the cloned cue to the transcript form.
