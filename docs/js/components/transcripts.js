@@ -17,7 +17,7 @@ cueTemplate.innerHTML = `
       </button>
       <button id="play-pause-button" class="button cue-play-button" aria-label="Play and Pause"></button>
     </div>
-    <textarea id="cue-text" name="cue-text" class="cue-text" rows="" cols="">$text</textarea>
+    <textarea aria-label="edit transcript segment" id="cue-text" name="cue-text" class="cue-text" rows="" cols="">$text</textarea>
   </div>
 `;
 
