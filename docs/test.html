@@ -44,9 +44,9 @@
       </style>
 
       <video>
-        <source src="media/audio-video/friday.mp4" type="video/mp4" />
-        <track default kind="captions" srclang="de" src="data/friday-de.vtt" />
-        <track kind="captions" srclang="en" src="data/friday-en.vtt" />
+        <source src="media/audio-video/newscast.mp3" type="video/mp4" />
+        <track kind="captions" srclang="de" src="data/newscast-de.vtt" />
+        <track default kind="captions" srclang="en" src="data/newscast-en.vtt" />
       </video>
       <div class="audio-captions" id="captions"></div>
 
@@ -54,45 +54,6 @@
     </main>
     <footer></footer>
 
-    <script>
-      const mediaElement = document.querySelector("video");
-      Object.assign(mediaElement, { controls: true });
-
-      const textTracks = mediaElement.textTracks;
-      const captionsElement = document.querySelector("#captions");
-      const cues = new Map();
-
-      textTracks.onchange = () => {
-        for (const track of textTracks) {
-          track.oncuechange = event => {
-            const activeCue = event.target?.activeCues[0];
-            const cueText = activeCue?.text;
-
-            if (!cueText) return;
-
-            const cueElement = cues.get(activeCue) ?? document.createElement("div");
-            cueElement.textContent = cueText;
-            cueElement.id = `cue-${activeCue.id}`;
-            cueElement.className = "line";
-            cues.set(activeCue, cueElement);
-
-            captionsElement.prepend(cueElement);
-
-            if (cueElement.nextElementSibling) {
-              cueElement.nextElementSibling.classList.remove("active");
-            }
-
-            cueElement.classList.add("active");
-
-            const firstChild = captionsElement.firstElementChild;
-            if (firstChild && firstChild !== cueElement) {
-              captionsElement.removeChild(firstChild);
-            }
-
-            cueElement.scrollIntoView({ behavior: "smooth", block: "end" });
-          };
-        }
-      };
-    </script>
+    <script type="module" src="js/test.js"></script>
   </body>
 </html>
