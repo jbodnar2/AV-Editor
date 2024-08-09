@@ -1,18 +1,52 @@
 const mediaElement = document.querySelector("video");
-Object.assign(mediaElement, { controls: true, autoplay: "", muted: false, loop: true, playbackRate: 2.0 });
+Object.assign(mediaElement, {
+  controls: true,
+  autoplay: "true",
+  muted: false,
+  loop: true,
+  poster: "media/images/01.jpeg",
+  src: "media/audio-video/newscast.mp4",
+  playbackRate: "2.0",
+});
 
-const textTracks = mediaElement.textTracks;
 const captionsElement = document.querySelector("#captions");
-const cues = new Map();
-
-for (const track of textTracks) {
-  track.addEventListener("addcue", event => {
-    console.log(event);
-  });
-}
+const cuesMap = new Map();
 
 mediaElement.addEventListener("loadeddata", event => {
   console.log(event.type);
+  const textTracks = mediaElement.textTracks;
+
+  for (const track of textTracks) {
+    if (!track.cues) break;
+
+    let count = 0;
+    for (const cue of track.cues) {
+      const cueElement = document.createElement("div");
+      Object.assign(cueElement, {
+        id: `cue-${count++}`,
+        textContent: cue.text,
+        style: "margin-bottom: 1rem",
+      });
+
+      cuesMap.set(cue, cueElement);
+
+      const frag = document.createDocumentFragment();
+
+      cuesMap.forEach(entry => frag.append(entry));
+      captionsElement.append(frag);
+
+      cue.onenter = event => {
+        const cue = cuesMap.get(event.target);
+        cue.scrollIntoView({ behavior: "smooth" });
+        cue.classList.add("active");
+      };
+
+      cue.onexit = event => {
+        const cue = cuesMap.get(event.target);
+        cue.classList.remove("active");
+      };
+    }
+  }
 });
 
 // textTracks.onchange = () => {
