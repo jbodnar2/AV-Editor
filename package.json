@@ -20,7 +20,7 @@
     "useTabs": false,
     "semi": true
   },
-  "devDependencies": {
+  "dependencies": {
     "live-server": "^1.2.2"
   }
 }
