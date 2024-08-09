@@ -1,38 +1,48 @@
 const mediaElement = document.querySelector("video");
-Object.assign(mediaElement, { controls: true, autoplay: "true", muted: true });
+Object.assign(mediaElement, { controls: true, autoplay: "", muted: false, loop: true, playbackRate: 2.0 });
 
 const textTracks = mediaElement.textTracks;
 const captionsElement = document.querySelector("#captions");
 const cues = new Map();
 
-textTracks.onchange = () => {
-  for (const track of textTracks) {
-    track.oncuechange = event => {
-      const activeCue = event.target?.activeCues[0];
-      const cueText = activeCue?.text;
+for (const track of textTracks) {
+  track.addEventListener("addcue", event => {
+    console.log(event);
+  });
+}
 
-      if (!cueText) return;
+mediaElement.addEventListener("loadeddata", event => {
+  console.log(event.type);
+});
 
-      const cueElement = cues.get(activeCue) ?? document.createElement("div");
-      cueElement.textContent = cueText;
-      cueElement.id = `cue-${activeCue.id}`;
-      cueElement.className = "line";
-      cues.set(activeCue, cueElement);
+// textTracks.onchange = () => {
+//   for (const track of textTracks) {
+//     track.oncuechange = event => {
+//       const activeCue = event.target?.activeCues[0];
+//       const cueText = activeCue?.text;
 
-      captionsElement.prepend(cueElement);
+//       if (!cueText) return;
 
-      if (cueElement.nextElementSibling) {
-        cueElement.nextElementSibling.classList.remove("active");
-      }
+//       const cueElement = cues.get(activeCue) ?? document.createElement("div");
+//       cueElement.textContent = cueText;
+//       cueElement.id = `cue-${activeCue.id}`;
+//       cueElement.className = "line";
+//       cues.set(activeCue, cueElement);
 
-      cueElement.classList.add("active");
+//       captionsElement.append(cueElement);
 
-      const firstChild = captionsElement.firstElementChild;
-      if (firstChild && firstChild !== cueElement) {
-        captionsElement.removeChild(firstChild);
-      }
+//       if (cueElement.nextElementSibling) {
+//         cueElement.nextElementSibling.classList.remove("active");
+//       }
 
-      cueElement.scrollIntoView({ behavior: "smooth", block: "end" });
-    };
-  }
-};
+//       cueElement.classList.add("active");
+
+//       const firstChild = captionsElement.firstElementChild;
+//       if (firstChild && firstChild !== cueElement) {
+//         captionsElement.removeChild(firstChild);
+//       }
+
+//       cueElement.scrollIntoView({ behavior: "smooth", block: "end" });
+//     };
+//   }
+// };

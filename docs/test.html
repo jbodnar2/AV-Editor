@@ -26,10 +26,13 @@
       <!-- Main content -->
 
       <style>
+        .grid {
+          display: grid;
+          grid-template-columns: 400px 1fr;
+          gap: 2rem;
+          margin-block-start: 2rem;
+        }
         .audio-captions {
-          margin-block-start: 1rem;
-          margin-inline: 1rem;
-          padding: 1rem;
           box-shadow:
             0 0 6px rgba(0, 0, 0, 0.3),
             0 0 0 1px rgba(0, 0, 0, 0.1),
@@ -39,21 +42,24 @@
 
           .active {
             font-size: xx-large;
+            line-height: 1.1;
           }
         }
       </style>
 
-      <video>
-        <source src="media/audio-video/newscast.mp3" type="video/mp4" />
-        <track kind="captions" srclang="de" src="data/newscast-de.vtt" />
-        <track default kind="captions" srclang="en" src="data/newscast-en.vtt" />
-      </video>
-      <div class="audio-captions" id="captions"></div>
+      <div class="grid container">
+        <video>
+          <source src="media/audio-video/newscast.mp4" type="video/mp4" />
+          <track kind="captions" srclang="de" src="data/newscast-de.vtt" />
+          <track default kind="captions" srclang="en" src="data/newscast-en.vtt" />
+        </video>
+        <div class="audio-captions" id="captions"></div>
+      </div>
 
       <!-- Main content end -->
     </main>
     <footer></footer>
 
-    <script type="module" src="js/test.js"></script>
+    <script defer type="module" src="js/test.js"></script>
   </body>
 </html>
