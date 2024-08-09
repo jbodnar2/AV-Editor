@@ -44,8 +44,8 @@
       </style>
 
       <video>
-        <source src="media/audio-video/plane.mp3" type="video/mp4" />
-        <track default kind="captions" srclang="de" src="data/plane-de.vtt" />
+        <source src="media/audio-video/friday.mp4" type="video/mp4" />
+        <track kind="captions" srclang="de" src="data/plane-de.vtt" />
         <track kind="captions" srclang="en" src="data/plane-en.vtt" />
       </video>
       <div class="audio-captions" id="captions"></div>
@@ -55,73 +55,40 @@
     <footer></footer>
 
     <script>
-      // Select the audio element and add controls to it
       const mediaElement = document.querySelector("video");
       Object.assign(mediaElement, { controls: true });
 
-      // Get the text tracks associated with the audio element
       const textTracks = mediaElement.textTracks;
-
-      // Select the captions element from the DOM
       const captionsElement = document.querySelector("#captions");
-
-      // Create a map to store the cue elements
       const cues = new Map();
 
-      // Add a change event listener to the text tracks
-      // This event listener will be triggered whenever the text tracks change
       textTracks.onchange = () => {
-        // Loop through each text track
         for (const track of textTracks) {
-          // Add a cue change event listener to each track
-          // This event listener will be triggered whenever a cue changes
           track.oncuechange = event => {
-            // Get the active cue from the event target
             const activeCue = event.target?.activeCues[0];
-
-            // Get the text of the active cue
             const cueText = activeCue?.text;
 
-            // If there is no active cue, return early
-            if (!cueText) {
-              return;
-            }
+            if (!cueText) return;
 
-            // Get the cue element from the map or create a new one if it doesn't exist
             const cueElement = cues.get(activeCue) ?? document.createElement("div");
-
-            // Set the text content of the cue element to the cue text
             cueElement.textContent = cueText;
-
-            // Set the id of the cue element to "cue-{activeCue.id}"
             cueElement.id = `cue-${activeCue.id}`;
-
-            // Add the class "line" to the cue element
             cueElement.className = "line";
-
-            // Add the cue element to the map
             cues.set(activeCue, cueElement);
 
-            // Prepend the cue element to the captions element
             captionsElement.prepend(cueElement);
 
-            // Remove the "active" class from the next sibling element (if it exists)
             if (cueElement.nextElementSibling) {
               cueElement.nextElementSibling.classList.remove("active");
             }
 
-            // Add the "active" class to the cue element
             cueElement.classList.add("active");
 
-            // Get the first child element of the captions element
             const firstChild = captionsElement.firstElementChild;
-
-            // If the first child element exists and is not the same as the cue element, remove the first child element
             if (firstChild && firstChild !== cueElement) {
               captionsElement.removeChild(firstChild);
             }
 
-            // Scroll the cue element into view with smooth behavior and end alignment
             cueElement.scrollIntoView({ behavior: "smooth", block: "end" });
           };
         }
