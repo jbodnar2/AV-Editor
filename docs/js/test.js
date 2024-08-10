@@ -6,18 +6,18 @@ Object.assign(mediaElement, {
   loop: true,
   poster: "media/images/01.jpeg",
   src: "media/audio-video/newscast.mp4",
-  playbackRate: "2.0",
+  playbackRate: "2.5",
 });
 
 const captionsElement = document.querySelector("#captions");
 const cuesMap = new Map();
 
 mediaElement.addEventListener("loadeddata", event => {
-  console.log(event.type);
   const textTracks = mediaElement.textTracks;
+  if (!textTracks) return;
 
   for (const track of textTracks) {
-    if (!track.cues) break;
+    if (!track.cues) return;
 
     let count = 0;
     for (const cue of track.cues) {
@@ -25,7 +25,6 @@ mediaElement.addEventListener("loadeddata", event => {
       Object.assign(cueElement, {
         id: `cue-${count++}`,
         textContent: cue.text,
-        style: "margin-bottom: 1rem",
       });
 
       cuesMap.set(cue, cueElement);
@@ -37,7 +36,7 @@ mediaElement.addEventListener("loadeddata", event => {
 
       cue.onenter = event => {
         const cue = cuesMap.get(event.target);
-        cue.scrollIntoView({ behavior: "smooth" });
+        cue.scrollIntoView({ behavior: "smooth", block: "center" });
         cue.classList.add("active");
       };
 
