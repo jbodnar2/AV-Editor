@@ -2,7 +2,7 @@ const mediaElement = document.querySelector("video");
 Object.assign(mediaElement, {
   controls: true,
   autoplay: "true",
-  muted: false,
+  muted: "true",
   loop: true,
   poster: "media/images/01.jpeg",
   src: "media/audio-video/newscast.mp4",
