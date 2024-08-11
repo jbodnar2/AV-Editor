@@ -34,20 +34,20 @@ function findKeyByValue(map, value) {
   let result;
 
   /* --- Option 1a --- */
-  // result = Array.from(map.entries()).find(([key, val]) => val === value)?.[0] || null;
+  result = Array.from(map.entries()).find(([key, val]) => val === value)?.[0] || null;
 
   /* --- Option 1b --- */
   // result = Array.from(map.entries()).filter(([key, val]) => val === value)[0]?.[0] || null;
 
   /* --- Option 1c --- */
-  result =
-    Array.from(map.entries()).reduce((prev, curr) => {
-      if (curr[1] === value) {
-        prev.push(curr[0]);
-      }
+  // result =
+  //   Array.from(map.entries()).reduce((prev, curr) => {
+  //     if (curr[1] === value) {
+  //       prev.push(curr[0]);
+  //     }
 
-      return prev;
-    }, [])?.[0] || null;
+  //     return prev;
+  //   }, [])?.[0] || null;
 
   /* --- Option 2 --- */
   // map.forEach((val, key) => {
@@ -63,7 +63,6 @@ function findKeyByValue(map, value) {
   //   }
   // }
 
-  console.log(result);
   return result;
 }
 
