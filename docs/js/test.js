@@ -120,5 +120,4 @@ mediaElement.addEventListener("loadeddata", () => {
   }
 
   captionsElement.appendChild(fragment);
-  
 });
