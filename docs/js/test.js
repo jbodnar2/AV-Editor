@@ -29,6 +29,14 @@ const cuesMap = new Map();
 
 // ----- Functions ----- //
 
+/**
+ * Finds the key associated with a given value in a map.
+ * - Various options are just 'cause and to eventually test for efficiency
+ *
+ * @param {Map} map - The map to search in.
+ * @param {*} value - The value to search for.
+ * @return {*} The key associated with the value, or null if not found.
+ */
 function findKeyByValue(map, value) {
   if (!map || !value) return null;
   let result;
