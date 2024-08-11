@@ -33,8 +33,11 @@ function findKeyByValue(map, value) {
   if (!map || !value) return null;
   let result = null;
 
-  /* --- Option 1 --- */
-  result = Array.from(map.entries()).find(([key, val]) => val === value)?.[0] || null;
+  /* --- Option 1a --- */
+  // result = Array.from(map.entries()).find(([key, val]) => val === value)?.[0] || null;
+
+  /* --- Option 1b --- */
+  result = Array.from(map.entries()).filter(([key, val]) => val === value)[0]?.[0] || null;
 
   /* --- Option 2 --- */
   // map.forEach((val, key) => {
