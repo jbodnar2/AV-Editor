@@ -10,7 +10,7 @@
 const mediaElement = document.querySelector("video");
 Object.assign(mediaElement, {
   controls: true,
-  autoplay: true,
+  // autoplay: true,
   muted: true,
   loop: true,
   poster: "media/images/01.jpeg",
@@ -32,6 +32,7 @@ const cuesMap = new Map();
 /**
  * Finds the key associated with a given value in a map.
  * - Various options are just 'cause and to eventually test for efficiency
+ * - This function definition is unnecessary if I only need it once
  *
  * @param {Map} map - The map to search in.
  * @param {*} value - The value to search for.
@@ -76,50 +77,46 @@ function findKeyByValue(map, value) {
 
 // ----- Initial setup & Listeners ----- //
 
-mediaElement.addEventListener("loadeddata", event => {
+mediaElement.addEventListener("loadeddata", () => {
   const textTracks = mediaElement.textTracks;
-
   if (!textTracks) return;
 
-  for (const textTrack of textTracks) {
-    if (!textTrack.cues) continue;
+  for (const track of textTracks) {
+    if (!track.cues) continue;
 
     let cueCount = 0;
-
-    for (const cue of textTrack.cues) {
-      const cueElement = document.createElement("div");
+    for (const cue of track.cues) {
       cue.id = cueCount;
-      Object.assign(cueElement, { id: `cue-${cueCount++}`, textContent: cue.text });
+
+      const cueElement = document.createElement("div");
+      cueElement.className = "cue";
+      cueElement.id = `cue-${cueCount}`;
+      cueElement.textContent = cue.text;
 
       cuesMap.set(cue, cueElement);
+
+      cueCount++;
     }
   }
 
   const fragment = document.createDocumentFragment();
 
-  cuesMap.forEach((cueElement, cue) => fragment.append(cueElement));
-  captionsElement.append(fragment);
+  for (const [cue, cueElement] of cuesMap.entries()) {
+    fragment.appendChild(cueElement);
 
-  for (const cue of cuesMap.keys()) {
-    cue.onenter = event => {
-      const associatedCueElement = cuesMap.get(event.target);
-      associatedCueElement.scrollIntoView({ behavior: "smooth", block: "center" });
-      associatedCueElement.classList.add("active");
+    cue.onenter = () => {
+      cueElement.scrollIntoView({ behavior: "smooth", block: "center" });
+      cueElement.classList.add("active");
     };
 
-    cue.onexit = event => {
-      const associatedCueElement = cuesMap.get(event.target);
-      associatedCueElement.classList.remove("active");
+    cue.onexit = () => {
+      cueElement.classList.remove("active");
+    };
+
+    cueElement.onclick = () => {
+      mediaElement.currentTime = cue.startTime;
     };
   }
-});
 
-document.addEventListener("click", event => {
-  const cueElement = event.target;
-  if (!cueElement.matches('[id^="cue-"]')) return;
-
-  const cue = findKeyByValue(cuesMap, cueElement);
-  if (!cue) return;
-
-  mediaElement.currentTime = cue.startTime;
+  captionsElement.appendChild(fragment);
 });
