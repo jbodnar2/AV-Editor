@@ -119,5 +119,6 @@ mediaElement.addEventListener("loadeddata", () => {
     };
   }
 
+  captionsElement.innerHTML = "";
   captionsElement.appendChild(fragment);
 });
