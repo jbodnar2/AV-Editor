@@ -10,7 +10,7 @@
 const mediaElement = document.querySelector("video");
 Object.assign(mediaElement, {
   controls: true,
-  // autoplay: true,
+  autoplay: true,
   muted: true,
   loop: true,
   poster: "media/images/01.jpeg",
@@ -31,20 +31,26 @@ const cuesMap = new Map();
 
 function findKeyByValue(map, value) {
   if (!map || !value) return null;
+  let result = null;
 
-  // More efficient?
-  return Array.from(map.entries()).find(([key, val]) => val === value)?.[0] || null;
+  /* --- Option 1 --- */
+  result = Array.from(map.entries()).find(([key, val]) => val === value)?.[0] || null;
 
-  // Not sure if the above code, below code, or using Map.prototype.forEach()
-  // ...would be more efficient? Better to create a function or not? Will I ever
-  // ..perform this operation more than onece?
+  /* --- Option 2 --- */
+  // map.forEach((val, key) => {
+  //   if (val === value) {
+  //     result = key;
+  //   }
+  // });
 
+  /* --- Option 3 --- */
   // for (let [key, val] of map) {
   //   if (val === value) {
-  //     return key;
+  //     result key;
   //   }
   // }
-  // return null;
+
+  return result;
 }
 
 // ----- Initial setup & Listeners ----- //
@@ -90,8 +96,8 @@ document.addEventListener("click", event => {
   const cueElement = event.target;
   if (!cueElement.matches('[id^="cue-"]')) return;
 
-  // const cue = findKeyByValue(cuesMap, cueElement);
-  const cue = Array.from(cuesMap.entries()).find(([key, val]) => val === cueElement)?.[0] || null;
+  const cue = findKeyByValue(cuesMap, cueElement);
+  console.log(cue);
   if (!cue) return;
 
   mediaElement.currentTime = cue.startTime;
