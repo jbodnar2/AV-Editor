@@ -79,6 +79,7 @@ function findKeyByValue(map, value) {
 
 mediaElement.addEventListener("loadeddata", () => {
   const textTracks = mediaElement.textTracks;
+
   if (!textTracks) return;
 
   for (const track of textTracks) {
@@ -89,8 +90,8 @@ mediaElement.addEventListener("loadeddata", () => {
       cue.id = cueCount;
 
       const cueElement = document.createElement("div");
-      cueElement.className = "cue";
       cueElement.id = `cue-${cueCount}`;
+      cueElement.className = "cue";
       cueElement.textContent = cue.text;
 
       cuesMap.set(cue, cueElement);
@@ -101,19 +102,19 @@ mediaElement.addEventListener("loadeddata", () => {
 
   const fragment = document.createDocumentFragment();
 
-  for (const [cue, cueElement] of cuesMap.entries()) {
-    fragment.appendChild(cueElement);
+  for (const [cue, element] of cuesMap.entries()) {
+    fragment.appendChild(element);
 
     cue.onenter = () => {
-      cueElement.scrollIntoView({ behavior: "smooth", block: "center" });
-      cueElement.classList.add("active");
+      element.scrollIntoView({ behavior: "smooth", block: "center" });
+      element.classList.add("active");
     };
 
     cue.onexit = () => {
-      cueElement.classList.remove("active");
+      element.classList.remove("active");
     };
 
-    cueElement.onclick = () => {
+    element.onclick = () => {
       mediaElement.currentTime = cue.startTime;
     };
   }
