@@ -25,7 +25,7 @@ const captionsElement = document.querySelector("#captions");
 // - Using a map because keys/values can be anything. Key and values will be
 //  "live" elements so updating one will update the element or values and
 //  consequently update the UI
-const cuesMap = new Map();
+// const cuesMap = new Map();
 
 // ----- Functions ----- //
 
@@ -81,10 +81,14 @@ mediaElement.addEventListener("loadeddata", () => {
   const textTracks = mediaElement.textTracks;
   if (!textTracks) return;
 
+  const cuesMap = new Map();
+  const fragment = document.createDocumentFragment();
+
   for (const track of textTracks) {
     if (!track.cues) continue;
 
     let cueCount = 0;
+
     for (const cue of track.cues) {
       cue.id = cueCount;
 
@@ -97,28 +101,32 @@ mediaElement.addEventListener("loadeddata", () => {
 
       cuesMap.set(cue, cueElement);
 
+      fragment.appendChild(cueElement);
+
       cueCount++;
     }
   }
 
-  const fragment = document.createDocumentFragment();
-
   for (const [cue, element] of cuesMap.entries()) {
-    fragment.appendChild(element);
-
     cue.onenter = () => {
       element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-      element.classList.add("active");
+      element.classList.add("cue--current");
     };
 
     cue.onexit = () => {
-      element.classList.remove("active");
+      element.classList.remove("cue--current");
     };
 
     element.onclick = () => {
       mediaElement.currentTime = cue.startTime;
     };
   }
+
+  textTracks.onchange = () => {
+    // TODO: Figure out how to update transcript when switching tracks, when no
+    // default track is set, or both.
+    console.log(textTracks);
+  };
 
   captionsElement.innerHTML = "";
   captionsElement.appendChild(fragment);

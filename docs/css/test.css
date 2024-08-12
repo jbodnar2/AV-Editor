@@ -18,7 +18,7 @@
     font-size 0.3s ease,
     line-height 0.3s ease;
 
-  .active {
+  .cue--current {
     font-size: x-large;
     line-height: 1.1;
   }
