@@ -79,7 +79,6 @@ function findKeyByValue(map, value) {
 
 mediaElement.addEventListener("loadeddata", () => {
   const textTracks = mediaElement.textTracks;
-
   if (!textTracks) return;
 
   for (const track of textTracks) {
@@ -108,7 +107,7 @@ mediaElement.addEventListener("loadeddata", () => {
     fragment.appendChild(element);
 
     cue.onenter = () => {
-      element.scrollIntoView({ behavior: "smooth", block: "center" });
+      element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
       element.classList.add("active");
     };
 
