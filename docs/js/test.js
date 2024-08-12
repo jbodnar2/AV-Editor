@@ -90,9 +90,11 @@ mediaElement.addEventListener("loadeddata", () => {
       cue.id = cueCount;
 
       const cueElement = document.createElement("div");
-      cueElement.id = `cue-${cueCount}`;
-      cueElement.className = "cue";
-      cueElement.textContent = cue.text;
+      Object.assign(cueElement, {
+        id: `cue-${cueCount}`,
+        className: "cue",
+        textContent: cue.text,
+      });
 
       cuesMap.set(cue, cueElement);
 
