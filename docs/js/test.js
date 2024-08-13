@@ -105,6 +105,9 @@ mediaElement.addEventListener("loadeddata", () => {
 
       cueCount++;
     }
+
+    captionsElement.innerHTML = "";
+    captionsElement.appendChild(fragment);
   }
 
   for (const [cue, element] of cuesMap.entries()) {
@@ -122,12 +125,70 @@ mediaElement.addEventListener("loadeddata", () => {
     };
   }
 
-  textTracks.onchange = () => {
-    // TODO: Figure out how to update transcript when switching tracks, when no
-    // default track is set, or both.
-    console.log(textTracks);
+  // --- Doing it all again? --- //
+  textTracks.onchange = evemt => {
+    Array.from(textTracks).forEach(track => {
+      const isShowing = track?.mode === "showing";
+      if (!isShowing) {
+        captionsElement.innerHTML = "";
+        return;
+      }
+
+      const cues = track.cues;
+      // A way to do this without the timer?
+      setTimeout(() => {
+        let cueCount = 0;
+
+        for (const cue of cues) {
+          cue.id = cueCount;
+
+          const cueElement = document.createElement("div");
+          Object.assign(cueElement, {
+            id: `cue-${cueCount}`,
+            className: "cue",
+            textContent: cue.text,
+          });
+
+          cuesMap.set(cue, cueElement);
+
+          fragment.appendChild(cueElement);
+
+          cueCount++;
+        }
+
+        captionsElement.innerHTML = "";
+        captionsElement.appendChild(fragment);
+
+        const isOnCue = track?.activeCues[0]?.startTime;
+        if (isOnCue) {
+          mediaElement.currentTime = isOnCue;
+          const cueElement = cuesMap.get(track?.activeCues[0]);
+          cueElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+          cueElement.classList.add("cue--current");
+
+          console.log(cueElement);
+
+          console.log(isOnCue);
+        }
+
+        for (const [cue, element] of cuesMap.entries()) {
+          cue.onenter = () => {
+            element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+            element.classList.add("cue--current");
+          };
+
+          cue.onexit = () => {
+            element.classList.remove("cue--current");
+          };
+
+          element.onclick = () => {
+            mediaElement.currentTime = cue.startTime;
+          };
+        }
+      }, 100);
+    });
   };
 
-  captionsElement.innerHTML = "";
-  captionsElement.appendChild(fragment);
+  // captionsElement.innerHTML = "";
+  // captionsElement.appendChild(fragment);
 });
