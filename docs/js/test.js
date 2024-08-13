@@ -1,16 +1,7 @@
-/**
- *
- */
-
-// ----- Variables ----- //
-
-// Get the media element and update its attributes
-// - Using Object.assign() for setting attributes only because I find it easier
-//   to reach when setting multiple attributes on an aelement
 const mediaElement = document.querySelector("video");
 Object.assign(mediaElement, {
   controls: true,
-  // autoplay: true,
+  autoplay: true,
   muted: true,
   loop: true,
   poster: "media/images/01.jpeg",
@@ -18,62 +9,34 @@ Object.assign(mediaElement, {
   playbackRate: "4.0",
 });
 
-// Get the wrapping element into which I'll render the captions
 const captionsElement = document.querySelector("#captions");
 
-// Create a map for the cues (keys) and (cueElements) values.
-// - Using a map because keys/values can be anything. Key and values will be
-//  "live" elements so updating one will update the element or values and
-//  consequently update the UI
-// const cuesMap = new Map();
+function findKeyByValue(map, valueToFind) {
+  if (!map || valueToFind === undefined) {
+    return null;
+  }
 
-// ----- Functions ----- //
-
-/**
- * Finds the key associated with a given value in a map.
- * - Various options are just 'cause and to eventually test for efficiency
- * - This function definition is unnecessary if I only need it once
- *
- * @param {Map} map - The map to search in.
- * @param {*} value - The value to search for.
- * @return {*} The key associated with the value, or null if not found.
- */
-function findKeyByValue(map, value) {
-  if (!map || !value) return null;
-  let result;
-
-  /* --- Option 1a --- */
-  // result = Array.from(map.entries()).find(([key, val]) => val === value)?.[0] || null;
-
-  /* --- Option 1b --- */
-  // result = Array.from(map.entries()).filter(([key, val]) => val === value)[0]?.[0] || null;
-
-  /* --- Option 1c --- */
-  // result =
-  //   Array.from(map.entries()).reduce((prev, curr) => {
-  //     if (curr[1] === value) {
-  //       prev.push(curr[0]);
-  //     }
-
-  //     return prev;
-  //   }, [])?.[0] || null;
-
-  /* --- Option 2 --- */
-  // map.forEach((val, key) => {
-  //   if (val === value) {
-  //     result = key;
-  //   }
-  // });
-
-  /* --- Option 3 --- */
-  for (let [key, val] of map) {
-    if (val === value) {
-      result = key;
+  for (const [key, value] of map) {
+    if (value === valueToFind) {
+      return key;
     }
   }
 
-  return result;
+  return null;
 }
+
+// create cuesMap
+function createCueElement(cueId, textContent) {
+  const cueElement = document.createElement("div");
+  Object.assign(cueElement, {
+    id: `cue-${cueId}`,
+    className: "cue",
+    textContent: textContent,
+  });
+  return cueElement;
+}
+
+// Add listeners
 
 // ----- Initial setup & Listeners ----- //
 
@@ -82,7 +45,7 @@ mediaElement.addEventListener("loadeddata", () => {
   if (!textTracks) return;
 
   const cuesMap = new Map();
-  const fragment = document.createDocumentFragment();
+  const allCuesFragment = document.createDocumentFragment();
 
   for (const track of textTracks) {
     const isShowing = track?.mode === "showing";
@@ -95,22 +58,17 @@ mediaElement.addEventListener("loadeddata", () => {
     for (const cue of track.cues) {
       cue.id = cueCount;
 
-      const cueElement = document.createElement("div");
-      Object.assign(cueElement, {
-        id: `cue-${cueCount}`,
-        className: "cue",
-        textContent: cue.text,
-      });
+      const cueElement = createCueElement(cue.id, cue.text);
 
       cuesMap.set(cue, cueElement);
 
-      fragment.appendChild(cueElement);
+      allCuesFragment.appendChild(cueElement);
 
       cueCount++;
     }
 
     captionsElement.innerHTML = "";
-    captionsElement.appendChild(fragment);
+    captionsElement.appendChild(allCuesFragment);
   }
 
   for (const [cue, element] of cuesMap.entries()) {
@@ -145,22 +103,17 @@ mediaElement.addEventListener("loadeddata", () => {
         for (const cue of cues) {
           cue.id = cueCount;
 
-          const cueElement = document.createElement("div");
-          Object.assign(cueElement, {
-            id: `cue-${cueCount}`,
-            className: "cue",
-            textContent: cue.text,
-          });
+          const cueElement = createCueElement(cue.id, cue.text);
 
           cuesMap.set(cue, cueElement);
 
-          fragment.appendChild(cueElement);
+          allCuesFragment.appendChild(cueElement);
 
           cueCount++;
         }
 
         captionsElement.innerHTML = "";
-        captionsElement.appendChild(fragment);
+        captionsElement.appendChild(allCuesFragment);
 
         const isOnCue = track?.activeCues[0]?.startTime;
         if (isOnCue) {
@@ -187,7 +140,4 @@ mediaElement.addEventListener("loadeddata", () => {
       }, 100);
     });
   };
-
-  // captionsElement.innerHTML = "";
-  // captionsElement.appendChild(fragment);
 });
