@@ -91,7 +91,6 @@ mediaElement.addEventListener("loadeddata", () => {
     Array.from(textTracks).forEach(track => {
       const isShowing = track?.mode === "showing";
       if (!isShowing) {
-        captionsElement.innerHTML = "";
         return;
       }
 
