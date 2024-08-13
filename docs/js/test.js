@@ -25,6 +25,7 @@ function findKeyByValue(map, valueToFind) {
   return null;
 }
 
+// create cuesMap
 function createCueElement(cueId, textContent) {
   const cueElement = document.createElement("div");
   Object.assign(cueElement, {
@@ -64,7 +65,6 @@ mediaElement.addEventListener("loadeddata", () => {
     const hasCues = track?.cues?.length > 0;
 
     if (!hasCues || !isShowing) {
-      captionsElement.innerHTML = "";
       continue;
     }
 
