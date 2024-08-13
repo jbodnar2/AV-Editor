@@ -168,10 +168,6 @@ mediaElement.addEventListener("loadeddata", () => {
           const cueElement = cuesMap.get(track?.activeCues[0]);
           cueElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
           cueElement.classList.add("cue--current");
-
-          console.log(cueElement);
-
-          console.log(isOnCue);
         }
 
         for (const [cue, element] of cuesMap.entries()) {
