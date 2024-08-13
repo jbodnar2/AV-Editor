@@ -85,7 +85,10 @@ mediaElement.addEventListener("loadeddata", () => {
   const fragment = document.createDocumentFragment();
 
   for (const track of textTracks) {
-    if (!track.cues) continue;
+    const isShowing = track?.mode === "showing";
+    const hasCues = track?.cues?.length > 0;
+
+    if (!hasCues || !isShowing) continue;
 
     let cueCount = 0;
 
@@ -126,7 +129,7 @@ mediaElement.addEventListener("loadeddata", () => {
   }
 
   // --- Doing it all again? --- //
-  textTracks.onchange = evemt => {
+  textTracks.onchange = event => {
     Array.from(textTracks).forEach(track => {
       const isShowing = track?.mode === "showing";
       if (!isShowing) {
