@@ -36,6 +36,23 @@ function createCueElement(cueId, textContent) {
   return cueElement;
 }
 
+function addCueListeners(cuesMap) {
+  for (const [cue, element] of cuesMap.entries()) {
+    cue.onenter = () => {
+      element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+      element.classList.add("cue--current");
+    };
+
+    cue.onexit = () => {
+      element.classList.remove("cue--current");
+    };
+
+    element.onclick = () => {
+      mediaElement.currentTime = cue.startTime;
+    };
+  }
+}
+
 // Add listeners
 
 // ----- Initial setup & Listeners ----- //
@@ -51,7 +68,10 @@ mediaElement.addEventListener("loadeddata", () => {
     const isShowing = track?.mode === "showing";
     const hasCues = track?.cues?.length > 0;
 
-    if (!hasCues || !isShowing) continue;
+    if (!hasCues || !isShowing) {
+      captionsElement.innerHTML = "";
+      continue;
+    }
 
     let cueCount = 0;
 
@@ -67,24 +87,11 @@ mediaElement.addEventListener("loadeddata", () => {
       cueCount++;
     }
 
-    captionsElement.innerHTML = "";
+    // captionsElement.innerHTML = "";
     captionsElement.appendChild(allCuesFragment);
   }
 
-  for (const [cue, element] of cuesMap.entries()) {
-    cue.onenter = () => {
-      element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-      element.classList.add("cue--current");
-    };
-
-    cue.onexit = () => {
-      element.classList.remove("cue--current");
-    };
-
-    element.onclick = () => {
-      mediaElement.currentTime = cue.startTime;
-    };
-  }
+  addCueListeners(cuesMap);
 
   // --- Doing it all again? --- //
   textTracks.onchange = event => {
@@ -123,20 +130,7 @@ mediaElement.addEventListener("loadeddata", () => {
           cueElement.classList.add("cue--current");
         }
 
-        for (const [cue, element] of cuesMap.entries()) {
-          cue.onenter = () => {
-            element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-            element.classList.add("cue--current");
-          };
-
-          cue.onexit = () => {
-            element.classList.remove("cue--current");
-          };
-
-          element.onclick = () => {
-            mediaElement.currentTime = cue.startTime;
-          };
-        }
+        addCueListeners(cuesMap);
       }, 100);
     });
   };
