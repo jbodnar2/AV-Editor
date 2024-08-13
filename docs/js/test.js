@@ -53,10 +53,6 @@ function addCueListeners(cuesMap) {
   }
 }
 
-// Add listeners
-
-// ----- Initial setup & Listeners ----- //
-
 mediaElement.addEventListener("loadeddata", () => {
   const textTracks = mediaElement.textTracks;
   if (!textTracks) return;
@@ -87,13 +83,11 @@ mediaElement.addEventListener("loadeddata", () => {
       cueCount++;
     }
 
-    // captionsElement.innerHTML = "";
     captionsElement.appendChild(allCuesFragment);
   }
 
   addCueListeners(cuesMap);
 
-  // --- Doing it all again? --- //
   textTracks.onchange = event => {
     Array.from(textTracks).forEach(track => {
       const isShowing = track?.mode === "showing";
@@ -103,7 +97,7 @@ mediaElement.addEventListener("loadeddata", () => {
       }
 
       const cues = track.cues;
-      // A way to do this without the timer?
+
       setTimeout(() => {
         let cueCount = 0;
 
