@@ -43,7 +43,7 @@ function findKeyByValue(map, value) {
   let result;
 
   /* --- Option 1a --- */
-  result = Array.from(map.entries()).find(([key, val]) => val === value)?.[0] || null;
+  // result = Array.from(map.entries()).find(([key, val]) => val === value)?.[0] || null;
 
   /* --- Option 1b --- */
   // result = Array.from(map.entries()).filter(([key, val]) => val === value)[0]?.[0] || null;
@@ -66,11 +66,11 @@ function findKeyByValue(map, value) {
   // });
 
   /* --- Option 3 --- */
-  // for (let [key, val] of map) {
-  //   if (val === value) {
-  //     result key;
-  //   }
-  // }
+  for (let [key, val] of map) {
+    if (val === value) {
+      result = key;
+    }
+  }
 
   return result;
 }
