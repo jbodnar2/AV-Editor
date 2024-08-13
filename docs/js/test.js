@@ -1,7 +1,7 @@
 const mediaElement = document.querySelector("video");
 Object.assign(mediaElement, {
   controls: true,
-  autoplay: true,
+  // autoplay: true,
   muted: true,
   loop: true,
   poster: "media/images/01.jpeg",
@@ -25,7 +25,6 @@ function findKeyByValue(map, valueToFind) {
   return null;
 }
 
-// create cuesMap
 function createCueElement(cueId, textContent) {
   const cueElement = document.createElement("div");
   Object.assign(cueElement, {
