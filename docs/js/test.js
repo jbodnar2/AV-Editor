@@ -44,8 +44,8 @@ function addCueEventListeners(cueMap) {
   }
 }
 
-function addTranscript(track, captionsElement = document.querySelector("#captions")) {
-  captionsElement.innerHTML = "";
+function addTranscript(track, transcriptElement = document.querySelector("#transcript")) {
+  transcriptElement.innerHTML = "";
 
   if (!track) return;
 
@@ -60,7 +60,7 @@ function addTranscript(track, captionsElement = document.querySelector("#caption
     allCuesFragment.appendChild(cueElement);
   }
 
-  captionsElement.appendChild(allCuesFragment);
+  transcriptElement.appendChild(allCuesFragment);
 
   const currentCue = track.activeCues[0];
   if (currentCue) {
