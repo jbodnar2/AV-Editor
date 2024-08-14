@@ -25,7 +25,6 @@ function findKeyByValue(map, valueToFind) {
   return null;
 }
 
-// create cuesMap
 function createCueElement(cueId, textContent) {
   const cueElement = document.createElement("div");
   Object.assign(cueElement, {
