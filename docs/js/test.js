@@ -1,130 +1,102 @@
-const mediaElement = document.querySelector("video");
-Object.assign(mediaElement, {
+// --- Variables & Setup --- //
+const video = document.querySelector("video");
+
+Object.assign(video, {
   controls: true,
-  // autoplay: true,
   muted: true,
   loop: true,
   poster: "media/images/01.jpeg",
   src: "media/audio-video/newscast.mp4",
-  playbackRate: "4.0",
+  playbackRate: 4.0,
 });
 
-const captionsElement = document.querySelector("#captions");
+// --- Functions --- //
 
-function findKeyByValue(map, valueToFind) {
-  if (!map || valueToFind === undefined) {
-    return null;
+function findTrackByMode(textTracks, mode) {
+  for (const track of textTracks) {
+    if (track.mode === mode) return track;
   }
-
-  for (const [key, value] of map) {
-    if (value === valueToFind) {
-      return key;
-    }
-  }
-
   return null;
 }
 
-function createCueElement(cueId, textContent) {
+function createCueElement(cueId, cueText) {
   const cueElement = document.createElement("div");
-  Object.assign(cueElement, {
-    id: `cue-${cueId}`,
-    className: "cue",
-    textContent: textContent,
-  });
+  cueElement.id = `cue-${cueId}`;
+  cueElement.className = "cue";
+  cueElement.textContent = cueText;
   return cueElement;
 }
 
-function addCueListeners(cuesMap) {
-  for (const [cue, element] of cuesMap.entries()) {
-    cue.onenter = () => {
-      element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-      element.classList.add("cue--current");
-    };
+function addCueEventListeners(cueMap) {
+  const handleEnter = element => () => {
+    element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    element.classList.add("cue--current");
+  };
 
-    cue.onexit = () => {
-      element.classList.remove("cue--current");
-    };
+  const handleExit = element => () => element.classList.remove("cue--current");
 
-    element.onclick = () => {
-      mediaElement.currentTime = cue.startTime;
-    };
+  const handleClick = cue => () => (video.currentTime = cue.startTime);
+
+  for (const [cue, element] of cueMap.entries()) {
+    cue.onenter = handleEnter(element);
+    cue.onexit = handleExit(element);
+    element.onclick = handleClick(cue);
   }
 }
 
-mediaElement.addEventListener("loadeddata", () => {
-  const textTracks = mediaElement.textTracks;
-  if (!textTracks) return;
+function addTranscript(track, captionsElement = document.querySelector("#captions")) {
+  captionsElement.innerHTML = "";
 
-  const cuesMap = new Map();
+  if (!track) return;
+
+  const cueMap = new Map();
   const allCuesFragment = document.createDocumentFragment();
 
-  for (const track of textTracks) {
-    const isShowing = track?.mode === "showing";
-    const hasCues = track?.cues?.length > 0;
+  for (const cue of track.cues) {
+    const cueElement = createCueElement(cueMap.size, cue.text);
 
-    if (!hasCues || !isShowing) {
-      continue;
-    }
+    cueMap.set(cue, cueElement);
 
-    let cueCount = 0;
-
-    for (const cue of track.cues) {
-      cue.id = cueCount;
-
-      const cueElement = createCueElement(cue.id, cue.text);
-
-      cuesMap.set(cue, cueElement);
-
-      allCuesFragment.appendChild(cueElement);
-
-      cueCount++;
-    }
-
-    captionsElement.innerHTML = "";
-    captionsElement.appendChild(allCuesFragment);
+    allCuesFragment.appendChild(cueElement);
   }
 
-  addCueListeners(cuesMap);
+  captionsElement.appendChild(allCuesFragment);
 
-  textTracks.onchange = event => {
-    Array.from(textTracks).forEach(track => {
-      const isShowing = track?.mode === "showing";
-      if (!isShowing) {
-        captionsElement.innerHTML = "";
-        return;
-      }
+  const currentCue = track.activeCues[0];
+  if (currentCue) {
+    video.currentTime = currentCue.startTime;
+    const currentCueElement = cueMap.get(currentCue);
+    currentCueElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    currentCueElement.classList.add("cue--current");
+  }
 
-      const cues = track.cues;
+  addCueEventListeners(cueMap);
+}
 
-      setTimeout(() => {
-        let cueCount = 0;
+// --- Init & Event Listeners --- //
 
-        for (const cue of cues) {
-          cue.id = cueCount;
+video.addEventListener("loadeddata", () => {
+  const textTracks = video.textTracks;
+  if (!textTracks) return;
 
-          const cueElement = createCueElement(cue.id, cue.text);
+  const showingTrack = findTrackByMode(textTracks, "showing");
+  addTranscript(showingTrack);
 
-          cuesMap.set(cue, cueElement);
+  textTracks.onchange = () => {
+    const showingTrack = findTrackByMode(textTracks, "showing");
 
-          allCuesFragment.appendChild(cueElement);
-
-          cueCount++;
-        }
-
-        captionsElement.innerHTML = "";
-        captionsElement.appendChild(allCuesFragment);
-
-        const isOnCue = track?.activeCues[0]?.startTime;
-        if (isOnCue) {
-          mediaElement.currentTime = isOnCue;
-          const cueElement = cuesMap.get(track?.activeCues[0]);
-          cueElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-          cueElement.classList.add("cue--current");
-        }
-
-        addCueListeners(cuesMap);
-      }, 100);
+    const trackChangedEvent = new CustomEvent("trackChanged", {
+      detail: {
+        track: showingTrack,
+      },
     });
+
+    setTimeout(() => {
+      video.dispatchEvent(trackChangedEvent);
+    }, 100);
   };
+});
+
+video.addEventListener("trackChanged", ({ detail: { track } }) => {
+  addTranscript(track);
 });
