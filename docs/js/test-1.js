@@ -1,7 +1,8 @@
-const videoElement = document.querySelector("video");
-Object.assign(videoElement, {
+// --- Variables & Setup --- //
+const video = document.querySelector("video");
+
+Object.assign(video, {
   controls: true,
-  // autoplay: true,
   muted: true,
   loop: true,
   poster: "media/images/01.jpeg",
@@ -9,20 +10,10 @@ Object.assign(videoElement, {
   playbackRate: 4.0,
 });
 
-const captionsElement = document.querySelector("#captions");
+// --- Functions --- //
 
-function findKeyByValue(map, valueToFind) {
-  if (!map || valueToFind === undefined) {
-    return null;
-  }
-
-  for (const [key, value] of map.entries()) {
-    if (value === valueToFind) {
-      return key;
-    }
-  }
-
-  return null;
+function findTrackByMode(textTracks, mode) {
+  return Array.from(textTracks).find(track => track.mode === mode);
 }
 
 function createCueElement(cueId, cueText) {
@@ -35,7 +26,7 @@ function createCueElement(cueId, cueText) {
   return cueElement;
 }
 
-function addCueListeners(cueMap) {
+function addCueEventListeners(cueMap) {
   for (const [cue, element] of cueMap.entries()) {
     cue.onenter = () => {
       element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
@@ -47,7 +38,7 @@ function addCueListeners(cueMap) {
     };
 
     element.onclick = () => {
-      videoElement.currentTime = cue.startTime;
+      video.currentTime = cue.startTime;
     };
   }
 }
@@ -61,55 +52,51 @@ function addTranscript(track, captionsElement) {
   const cueMap = new Map();
   const allCuesFragment = document.createDocumentFragment();
 
-  if (track?.cues) {
-    for (const cue of track.cues) {
-      const cueElement = createCueElement(cueMap.size, cue.text);
+  for (const cue of track.cues) {
+    const cueElement = createCueElement(cueMap.size, cue.text);
 
-      cueMap.set(cue, cueElement);
+    cueMap.set(cue, cueElement);
 
-      allCuesFragment.appendChild(cueElement);
-    }
-
-    captionsElement.appendChild(allCuesFragment);
-
-    const isOnCue = track.activeCues[0]?.startTime;
-    if (isOnCue) {
-      videoElement.currentTime = isOnCue;
-      const cueElement = cueMap.get(track.activeCues[0]);
-      cueElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
-      cueElement.classList.add("cue--current");
-    }
-
-    addCueListeners(cueMap);
+    allCuesFragment.appendChild(cueElement);
   }
+
+  captionsElement.appendChild(allCuesFragment);
+
+  const currentCue = track.activeCues[0];
+  if (currentCue) {
+    video.currentTime = currentCue.startTime;
+    const currentCueElement = cueMap.get(currentCue);
+    currentCueElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
+    currentCueElement.classList.add("cue--current");
+  }
+
+  addCueEventListeners(cueMap);
 }
 
-videoElement.addEventListener("loadeddata", () => {
-  const textTracks = videoElement.textTracks;
+// --- Init & Event Listeners --- //
+
+video.addEventListener("loadeddata", () => {
+  const textTracks = video.textTracks;
   if (!textTracks) return;
 
-  const track = Array.from(textTracks).find(track => track.mode === "showing");
+  const showingTrack = findTrackByMode(textTracks, "showing");
+  addTranscript(showingTrack);
 
-  addTranscript(track);
-
-  textTracks.onchange = event => {
-    const track = Array.from(textTracks).find(track => track.mode === "showing");
+  textTracks.onchange = () => {
+    const showingTrack = findTrackByMode(textTracks, "showing");
 
     const trackChangedEvent = new CustomEvent("trackChanged", {
       detail: {
-        bubbles: true,
-        composed: true,
-        cancelable: true,
-        track: track,
+        track: showingTrack,
       },
     });
 
     setTimeout(() => {
-      videoElement.dispatchEvent(trackChangedEvent);
+      video.dispatchEvent(trackChangedEvent);
     }, 100);
   };
 });
 
-videoElement.addEventListener("trackChanged", event => {
-  addTranscript(event.detail.track);
+video.addEventListener("trackChanged", ({ detail: { track } }) => {
+  addTranscript(track);
 });
