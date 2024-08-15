@@ -71,6 +71,7 @@ function addTranscript(track, transcriptElement = document.querySelector("#trans
     allCuesFragment.appendChild(cueElement);
   }
 
+  transcriptElement.setAttribute("lang", track.language);
   transcriptElement.appendChild(allCuesFragment);
 
   const currentCue = track.activeCues[0];
