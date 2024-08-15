@@ -7,7 +7,7 @@ Object.assign(video, {
   loop: true,
   poster: "media/images/01.jpeg",
   src: "media/audio-video/newscast.mp4",
-  playbackRate: 4.0,
+  playbackRate: 3.0,
 });
 
 // --- Functions --- //
