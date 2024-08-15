@@ -19,11 +19,21 @@ function findTrackByMode(textTracks, mode) {
   return null;
 }
 
-function createCueElement(cueId, cueText) {
+function formatTime(totalSeconds) {
+  const hours = String(Math.floor(totalSeconds / 3600) % 24).padStart(2, "0");
+
+  const minutes = String(Math.floor(totalSeconds / 60) % 60).padStart(2, "0");
+
+  const seconds = String(Math.floor(totalSeconds % 60)).padStart(2, "0");
+
+  return `${hours}:${minutes}:${seconds}`;
+}
+
+function createCueElement(cue) {
   const cueElement = document.createElement("div");
-  cueElement.id = `cue-${cueId}`;
+  cueElement.id = `cue-${cue.id}`;
   cueElement.className = "cue";
-  cueElement.textContent = cueText;
+  cueElement.textContent = cue.text;
   return cueElement;
 }
 
@@ -53,7 +63,7 @@ function addTranscript(track, transcriptElement = document.querySelector("#trans
   const allCuesFragment = document.createDocumentFragment();
 
   for (const cue of track.cues) {
-    const cueElement = createCueElement(cueMap.size, cue.text);
+    const cueElement = createCueElement(cue);
 
     cueMap.set(cue, cueElement);
 
