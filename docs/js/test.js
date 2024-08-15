@@ -3,6 +3,7 @@ const video = document.querySelector("video");
 
 Object.assign(video, {
   controls: true,
+  autoplay: true,
   muted: true,
   loop: true,
   poster: "media/images/01.jpeg",
