@@ -6,8 +6,8 @@ Object.assign(video, {
   autoplay: true,
   muted: true,
   loop: true,
-  poster: "media/images/01.jpeg",
-  src: "media/audio-video/newscast.mp4",
+  poster: "/media/images/01.jpeg",
+  src: "/media/audio-video/newscast.mp4",
   playbackRate: 1.0,
 });
 
@@ -31,6 +31,8 @@ function formatTime(totalSeconds) {
 }
 
 function createCueElement(cue) {
+  if (!cue) return;
+
   const cueElement = document.createElement("div");
   cueElement.id = `cue-${cue.id}`;
   cueElement.className = "cue";
