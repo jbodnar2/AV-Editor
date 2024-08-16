@@ -1,7 +1,8 @@
 // --- Variables & Setup --- //
-const video = document.querySelector("video");
 
-Object.assign(video, {
+const videoElement = document.querySelector("video");
+
+Object.assign(videoElement, {
   controls: true,
   autoplay: true,
   muted: true,
@@ -14,29 +15,25 @@ Object.assign(video, {
 // --- Functions --- //
 
 function findTrackByMode(textTracks, mode) {
-  for (const track of textTracks) {
-    if (track.mode === mode) return track;
-  }
-  return null;
+  return [...textTracks].find(track => track.mode === mode) || null;
 }
 
 function formatTime(totalSeconds) {
-  const hours = String(Math.floor(totalSeconds / 3600) % 24).padStart(2, "0");
-
-  const minutes = String(Math.floor(totalSeconds / 60) % 60).padStart(2, "0");
-
-  const seconds = String(Math.floor(totalSeconds % 60)).padStart(2, "0");
+  const hours = `${Math.floor(totalSeconds / 3600) % 24}`.padStart(2, "0");
+  const minutes = `${Math.floor(totalSeconds / 60) % 60}`.padStart(2, "0");
+  const seconds = `${Math.floor(totalSeconds % 60)}`.padStart(2, "0");
 
   return `${hours}:${minutes}:${seconds}`;
 }
 
 function createCueElement(cue) {
-  if (!cue) return;
+  if (!cue) return null;
 
   const cueElement = document.createElement("div");
   cueElement.id = `cue-${cue.id}`;
   cueElement.className = "cue";
   cueElement.textContent = cue.text;
+
   return cueElement;
 }
 
@@ -48,7 +45,7 @@ function addCueEventListeners(cueMap) {
 
   const handleExit = element => () => element.classList.remove("cue--current");
 
-  const handleClick = cue => () => (video.currentTime = cue.startTime);
+  const handleClick = cue => () => (videoElement.currentTime = cue.startTime);
 
   for (const [cue, element] of cueMap.entries()) {
     cue.onenter = handleEnter(element);
@@ -78,7 +75,7 @@ function addTranscript(track, transcriptElement = document.querySelector("#trans
 
   const currentCue = track.activeCues[0];
   if (currentCue) {
-    video.currentTime = currentCue.startTime;
+    videoElement.currentTime = currentCue.startTime;
     const currentCueElement = cueMap.get(currentCue);
     currentCueElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     currentCueElement.classList.add("cue--current");
@@ -89,8 +86,8 @@ function addTranscript(track, transcriptElement = document.querySelector("#trans
 
 // --- Init & Event Listeners --- //
 
-video.addEventListener("loadeddata", () => {
-  const textTracks = video.textTracks;
+videoElement.addEventListener("loadeddata", () => {
+  const textTracks = videoElement.textTracks;
   if (!textTracks) return;
 
   const showingTrack = findTrackByMode(textTracks, "showing");
@@ -106,11 +103,11 @@ video.addEventListener("loadeddata", () => {
     });
 
     setTimeout(() => {
-      video.dispatchEvent(trackChangedEvent);
+      videoElement.dispatchEvent(trackChangedEvent);
     }, 100);
   };
 });
 
-video.addEventListener("trackChanged", ({ detail: { track } }) => {
+videoElement.addEventListener("trackChanged", ({ detail: { track } }) => {
   addTranscript(track);
 });
