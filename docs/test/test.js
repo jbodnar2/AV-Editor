@@ -95,19 +95,22 @@ videoElement.addEventListener("loadeddata", () => {
 
   textTracks.onchange = () => {
     const showingTrack = findTrackByMode(textTracks, "showing");
+    if (!showingTrack) {
+      addTranscript(null);
+      return;
+    }
 
-    const trackChangedEvent = new CustomEvent("trackChanged", {
-      detail: {
-        track: showingTrack,
-      },
-    });
+    let hasCues = false;
 
-    setTimeout(() => {
-      videoElement.dispatchEvent(trackChangedEvent);
-    }, 100);
+    function checkForCues() {
+      hasCues = showingTrack.cues.length > 0;
+      if (!hasCues) {
+        return requestAnimationFrame(checkForCues);
+      }
+
+      addTranscript(showingTrack);
+    }
+
+    requestAnimationFrame(checkForCues);
   };
-});
-
-videoElement.addEventListener("trackChanged", ({ detail: { track } }) => {
-  addTranscript(track);
 });
