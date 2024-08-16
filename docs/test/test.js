@@ -100,10 +100,8 @@ videoElement.addEventListener("loadeddata", () => {
       return;
     }
 
-    let hasCues = false;
-
     function checkForCues() {
-      hasCues = showingTrack.cues.length > 0;
+      let hasCues = showingTrack.cues.length > 0;
       if (!hasCues) {
         return requestAnimationFrame(checkForCues);
       }
