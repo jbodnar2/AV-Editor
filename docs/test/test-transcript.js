@@ -1,3 +1,5 @@
+import { formatTime, downloadShowingCues } from "./test-helpers.js";
+
 // --- Variables & Setup --- //
 
 const videoElement = document.querySelector("#video-1");
