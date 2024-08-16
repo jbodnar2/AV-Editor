@@ -18,14 +18,6 @@ function findTrackByMode(textTracks, mode) {
   return [...textTracks].find(track => track.mode === mode) || null;
 }
 
-function formatTime(totalSeconds) {
-  const hours = `${Math.floor(totalSeconds / 3600) % 24}`.padStart(2, "0");
-  const minutes = `${Math.floor(totalSeconds / 60) % 60}`.padStart(2, "0");
-  const seconds = `${Math.floor(totalSeconds % 60)}`.padStart(2, "0");
-
-  return `${hours}:${minutes}:${seconds}`;
-}
-
 function createCueElement(cue) {
   if (!cue) return null;
 
