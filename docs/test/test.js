@@ -7,8 +7,8 @@ Object.assign(videoElement, {
   autoplay: true,
   muted: true,
   loop: true,
-  poster: "/media/images/01.jpeg",
-  src: "/media/audio-video/newscast.mp4",
+  poster: "../media/images/01.jpeg",
+  src: "../media/audio-video/newscast.mp4",
   playbackRate: 1.0,
 });
 
@@ -55,6 +55,7 @@ function addTranscript(track, transcriptElement = document.querySelector("#trans
   const allCuesFragment = document.createDocumentFragment();
 
   for (const cue of track.cues) {
+    cue.id = cueMap.size;
     const cueElement = createCueElement(cue);
 
     cueMap.set(cue, cueElement);
