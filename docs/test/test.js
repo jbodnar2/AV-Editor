@@ -1,6 +1,6 @@
 // --- Variables & Setup --- //
 
-const videoElement = document.querySelector("video");
+const videoElement = document.querySelector("#video-1");
 
 Object.assign(videoElement, {
   controls: true,
