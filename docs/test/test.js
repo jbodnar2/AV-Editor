@@ -92,15 +92,15 @@ videoElement.addEventListener("loadeddata", () => {
       return;
     }
 
-    function checkForCues() {
-      let hasCues = showingTrack.cues.length > 0;
-      if (!hasCues) {
-        return requestAnimationFrame(checkForCues);
+    function checkAndLoadCues() {
+      let cuesLoaded = showingTrack.cues.length > 0;
+      if (cuesLoaded) {
+        return addTranscript(showingTrack);
       }
 
-      addTranscript(showingTrack);
+      requestAnimationFrame(checkAndLoadCues);
     }
 
-    requestAnimationFrame(checkForCues);
+    requestAnimationFrame(checkAndLoadCues);
   };
 });
