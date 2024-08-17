@@ -33,11 +33,6 @@ function downloadVTT(video) {
   if (!track) return;
 
   const cues = Array.from(track.cues);
-  // const content = new Array(cues.length);
-  // for (let i = 0; i < cues.length; i++) {
-  //   const cue = cues[i];
-  //   content[i] = `${i + 1}\n${toVTTTime(cue.startTime)} --> ${toVTTTime(cue.endTime)}\n${cue.text}`;
-  // }
   const content = cues
     .map((cue, idx) => `${idx + 1}\n${toVTTTime(cue.startTime)} --> ${toVTTTime(cue.endTime)}\n${cue.text}`)
     .join("\n\n");
