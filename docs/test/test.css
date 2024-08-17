@@ -29,9 +29,9 @@
     inset 0 0 6px rgba(0, 0, 0, 0.3),
     inset 0 0 0 1px rgba(0, 0, 0, 0.1),
     inset 0 1px 3px rgba(0, 0, 0, 0.3);
-  max-height: 300px;
+  max-height: 500px;
   overflow-y: scroll;
-  padding-inline: 2rem;
+  padding-inline: 1rem;
   transition:
     font-size 0.3s ease,
     line-height 0.3s ease;
