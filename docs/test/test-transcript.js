@@ -5,6 +5,7 @@ import { downloadVTT, downloadTXT, downloadJSON } from "./test-helpers.js";
 const videoElement = document.querySelector("#video-1");
 
 Object.assign(videoElement, {
+  id: "478e2cb1",
   title: "Newscast",
   controls: true,
   autoplay: true,

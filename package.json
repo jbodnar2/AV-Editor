@@ -5,6 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "npm run serve-docs",
+    "start-php": "php -S localhost:3000 -t ./docs",
     "serve-docs-and-db": "npm run serve-db & npm run serve-docs",
     "serve-docs": "node ./serve-docs.js",
     "serve-db": "npx json-server --port 3001 ./data/db.json",

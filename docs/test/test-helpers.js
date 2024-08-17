@@ -41,7 +41,7 @@ function downloadVTT(video) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${video.title}-${track.label}.vtt`;
+  link.download = `media-${video.id}-${track.language}.vtt`;
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
@@ -60,7 +60,7 @@ function downloadTXT(video) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${video.title}-${track.label}.txt`;
+  link.download = `media-${video.id}-${track.language}.txt`;
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
@@ -74,23 +74,21 @@ function downloadJSON(video) {
 
   const content = JSON.stringify(
     {
-      video: {
-        id: video.id,
-        url: video.url,
-        title: video.title,
-        poster: video.poster,
-        track: {
-          id: track.id,
-          kind: track.kind,
-          label: track.label,
-          language: track.language,
-          cues: Array.from(track.cues).map((cue, idx) => ({
-            id: idx + 1,
-            start: cue.startTime,
-            end: cue.endTime,
-            text: cue.text,
-          })),
-        },
+      id: video.id,
+      src: video.src,
+      title: video.title,
+      poster: video.poster,
+      track: {
+        id: track.id,
+        kind: track.kind,
+        label: track.label,
+        language: track.language,
+        cues: Array.from(track.cues).map((cue, idx) => ({
+          id: idx + 1,
+          start: cue.startTime,
+          end: cue.endTime,
+          text: cue.text,
+        })),
       },
     },
     null,
@@ -101,7 +99,7 @@ function downloadJSON(video) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${video.title}-${track.label}.json`;
+  link.download = `media-${video.id}-${track.language}.json`;
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
