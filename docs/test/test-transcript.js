@@ -1,10 +1,11 @@
-import { formatTime, downloadShowingCues } from "./test-helpers.js";
+import { formatTime, downloadVTT, downloadTXT } from "./test-helpers.js";
 
 // --- Variables & Setup --- //
 
 const videoElement = document.querySelector("#video-1");
 
 Object.assign(videoElement, {
+  title: "Newscast",
   controls: true,
   autoplay: true,
   muted: true,
@@ -107,3 +108,9 @@ videoElement.addEventListener("loadeddata", () => {
     requestAnimationFrame(hasCuesAddTranscript);
   };
 });
+
+const vttButton = document.querySelector('a[download="vtt"]');
+const txtButton = document.querySelector('a[download="txt"]');
+
+vttButton.addEventListener("click", event => downloadVTT(videoElement));
+txtButton.addEventListener("click", event => downloadTXT(videoElement));
