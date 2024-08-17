@@ -68,4 +68,45 @@ function downloadTXT(video) {
   document.body.removeChild(link); // remove the link when done
 }
 
-export { formatTime, downloadVTT, findTrackByMode, downloadTXT };
+function downloadJSON(video) {
+  const track = findTrackByMode(video.textTracks, "showing");
+  if (!track) return;
+
+  const content = JSON.stringify(
+    {
+      video: {
+        id: video.id,
+        url: video.url,
+        title: video.title,
+        poster: video.poster,
+        track: {
+          id: track.id,
+          kind: track.kind,
+          label: track.label,
+          language: track.language,
+          cues: Array.from(track.cues).map((cue, idx) => ({
+            id: idx + 1,
+            start: cue.startTime,
+            end: cue.endTime,
+            text: cue.text,
+          })),
+        },
+      },
+    },
+    null,
+    2,
+  );
+
+  const blob = new Blob([content], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = `${video.title}-${track.label}.json`;
+  link.style.display = "none";
+  document.body.appendChild(link); // Firefox requires the link to be in the body
+  link.click();
+  URL.revokeObjectURL(url);
+  document.body.removeChild(link); // remove the link when done
+}
+
+export { formatTime, downloadVTT, findTrackByMode, downloadTXT, downloadJSON };

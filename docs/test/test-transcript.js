@@ -1,4 +1,4 @@
-import { formatTime, downloadVTT, downloadTXT } from "./test-helpers.js";
+import { downloadVTT, downloadTXT, downloadJSON } from "./test-helpers.js";
 
 // --- Variables & Setup --- //
 
@@ -111,6 +111,8 @@ videoElement.addEventListener("loadeddata", () => {
 
 const vttButton = document.querySelector('a[download="vtt"]');
 const txtButton = document.querySelector('a[download="txt"]');
+const jsonButton = document.querySelector('a[download="json"]');
 
 vttButton.addEventListener("click", event => downloadVTT(videoElement));
 txtButton.addEventListener("click", event => downloadTXT(videoElement));
+jsonButton.addEventListener("click", event => downloadJSON(videoElement));
