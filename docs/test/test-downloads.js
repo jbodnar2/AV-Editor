@@ -42,7 +42,7 @@ function downloadTXT(videoElement) {
   if (!track) return;
 
   const cues = Array.from(track.cues);
-  const content = cues.map((cue, idx) => `${cue.text}`).join(" ");
+  const content = cues.map((cue) => `${cue.text}`).join(" ");
 
   const blob = new Blob([content], { type: "text/plain" });
   const url = URL.createObjectURL(blob);
