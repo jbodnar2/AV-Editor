@@ -18,6 +18,8 @@ function downloadVTT(videoElement) {
   const track = findTrackByMode(videoElement.textTracks, "showing");
   if (!track) return;
 
+  const filename = videoElement.id.replace(/(-[^-]*)$/, `-${track.language}`);
+
   const cues = Array.from(track.cues);
   const content = cues
     .map(cue => `${secondsToVttTime(cue.startTime)} --> ${secondsToVttTime(cue.endTime)}\n${cue.text}`)
@@ -27,7 +29,7 @@ function downloadVTT(videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${videoElement.id}-${track.language}.vtt`;
+  link.download = `${filename}.vtt`;
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
@@ -39,6 +41,8 @@ function downloadTXT(videoElement) {
   const track = findTrackByMode(videoElement.textTracks, "showing");
   if (!track) return;
 
+  const filename = videoElement.id.replace(/(-[^-]*)$/, `-${track.language}`);
+
   const cues = Array.from(track.cues);
   const content = cues.map(cue => `${cue.text}`).join(" ");
 
@@ -46,7 +50,7 @@ function downloadTXT(videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${videoElement.id}-${track.language}.vtt`;
+  link.download = `${filename}.txt`;
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
