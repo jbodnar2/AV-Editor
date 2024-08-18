@@ -1,3 +1,5 @@
+import { findTrackByMode } from "./test-helpers.js";
+
 function secondsToVttTime(secondsWithMilliseconds) {
   const [totalSeconds, fractionalSeconds = "0"] = String(secondsWithMilliseconds).split(".");
   const hours = Math.floor(totalSeconds / 3600);
@@ -10,10 +12,6 @@ function secondsToVttTime(secondsWithMilliseconds) {
     `${seconds.toString().padStart(2, "0")}` +
     `.${fractionalSeconds.padEnd(3, "0")}`
   );
-}
-
-function findTrackByMode(textTracks, mode) {
-  return [...textTracks].find(track => track.mode === mode) || null;
 }
 
 function downloadVTT(videoElement) {
@@ -31,7 +29,7 @@ function downloadVTT(videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${videoElement.id}.vtt`;
+  link.download = `${videoElement.id}-${track.language}.vtt`;
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
@@ -50,7 +48,7 @@ function downloadTXT(videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${videoElement.id}.txt`;
+  link.download = `${videoElement.id}-${track.language}.vtt`;
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();

@@ -1,6 +1,4 @@
-function findTrackByMode(textTracks, mode) {
-  return [...textTracks].find(track => track.mode === mode) || null;
-}
+import { findTrackByMode } from "./test-helpers.js";
 
 function createCueElement(cue) {
   if (!cue) return null;
