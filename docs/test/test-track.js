@@ -1,4 +1,4 @@
-function addVideoTrackAndCues(videoElement = document.querySelector("video"), mediaData) {
+function addVideoTrackAndCues(videoElement, mediaData) {
   if (!videoElement) return;
   if (!mediaData) return;
 
@@ -7,17 +7,16 @@ function addVideoTrackAndCues(videoElement = document.querySelector("video"), me
   track.mode = "showing";
 
   for (const cueData of trackData.cues) {
-    const { id, start, end, text, ...data } = cueData;
+    const { id, start, end, text } = cueData;
 
     const cue = new VTTCue(start, end, text.trim());
-    cue.id = id;
-    cue.data = data;
+    Object.assign(cue, cueData);
 
     track.addCue(cue);
   }
 }
 
-function addVideoData(videoElement = document.querySelector("video"), mediaData) {
+function addVideoData(videoElement, mediaData) {
   if (!videoElement) return;
   if (!mediaData) return;
 

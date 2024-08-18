@@ -20,9 +20,7 @@ function downloadVTT(videoElement) {
 
   const cues = Array.from(track.cues);
   const content = cues
-    .map(
-      (cue, idx) => `${idx + 1}\n${secondsToVttTime(cue.startTime)} --> ${secondsToVttTime(cue.endTime)}\n${cue.text}`,
-    )
+    .map(cue => `${secondsToVttTime(cue.startTime)} --> ${secondsToVttTime(cue.endTime)}\n${cue.text}`)
     .join("\n\n");
 
   const blob = new Blob([`WEBVTT\n\n${content}`], { type: "text/plain" });
@@ -60,9 +58,11 @@ function downloadJSON(videoElement) {
   const track = findTrackByMode(videoElement.textTracks, "showing");
   if (!track) return;
 
+  const filename = videoElement.id.replace(/(-[^-]*)$/, `-${track.language}`);
+
   const content = JSON.stringify(
     {
-      id: `${videoElement.id}`,
+      id: filename,
       src: videoElement.src,
       title: videoElement.title,
       poster: videoElement.poster,
@@ -70,12 +70,12 @@ function downloadJSON(videoElement) {
         kind: track.kind,
         label: track.label,
         srclang: track.language,
-        cues: Array.from(track.cues).map((cue, idx) => ({
-          id: idx + 1,
+        cues: Array.from(track.cues).map(cue => ({
+          id: cue.id,
           start: cue.startTime,
           end: cue.endTime,
           text: cue.text,
-          data: { ...cue.data },
+          ...cue,
         })),
       },
     },
@@ -87,7 +87,7 @@ function downloadJSON(videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${videoElement.id}.json`;
+  link.download = filename + ".json";
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();

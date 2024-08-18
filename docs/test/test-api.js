@@ -11,7 +11,7 @@ function extractMediaIdFromUrl() {
 async function fetchMediaData({ id = extractMediaIdFromUrl(), url = "http://localhost:3000/test/api/data/" }) {
   if (!id) return;
 
-  const dataUrl = `${url}media-${id}.json`;
+  const dataUrl = `${url}${id}.json`;
 
   try {
     const response = await fetch(dataUrl);

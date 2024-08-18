@@ -1,7 +1,12 @@
 [
   {
-    "id": "media-478e2cb1",
+    "id": "media-478e2cb1-en",
     "title": "Up First: Thursday, July 25th",
+    "poster": "http://localhost:3000/media/image01.jpg"
+  },
+  {
+    "id": "media-478e2cb1-de",
+    "title": "Zuerst dran: Donnerstag, 25. Juli",
     "poster": "http://localhost:3000/media/image01.jpg"
   }
 ]

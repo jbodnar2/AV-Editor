@@ -1,0 +1,1225 @@
+{
+  "id": "media-478e2cb1-de",
+  "src": "http://localhost:3000/media/audio-video/newscast.mp4",
+  "title": "Up First: Thursday, July 25th",
+  "poster": "http://localhost:3000/media/images/01.jpeg",
+  "track": {
+    "kind": "captions",
+    "label": "German",
+    "srclang": "de",
+    "cues": [
+      {
+        "id": "0",
+        "start": 0,
+        "end": 7.42,
+        "text": "Okay. In Ordnung. Das habe ich gehört. Es ist der Donnerstagsseufzer. Noch ein Tag. Ja,"
+      },
+      {
+        "id": "1",
+        "start": 7.42,
+        "end": 11.18,
+        "text": "Los geht's. Der Donnerstagsseufzer. Es ist Donnerstag, der 25. Juli."
+      },
+      {
+        "id": "2",
+        "start": 15.54,
+        "end": 20.32,
+        "text": "Präsident Biden erläuterte in einer Rede seine Entscheidung, zurückzutreten"
+      },
+      {
+        "id": "3",
+        "start": 20.32,
+        "end": 24.88,
+        "text": "Oval Office. Ich habe beschlossen, dass der beste Weg nach vorn darin besteht, die Fackel weiterzugeben"
+      },
+      {
+        "id": "4",
+        "start": 24.88,
+        "end": 28.62,
+        "text": "neue Generation. Was steht für seine verbleibende Amtszeit auf dem Plan? Ich bin"
+      },
+      {
+        "id": "5",
+        "start": 28.62,
+        "end": 32.26,
+        "text": "Stephen Skeep mit Michelle Martin, und das ist Up First von NPR News."
+      },
+      {
+        "id": "6",
+        "start": 34.76,
+        "end": 39.3,
+        "text": "Israels Premierminister Benjamin Netanyahu trifft heute Präsident Biden und"
+      },
+      {
+        "id": "7",
+        "start": 39.3,
+        "end": 43.32,
+        "text": "wird sich separat mit Vizepräsident Harris treffen, wo sind der Präsident und"
+      },
+      {
+        "id": "8",
+        "start": 43.32,
+        "end": 47.46,
+        "text": "Vizepräsident ist unterschiedlicher Meinung zu Israel und Gaza? Und die Wähler sind aufmerksam"
+      },
+      {
+        "id": "9",
+        "start": 47.46,
+        "end": 51.48,
+        "text": "darüber, wie sich Kamala Harris' Erfolg bei der Strafverfolgung in einem Wettbewerb auswirken könnte"
+      },
+      {
+        "id": "10",
+        "start": 51.48,
+        "end": 56.2,
+        "text": "gegen Donald Trump. Wenn man sagen kann, dass dies ein klarer Fall eines Staatsanwalts ist"
+      },
+      {
+        "id": "11",
+        "start": 56.2,
+        "end": 60.58,
+        "text": "gegen einen Schwerverbrecher ist es ein Homerun. Bleiben Sie bei uns. Wir geben Ihnen die Neuigkeiten"
+      },
+      {
+        "id": "12",
+        "start": 60.58,
+        "end": 61.56,
+        "text": "Du musst deinen Tag beginnen."
+      },
+      {
+        "id": "13",
+        "start": 69.38,
+        "end": 74.1,
+        "text": "Diese Nachricht stammt vom NPR-Sponsor IBM. Für Sie wird etwas schiefgehen"
+      },
+      {
+        "id": "14",
+        "start": 74.1,
+        "end": 78.02,
+        "text": "Kunden, aber Ihr Unternehmen kann es mit WatsonX Assistant, AI, richtig machen"
+      },
+      {
+        "id": "15",
+        "start": 78.02,
+        "end": 81.82,
+        "text": "Das kann bei der Lösung von Problemen helfen, indem es die Wünsche Ihrer Kunden versteht"
+      },
+      {
+        "id": "16",
+        "start": 81.82,
+        "end": 86.38,
+        "text": "90 % Genauigkeit. Lassen Sie uns einen Kundenservice im Dienste der Kunden schaffen"
+      },
+      {
+        "id": "17",
+        "start": 86.38,
+        "end": 91.76,
+        "text": "WatsonX-Assistent. Erfahren Sie mehr unter IBM.com Slash Assistant. IBM, lass uns"
+      },
+      {
+        "id": "18",
+        "start": 91.76,
+        "end": 97.24,
+        "text": "erstellen. Diese Nachricht stammt vom NPR-Sponsor Capital One. Capital One bietet"
+      },
+      {
+        "id": "19",
+        "start": 97.24,
+        "end": 102.58,
+        "text": "Girokonten ohne Gebühren oder Mindestbeträge und ohne Überziehungsgebühren. Das ist"
+      },
+      {
+        "id": "20",
+        "start": 102.58,
+        "end": 107.78,
+        "text": "Bankwesen, neu interpretiert. Was ist in Ihrer Brieftasche? Es gelten die Allgemeinen Geschäftsbedingungen. Siehe Capitalone.com"
+      },
+      {
+        "id": "21",
+        "start": 107.78,
+        "end": 113.62,
+        "text": "Schrägstrichbank. Capital One NA-Mitglied FDIC. Diese Nachricht kommt von Progressive"
+      },
+      {
+        "id": "22",
+        "start": 113.62,
+        "end": 119.12,
+        "text": "Bei der Versicherung sparen Fahrer, die durch einen Wechsel sparen, im Durchschnitt fast 750 US-Dollar."
+      },
+      {
+        "id": "23",
+        "start": 119.38,
+        "end": 123.68,
+        "text": "Holen Sie sich Ihr Angebot bei progressive.com und prüfen Sie, ob Sie sparen können. Progressiv"
+      },
+      {
+        "id": "24",
+        "start": 123.68,
+        "end": 127.2,
+        "text": "Unfallversicherungsgesellschaft und verbundene Unternehmen. Landesdurchschnitt 12 Monate"
+      },
+      {
+        "id": "25",
+        "start": 127.2,
+        "end": 132.02,
+        "text": "Einsparungen von 744 US-Dollar durch befragte Neukunden, die mit Progressive gespart haben"
+      },
+      {
+        "id": "26",
+        "start": 132.02,
+        "end": 137.16,
+        "text": "zwischen Juni 2022 und Mai 2023. Die möglichen Einsparungen variieren. Präsident"
+      },
+      {
+        "id": "27",
+        "start": 137.16,
+        "end": 140.58,
+        "text": "Biden wollte seine Bewerbung um eine Wiederwahl nicht beenden, sagte aber, es stehe auf dem Spiel"
+      },
+      {
+        "id": "28",
+        "start": 140.58,
+        "end": 146.22,
+        "text": "waren einfach zu hoch, um es zu riskieren. Ich glaube, ich denke, als Präsident, mein"
+      },
+      {
+        "id": "29",
+        "start": 146.22,
+        "end": 151.92,
+        "text": "Führung in der Welt, meine Vision für die Zukunft Amerikas, alle verheiratet zu einem"
+      },
+      {
+        "id": "30",
+        "start": 151.92,
+        "end": 157.52,
+        "text": "zweite Amtszeit, aber nichts, nichts kann unserer Rettung im Wege stehen"
+      },
+      {
+        "id": "31",
+        "start": 157.52,
+        "end": 163.48,
+        "text": "Demokratie. Dazu gehört auch persönlicher Ehrgeiz. Also habe ich mich für den besten Weg entschieden"
+      },
+      {
+        "id": "32",
+        "start": 163.48,
+        "end": 168.04,
+        "text": "Vorwärts geht es darum, die Fackel an eine neue Generation weiterzugeben. Der Präsident sprach davon"
+      },
+      {
+        "id": "33",
+        "start": 168.04,
+        "end": 172.6,
+        "text": "seine Entscheidung, zurückzutreten, und versicherte außerdem, dass er noch viel zu tun habe"
+      },
+      {
+        "id": "34",
+        "start": 172.6,
+        "end": 176.74,
+        "text": "in seinen letzten sechs Monaten am Schreibtisch des Oval Office, von dem aus er redete"
+      },
+      {
+        "id": "35",
+        "start": 176.74,
+        "end": 180.18,
+        "text": "die Nation. Jetzt ist NPR-Senior White zu uns gekommen, um mehr darüber zu sprechen"
+      },
+      {
+        "id": "36",
+        "start": 180.18,
+        "end": 184.2,
+        "text": "Die Korrespondentin des Repräsentantenhauses, Tamra Keith, ist nach einer langen Nacht wieder früh aufgestanden, Tam."
+      },
+      {
+        "id": "37",
+        "start": 184.78,
+        "end": 188.62,
+        "text": "Ja, guten Morgen. Vielen Dank, dass Sie das getan haben. Was versuchte Biden also?"
+      },
+      {
+        "id": "38",
+        "start": 188.62,
+        "end": 193.06,
+        "text": "mit dieser Adresse bewerkstelligen? Nun, das war ein monumentaler Moment für Biden,"
+      },
+      {
+        "id": "39",
+        "start": 193.3,
+        "end": 196.94,
+        "text": "markiert das Ende oder zumindest den Anfang vom Ende einer sehr langen Karriere"
+      },
+      {
+        "id": "40",
+        "start": 196.94,
+        "end": 201.66,
+        "text": "im öffentlichen Leben. Und seine Familie saß an den Wänden des Oval Office"
+      },
+      {
+        "id": "41",
+        "start": 201.66,
+        "end": 206.62,
+        "text": "er sprach. Die First Lady, seine Enkel, seine Kinder, er sprach, wie Steve sagte"
+      },
+      {
+        "id": "42",
+        "start": 206.62,
+        "end": 210.28,
+        "text": "hinter dem resoluten Schreibtisch, dieser Ort des sehr ernsten Präsidenten"
+      },
+      {
+        "id": "43",
+        "start": 210.28,
+        "end": 214.36,
+        "text": "Adressen. Und hier ging es ihm darum, die sehr schwierige Entscheidung zu erklären"
+      },
+      {
+        "id": "44",
+        "start": 214.36,
+        "end": 219,
+        "text": "gemacht, beiseite zu treten und es in ein edles Licht zu rücken. Er machte auch eine"
+      },
+      {
+        "id": "45",
+        "start": 219,
+        "end": 222.56,
+        "text": "Appell an das amerikanische Volk, darüber nachzudenken, was für ein Land es ist"
+      },
+      {
+        "id": "46",
+        "start": 222.56,
+        "end": 226.34,
+        "text": "wollen. Ganz am Ende lieferte Biden diesen emotionalen Ausdruck von"
+      },
+      {
+        "id": "47",
+        "start": 226.34,
+        "end": 229.88,
+        "text": "Er dankte ihm und sagte, dass er der Nation sein Herz und seine Seele gegeben habe"
+      },
+      {
+        "id": "48",
+        "start": 229.88,
+        "end": 234.12,
+        "text": "50 years in public life and has been blessed with the love and support of"
+      },
+      {
+        "id": "49",
+        "start": 234.12,
+        "end": 238.62,
+        "text": "das amerikanische Volk. Ich hoffe, Sie haben eine Vorstellung davon, wie dankbar ich allen bin"
+      },
+      {
+        "id": "50",
+        "start": 238.62,
+        "end": 245.18,
+        "text": "Du. Das Tolle an Amerika ist, dass es hier Könige und Diktatoren gibt"
+      },
+      {
+        "id": "51",
+        "start": 245.18,
+        "end": 249.88,
+        "text": "Herrschaft, das Volk tut es. Dies war nicht der Ort für offen Politische"
+      },
+      {
+        "id": "52",
+        "start": 249.88,
+        "end": 253.8,
+        "text": "Sprache, die man bei einer Wahlkampfveranstaltung hören würde. Also hat er nie „erster“ gesagt"
+      },
+      {
+        "id": "53",
+        "start": 253.8,
+        "end": 258.22,
+        "text": "Der Name von Präsident Trump, aber der Untertext war ziemlich klar. Es war klar, aber"
+      },
+      {
+        "id": "54",
+        "start": 258.22,
+        "end": 261.48,
+        "text": "Du weißt, die Rede hatte das Gefühl einer Abschiedsrede, Tam, aber er"
+      },
+      {
+        "id": "55",
+        "start": 261.48,
+        "end": 264.98,
+        "text": "hat noch sechs Monate im Amt. Was hat er gesagt, was er tun möchte?"
+      },
+      {
+        "id": "56",
+        "start": 264.98,
+        "end": 268.76,
+        "text": "Wann ist er noch übrig? Weißt du, es fühlte sich wirklich so an, als ob der Sauerstoff ausgegangen wäre"
+      },
+      {
+        "id": "57",
+        "start": 268.76,
+        "end": 271.48,
+        "text": "seine Präsidentschaft, als er ankündigte, dass er aus dem Rennen aussteigen werde"
+      },
+      {
+        "id": "58",
+        "start": 271.48,
+        "end": 275.74,
+        "text": "Wiederwahl. Aber praktisch gesehen war dieser Begriff bereits in einer lahmen Ente"
+      },
+      {
+        "id": "59",
+        "start": 275.74,
+        "end": 280.06,
+        "text": "Phase. Seine größten Erfolge erzielten sie, bevor die Demokraten die Kontrolle verloren"
+      },
+      {
+        "id": "60",
+        "start": 280.06,
+        "end": 284.34,
+        "text": "Das Repräsentantenhaus im Jahr 2023. Vieles, was er in diesen letzten Monaten tun kann, ist also"
+      },
+      {
+        "id": "61",
+        "start": 284.34,
+        "end": 288.36,
+        "text": "Umsetzung, Verteilung von Mitteln für Infrastruktur- und Klimaprojekte,"
+      },
+      {
+        "id": "62",
+        "start": 288.72,
+        "end": 292.32,
+        "text": "Zementierungsvorschriften. Er sagte, er werde weiter dafür kämpfen"
+      },
+      {
+        "id": "63",
+        "start": 292.32,
+        "end": 295.42,
+        "text": "reproduktive Rechte und Bürgerrechte. Er wird weiter daran arbeiten"
+      },
+      {
+        "id": "64",
+        "start": 295.42,
+        "end": 299.56,
+        "text": "Wirtschaft und versuchen, die Kosten zu senken, und er wird sich gegen Extremismus aussprechen und"
+      },
+      {
+        "id": "65",
+        "start": 299.56,
+        "end": 303.6,
+        "text": "politische Gewalt. Und natürlich versucht er immer noch sehr, einen zu bekommen"
+      },
+      {
+        "id": "66",
+        "start": 303.6,
+        "end": 307.44,
+        "text": "Waffenstillstand wegen Geiselnahme in Gaza. Tam, wir haben viel Zeit zum Reden"
+      },
+      {
+        "id": "67",
+        "start": 307.44,
+        "end": 310.32,
+        "text": "darüber, aber wie wird sein Vermächtnis Ihrer Meinung nach am Ende aussehen?"
+      },
+      {
+        "id": "68",
+        "start": 310.32,
+        "end": 313.78,
+        "text": "definiert? Nun, wissen Sie, es gab viel Lob von den Demokraten"
+      },
+      {
+        "id": "69",
+        "start": 313.78,
+        "end": 317.7,
+        "text": "Bidens Selbstlosigkeit seit seiner Ankündigung am Sonntag ist aber real"
+      },
+      {
+        "id": "70",
+        "start": 317.7,
+        "end": 321.62,
+        "text": "Urteil kommt im November. Indem er erkannte, dass er hier einen Schritt zurücktreten musste"
+      },
+      {
+        "id": "71",
+        "start": 321.62,
+        "end": 326.12,
+        "text": "Zu diesem sehr späten Zeitpunkt schloss er jede Möglichkeit einer echten Vorwahl aus. Im Augenblick,"
+      },
+      {
+        "id": "72",
+        "start": 326.16,
+        "end": 329.38,
+        "text": "Die Demokraten sind sehr gespannt auf Vizepräsident Harris als möglichen Kandidaten"
+      },
+      {
+        "id": "73",
+        "start": 329.38,
+        "end": 333.62,
+        "text": "Nominiert, aber dieses Rennen ist immer noch sehr eng. Wenn Harris gewinnt, wird es Biden sein"
+      },
+      {
+        "id": "74",
+        "start": 333.62,
+        "end": 336.98,
+        "text": "Er gilt als der seltene Präsident, der seine Partei und sein Land über sich selbst stellte"
+      },
+      {
+        "id": "75",
+        "start": 336.98,
+        "end": 341.22,
+        "text": "Ego. Wenn sie verliert, dann ist er beide derjenige, der Trump aus dem Amt entfernt hat"
+      },
+      {
+        "id": "76",
+        "start": 341.22,
+        "end": 345.72,
+        "text": "und führte ihn wieder herein. Das ist N.P.S. Tamara Keith wacht wieder früh auf"
+      },
+      {
+        "id": "77",
+        "start": 345.72,
+        "end": 348.64,
+        "text": "nach einer weiteren späten Nacht. Tam, danke. Gern geschehen."
+      },
+      {
+        "id": "78",
+        "start": 356.8,
+        "end": 360.78,
+        "text": "Israels Ministerpräsident Benjamin Netanjahu sprach erneut vor dem US-Kongress"
+      },
+      {
+        "id": "79",
+        "start": 360.78,
+        "end": 365.22,
+        "text": "gestern. Er hat vier Mal Ansprachen vor dem Kongress gehalten"
+      },
+      {
+        "id": "80",
+        "start": 365.22,
+        "end": 368.62,
+        "text": "mehr als jeder ausländische Führer in der Geschichte. Er ist schon eine Weile da."
+      },
+      {
+        "id": "81",
+        "start": 369.22,
+        "end": 373.86,
+        "text": "Netanyahus jüngster Beitrag von gestern enthielt Schnörkel, die oft in einem zu sehen sind"
+      },
+      {
+        "id": "82",
+        "start": 373.86,
+        "end": 377.42,
+        "text": "Rede des Präsidenten zur Lage der Nation. Er erzählte Geschichten von Gästen im"
+      },
+      {
+        "id": "83",
+        "start": 377.42,
+        "end": 382.4,
+        "text": "Publikum, um Israels Krieg gegen die Hamas zu veranschaulichen und zu verteidigen. Für die"
+      },
+      {
+        "id": "84",
+        "start": 382.4,
+        "end": 388.36,
+        "text": "Damit die Kräfte der Zivilisation siegen können, müssen Amerika und Israel zusammenhalten."
+      },
+      {
+        "id": "85",
+        "start": 389.42,
+        "end": 392.76,
+        "text": "Heute trifft der Premierminister Präsident Biden im Weißen Haus und auch"
+      },
+      {
+        "id": "86",
+        "start": 392.76,
+        "end": 398.12,
+        "text": "trifft sich mit Vizepräsidentin Harris, wie sie sich mit Netanyahu auseinandersetzt, was jetzt wichtiger ist"
+      },
+      {
+        "id": "87",
+        "start": 398.12,
+        "end": 401.52,
+        "text": "dass sie für das Präsidentenamt kandidiert. NPR-Korrespondentin im Weißen Haus, Asma Khaled"
+      },
+      {
+        "id": "88",
+        "start": 401.52,
+        "end": 404.38,
+        "text": "ist jetzt bei uns, um uns mehr darüber zu erzählen. Guten Morgen, Asma. Gut"
+      },
+      {
+        "id": "89",
+        "start": 404.38,
+        "end": 407.74,
+        "text": "Morgen. Ich wollte Sie fragen, wie Sie den Vizepräsidenten charakterisieren"
+      },
+      {
+        "id": "90",
+        "start": 407.74,
+        "end": 410.72,
+        "text": "Politik gegenüber Gaza. Ich meine, offensichtlich ist sie die Vizepräsidentin, also Sie"
+      },
+      {
+        "id": "91",
+        "start": 410.72,
+        "end": 415.84,
+        "text": "Ich gehe davon aus, dass ihre Politik im Gleichschritt mit den Präsidenten erfolgen müsste."
+      },
+      {
+        "id": "92",
+        "start": 416.52,
+        "end": 420.38,
+        "text": "Aber was würden Sie dazu sagen, wie sie das Problem angeht? Nun ja, das"
+      },
+      {
+        "id": "93",
+        "start": 420.38,
+        "end": 423.96,
+        "text": "Der Inhalt ihrer Aussagen ähnelt dem von Biden, unterscheidet sich jedoch darin"
+      },
+      {
+        "id": "94",
+        "start": 423.96,
+        "end": 428.8,
+        "text": "Stil und Ton. Harris beschrieb sie als eine, Zitat, unerschütterliche Person"
+      },
+      {
+        "id": "95",
+        "start": 428.8,
+        "end": 432.58,
+        "text": "Engagement für die Sicherheit Israels. Ich habe auch mit einem Berater von gesprochen"
+      },
+      {
+        "id": "96",
+        "start": 432.58,
+        "end": 436.08,
+        "text": "Harris‘ Tage im Senat, Hailey Soyfer, die mir erzählte, wie es war"
+      },
+      {
+        "id": "97",
+        "start": 436.08,
+        "end": 439.1,
+        "text": "eine kürzliche Veranstaltung im Weißen Haus, bei der sie sah, wie der Vizepräsident gegen eine antrat"
+      },
+      {
+        "id": "98",
+        "start": 439.1,
+        "end": 442.62,
+        "text": "echte Führungsrolle bei der Verurteilung der Anwendung sexueller Gewalt in der"
+      },
+      {
+        "id": "99",
+        "start": 442.62,
+        "end": 446.1,
+        "text": "Anschläge vom 7. Oktober. Aber wirklich, Michelle, der wahre Unterschied zu Biden"
+      },
+      {
+        "id": "100",
+        "start": 446.1,
+        "end": 450.2,
+        "text": "So spricht Harris über die Menschen in Gaza. Hören Sie sich ihre Kommentare an"
+      },
+      {
+        "id": "101",
+        "start": 450.2,
+        "end": 454.78,
+        "text": "vom vergangenen März in Selma, Alabama. Was wir jeden Tag sehen"
+      },
+      {
+        "id": "102",
+        "start": 454.78,
+        "end": 461.4,
+        "text": "Gaza ist verheerend. Wir haben Berichte von Familien gesehen, die Blätter gegessen haben oder"
+      },
+      {
+        "id": "103",
+        "start": 461.4,
+        "end": 469.14,
+        "text": "Tierfutter. Frauen, die unterernährte Babys mit wenig oder gar nichts zur Welt bringen"
+      },
+      {
+        "id": "104",
+        "start": 469.14,
+        "end": 472.84,
+        "text": "medizinische Versorgung. Ich habe mit mehreren Leuten gesprochen, die mir das gesagt haben"
+      },
+      {
+        "id": "105",
+        "start": 472.84,
+        "end": 477.2,
+        "text": "Harris zeigt ein größeres Maß an Empathie für palästinensische Zivilisten als"
+      },
+      {
+        "id": "106",
+        "start": 477.2,
+        "end": 481.2,
+        "text": "Sie haben öffentlich von Biden gehört. Haben diese Worte Auswirkungen auf die Wähler?"
+      },
+      {
+        "id": "107",
+        "start": 481.2,
+        "end": 485.72,
+        "text": "siehst du sie? Nun, sagen Leute, mit denen ich in der arabisch-amerikanischen Gemeinschaft gesprochen habe"
+      },
+      {
+        "id": "108",
+        "start": 485.72,
+        "end": 490.66,
+        "text": "dass Harris nicht als so giftig angesehen wird wie Biden. Ich habe mit gesprochen"
+      },
+      {
+        "id": "109",
+        "start": 490.66,
+        "end": 494.58,
+        "text": "Rubel Roman. Sie ist eine demokratische Abgeordnete des Bundesstaates Georgia und eine Palästinenserin"
+      },
+      {
+        "id": "110",
+        "start": 494.58,
+        "end": 498.2,
+        "text": "Amerikanerin, und sie hat es so ausgedrückt. Ich kann Ihnen jetzt sagen, wenn ich es getan hätte,"
+      },
+      {
+        "id": "111",
+        "start": 498.3,
+        "end": 502.4,
+        "text": "versuchte zum Beispiel, zu einer Moschee oder einer arabischen Gemeinschaftsveranstaltung zu gehen und drängte sie dazu"
+      },
+      {
+        "id": "112",
+        "start": 502.4,
+        "end": 506.62,
+        "text": "Um für Joe Biden zu stimmen, würde ich nie wieder eingeladen werden. Die Wut saß so tief"
+      },
+      {
+        "id": "113",
+        "start": 506.62,
+        "end": 511.88,
+        "text": "und der Schmerz war so tief. Sogar ich erzähle den Leuten das. Und ich denke"
+      },
+      {
+        "id": "114",
+        "start": 511.88,
+        "end": 515.98,
+        "text": "Die Leute wären zumindest offen dafür, von ihr zu hören und sich von ihr machen zu lassen"
+      },
+      {
+        "id": "115",
+        "start": 515.98,
+        "end": 520.18,
+        "text": "Fall. Und einige Demokraten, die bei den Vorwahlen unverbindlich abgestimmt haben, haben es mir erzählt"
+      },
+      {
+        "id": "116",
+        "start": 520.18,
+        "end": 522.98,
+        "text": "dass sie bereit sind, Harris eine Chance zu geben. Ich meine, um es klarzustellen: Sie sind es"
+      },
+      {
+        "id": "117",
+        "start": 522.98,
+        "end": 526.52,
+        "text": "Sie sagen nicht, dass sie definitiv für sie stimmen werden, aber es besteht die Möglichkeit."
+      },
+      {
+        "id": "118",
+        "start": 527.14,
+        "end": 530.1,
+        "text": "Ich muss auch sagen, dass Harris einer der ersten Leute war"
+      },
+      {
+        "id": "119",
+        "start": 530.1,
+        "end": 533.58,
+        "text": "Regierung, auf einige der Proteste weniger abweisend zu reagieren"
+      },
+      {
+        "id": "120",
+        "start": 533.58,
+        "end": 536.9,
+        "text": "hier zu Hause. Heute trifft sie sich separat mit Israels Premierminister"
+      },
+      {
+        "id": "121",
+        "start": 536.9,
+        "end": 541.44,
+        "text": "Minister, getrennt von Biden. Was erwarten Sie von ihrem Treffen? Was"
+      },
+      {
+        "id": "122",
+        "start": 541.44,
+        "end": 544.74,
+        "text": "Ich achte darauf, wie eng sie dem Präsidenten nahesteht. Weißt du, sie"
+      },
+      {
+        "id": "123",
+        "start": 544.74,
+        "end": 548.04,
+        "text": "Dieses Problem erbt jetzt in ihrem Wahlkampf und nach dem Angriff in"
+      },
+      {
+        "id": "124",
+        "start": 548.04,
+        "end": 552.42,
+        "text": "Oktober, bei dem mehr als 1.200 Menschen ums Leben kamen. Mittlerweile sind es mehr als 39.000"
+      },
+      {
+        "id": "125",
+        "start": 552.42,
+        "end": 555.92,
+        "text": "Palästinenser wurden getötet und es gibt immer noch keinen Waffenstillstand. Und einige"
+      },
+      {
+        "id": "126",
+        "start": 555.92,
+        "end": 559.2,
+        "text": "Die Leute werden ihr die Schuld geben, weil sie Teil dieser Regierung ist. Sie hat"
+      },
+      {
+        "id": "127",
+        "start": 559.2,
+        "end": 563.44,
+        "text": "ein wirklich heikler Balanceakt, bei dem sie versuchen wird, sich nicht zu entfremden"
+      },
+      {
+        "id": "128",
+        "start": 563.44,
+        "end": 567.5,
+        "text": "Anhänger Israels, die einen wichtigen Teil der Demokratischen Partei ausmachen, aber"
+      },
+      {
+        "id": "129",
+        "start": 567.5,
+        "end": 570.94,
+        "text": "Sie versucht auch, einige der jungen, fortschrittlichen, braunen und… zurückzugewinnen"
+      },
+      {
+        "id": "130",
+        "start": 570.94,
+        "end": 574.32,
+        "text": "schwarze Wähler, die Biden mit einigen seiner diesbezüglichen Entscheidungen verärgert hat"
+      },
+      {
+        "id": "131",
+        "start": 574.32,
+        "end": 578.64,
+        "text": "Krieg. Das ist Asma Khaled von NPR. Asma, danke. Schön, mit Ihnen zu reden."
+      },
+      {
+        "id": "132",
+        "start": 587.06,
+        "end": 590.58,
+        "text": "Vizepräsident Harris steht vor einer weiteren grundlegenden Herausforderung, um den Sieg zu erringen"
+      },
+      {
+        "id": "133",
+        "start": 590.58,
+        "end": 594.48,
+        "text": "Wahl. Der voraussichtliche Kandidat der Demokraten wird eine breite Mehrheit zusammenhalten müssen"
+      },
+      {
+        "id": "134",
+        "start": 594.48,
+        "end": 597.28,
+        "text": "Koalition, und sie haben zu einigen Themen sehr unterschiedliche Ansichten."
+      },
+      {
+        "id": "135",
+        "start": 597.7,
+        "end": 601.92,
+        "text": "Präsident Biden hat dies im Jahr 2020 geschafft, aber die Koalition ist ebenso zersplittert wie wir"
+      },
+      {
+        "id": "136",
+        "start": 601.92,
+        "end": 605.16,
+        "text": "gerade gehört, und Harris ist eine andere Figur. Ihre Herausforderung wird deutlich"
+      },
+      {
+        "id": "137",
+        "start": 605.16,
+        "end": 608.48,
+        "text": "Was kommt zu ihrer Akte bei der Strafverfolgung? Mein Co-Moderator Steve Inskeep hat"
+      },
+      {
+        "id": "138",
+        "start": 608.48,
+        "end": 611.14,
+        "text": "Ich habe mit Wählern in West-Pennsylvania gesprochen. Steve, was hast du gefunden?"
+      },
+      {
+        "id": "139",
+        "start": 611.14,
+        "end": 615.4,
+        "text": "aus? Nun, einige gegensätzliche Meinungen zu einem großen Teil von Harris‘ Lebenslauf. Ihr"
+      },
+      {
+        "id": "140",
+        "start": 615.4,
+        "end": 619.74,
+        "text": "Geschichte als Staatsanwalt in San Francisco im kalifornischen Generalstaatsanwalt. Sie"
+      },
+      {
+        "id": "141",
+        "start": 619.74,
+        "end": 624.72,
+        "text": "Dies brachte sie bei ihrer ersten Wahlkampfveranstaltung während ihrer Präsidentschaftskandidatur zur Sprache"
+      },
+      {
+        "id": "142",
+        "start": 624.72,
+        "end": 628.8,
+        "text": "von Donald Trump und sagte, als Staatsanwältin wisse sie, was ein Raubtier sei"
+      },
+      {
+        "id": "143",
+        "start": 628.8,
+        "end": 634.22,
+        "text": "oder ein Betrüger. Wie die Wähler diese Botschaft aufnehmen, hängt davon ab, mit wem Sie sprechen. An"
+      },
+      {
+        "id": "144",
+        "start": 634.22,
+        "end": 638.54,
+        "text": "Gestern hörten wir in der Morning Edition von NPR Kathleen Madonna Emerling, a"
+      },
+      {
+        "id": "145",
+        "start": 638.54,
+        "end": 642.66,
+        "text": "Aktivistin der Demokratischen Partei in einem Vorort von Pittsburgh, die sie wirklich mag"
+      },
+      {
+        "id": "146",
+        "start": 642.66,
+        "end": 648.46,
+        "text": "neuer Kandidat. Mein erster Gedanke war: Das ist der ideale Vorstadtkandidat"
+      },
+      {
+        "id": "147",
+        "start": 648.46,
+        "end": 655.9,
+        "text": "weil sie die Grenze zwischen zugänglich, zuordenbar,"
+      },
+      {
+        "id": "148",
+        "start": 656.6,
+        "end": 661.44,
+        "text": "ein freudiges Ereignis und verfügt gleichzeitig über unglaubliche Referenzen im Bereich der öffentlichen Sicherheit."
+      },
+      {
+        "id": "149",
+        "start": 661.8,
+        "end": 667.98,
+        "text": "Denn oft wollen die Menschen in den Vororten jemanden, der sich für die öffentliche Sicherheit einsetzt,"
+      },
+      {
+        "id": "150",
+        "start": 668.28,
+        "end": 672.9,
+        "text": "Pro-Polizei. Denn viele Menschen in ihrem Vorort haben Militär oder Polizei"
+      },
+      {
+        "id": "151",
+        "start": 672.9,
+        "end": 677.46,
+        "text": "Hintergründe. Und wenn man sagen kann, ist dies ein klarer Fall eines Staatsanwalts"
+      },
+      {
+        "id": "152",
+        "start": 677.46,
+        "end": 681.76,
+        "text": "gegen einen Schwerverbrecher ist es ein Homerun. Obwohl für einige Leute in der"
+      },
+      {
+        "id": "153",
+        "start": 681.76,
+        "end": 685.02,
+        "text": "Demokratische Koalition, Michelle, das ist ein komplizierteres Thema. Und ich"
+      },
+      {
+        "id": "154",
+        "start": 685.02,
+        "end": 689.16,
+        "text": "Ich kann das mitunterzeichnen, weil ich, wie man sagt, Leute in der Art und Weise habe wie Sie"
+      },
+      {
+        "id": "155",
+        "start": 689.16,
+        "end": 693.84,
+        "text": "Sind. Wie sehen die Leute also die Bilanz des Vizepräsidenten anders? Als"
+      },
+      {
+        "id": "156",
+        "start": 693.84,
+        "end": 698.32,
+        "text": "potenzielles Zeichen gegen sie. Ich war diese Woche auch im Zentrum von Pittsburgh"
+      },
+      {
+        "id": "157",
+        "start": 698.32,
+        "end": 701.96,
+        "text": "zum Hill District, einem historisch schwarzen Viertel, und"
+      },
+      {
+        "id": "158",
+        "start": 701.96,
+        "end": 706.12,
+        "text": "sprach mit Adrienne Dilworth. Sie sagte, sie habe gemischte Gefühle"
+      },
+      {
+        "id": "159",
+        "start": 706.12,
+        "end": 710.98,
+        "text": "Harris. Wir sprachen hier, während wir auf dem Parkplatz eines Lebensmittelgeschäfts Autos auswichen. ICH"
+      },
+      {
+        "id": "160",
+        "start": 710.98,
+        "end": 715.82,
+        "text": "Meiner Meinung nach hätten sie den Kandidaten ein breiteres Netz zur Verfügung stellen sollen, um zu sehen, wer das ist"
+      },
+      {
+        "id": "161",
+        "start": 715.82,
+        "end": 719.8,
+        "text": "könnte tatsächlich das Beste sein und nicht nur, wissen Sie, okay, wir sind einfach so"
+      },
+      {
+        "id": "162",
+        "start": 719.8,
+        "end": 723.78,
+        "text": "Ich werde den Vizepräsidenten für die Position drängen. Warum haben Sie gemischte Gefühle?"
+      },
+      {
+        "id": "163",
+        "start": 723.78,
+        "end": 729.58,
+        "text": "Vizepräsident Harris? Nur ein Teil ihrer Geschichte. Wir gehen besser davon weg"
+      },
+      {
+        "id": "164",
+        "start": 729.58,
+        "end": 734.6,
+        "text": "Das. Es wäre schlecht für das Vorstellungsgespräch, wenn Sie hier mittendrin überfahren würden."
+      },
+      {
+        "id": "165",
+        "start": 734.6,
+        "end": 737.98,
+        "text": "Ja, nein, das werden wir nicht haben. Nur einiges von dem, was ich höre"
+      },
+      {
+        "id": "166",
+        "start": 737.98,
+        "end": 742.26,
+        "text": "aus ihrer Geschichte mit einigen der Menschen, die sie eingesperrt hat"
+      },
+      {
+        "id": "167",
+        "start": 742.26,
+        "end": 747.18,
+        "text": "in der Vergangenheit. Sie bezog sich auf einen Teil von Harris‘ bisheriger Tätigkeit als Staatsanwältin."
+      },
+      {
+        "id": "168",
+        "start": 747.44,
+        "end": 751.04,
+        "text": "Sie kämpfte dafür, Menschen ins Gefängnis zu bringen. Manchmal geriet sie mit den Bürgerrechten in Konflikt"
+      },
+      {
+        "id": "169",
+        "start": 751.04,
+        "end": 754.36,
+        "text": "Gruppen und Aktivisten über ihre Entscheidungen. Und sie wurde darüber angegriffen"
+      },
+      {
+        "id": "170",
+        "start": 754.36,
+        "end": 758.66,
+        "text": "Jahre auf der linken Seite dafür. Jetzt wird der Angriff wiederholt"
+      },
+      {
+        "id": "171",
+        "start": 758.66,
+        "end": 762.54,
+        "text": "Republikaner. Ich schätze, man könnte sagen, dass die Republikaner hier nur trollen,"
+      },
+      {
+        "id": "172",
+        "start": 762.54,
+        "end": 766.6,
+        "text": "Sie fordern aber auch ausdrücklich einen Teil der schwarzen Stimmen für Donald"
+      },
+      {
+        "id": "173",
+        "start": 766.6,
+        "end": 770.16,
+        "text": "Trumpf. Und Sie können sehen, wo das bei manchen Menschen Anklang finden könnte"
+      },
+      {
+        "id": "174",
+        "start": 770.16,
+        "end": 773.48,
+        "text": "Gemeinschaft, die, wie Sie sagen, dieses komplizierte Verhältnis zum Recht hatte"
+      },
+      {
+        "id": "175",
+        "start": 773.48,
+        "end": 776.44,
+        "text": "Durchsetzung. Oh ja, ich habe in derselben Gegend Leute interviewt"
+      },
+      {
+        "id": "176",
+        "start": 776.44,
+        "end": 780.3,
+        "text": "In den vergangenen Jahren traf ich einmal eine Wählerin, die 22 Jahre alt war, und sagte, sie sei es bereits gewesen"
+      },
+      {
+        "id": "177",
+        "start": 780.3,
+        "end": 785.22,
+        "text": "wurde zweimal wegen Dingen inhaftiert, die sie angeblich nicht getan hatte. Also zusammenhalten"
+      },
+      {
+        "id": "178",
+        "start": 785.22,
+        "end": 788.72,
+        "text": "Diese demokratische Koalition, Harris braucht Leute für Recht und Ordnung und auch"
+      },
+      {
+        "id": "179",
+        "start": 788.72,
+        "end": 792.28,
+        "text": "Menschen, die Recht und Ordnung, wie sie manchmal praktiziert werden, skeptisch gegenüberstehen"
+      },
+      {
+        "id": "180",
+        "start": 792.28,
+        "end": 795.9,
+        "text": "den Vereinigten Staaten, und wir können damit rechnen, dass ihre Akte einer genauen Prüfung unterzogen wird. Obwohl"
+      },
+      {
+        "id": "181",
+        "start": 795.9,
+        "end": 798.76,
+        "text": "Ich sollte hinzufügen, dass ich in derselben Gegend auch Menschen gefunden habe, die sehr freundlich waren"
+      },
+      {
+        "id": "182",
+        "start": 798.76,
+        "end": 801.94,
+        "text": "Sie waren bestrebt, für Harris zu stimmen, und freuten sich darauf, für eine Frau zu stimmen, und das waren sie auch"
+      },
+      {
+        "id": "183",
+        "start": 801.94,
+        "end": 805.98,
+        "text": "Organisieren mit neuer Intensität. Das ist Steve Inskiep in Pittsburgh."
+      },
+      {
+        "id": "184",
+        "start": 806.24,
+        "end": 808.46,
+        "text": "Steve, danke. Ich bin froh, es zu tun."
+      },
+      {
+        "id": "185",
+        "start": 812.02,
+        "end": 816.4,
+        "text": "Und das zuerst für Donnerstag, den 25. Juli. Ich bin Michelle Martin. Und das bin ich"
+      },
+      {
+        "id": "186",
+        "start": 816.4,
+        "end": 820.24,
+        "text": "Steve Inskiep. Bedenken Sie dies. Kamala Harris wird nicht die erste Frau sein, die das tut"
+      },
+      {
+        "id": "187",
+        "start": 820.24,
+        "end": 823.68,
+        "text": "führt die Präsidentschaftskandidatur einer großen Partei an, wird aber die erste Frau sein"
+      },
+      {
+        "id": "188",
+        "start": 823.68,
+        "end": 827.46,
+        "text": "Farbe. Und obwohl ihre Nominierung noch nicht offiziell ist, ist sie es bereits"
+      },
+      {
+        "id": "189",
+        "start": 827.46,
+        "end": 832.06,
+        "text": "Gegenstand rassistischer Angriffe. Wie wirkt sich das auf ihre Kandidatur aus? Anhören"
+      },
+      {
+        "id": "190",
+        "start": 832.06,
+        "end": 836.1,
+        "text": "Bedenken Sie dies. Die heutige Folge von Up First wurde von Roberta Rampton bearbeitet,"
+      },
+      {
+        "id": "191",
+        "start": 836.32,
+        "end": 840.4,
+        "text": "Gabriel Spitzer, Dana Farrington, Janea Williams und Alice Wolfley. Es war"
+      },
+      {
+        "id": "192",
+        "start": 840.4,
+        "end": 844.14,
+        "text": "Produziert von Ziad Butch, Ben Abrams und Milton Guevara. Wir bekommen Engineering"
+      },
+      {
+        "id": "193",
+        "start": 844.14,
+        "end": 848.06,
+        "text": "Unterstützung von Carly Strange und unserem technischen Direktor Zach Coleman. Wir"
+      },
+      {
+        "id": "194",
+        "start": 848.06,
+        "end": 849.16,
+        "text": "Ich hoffe, Sie sind morgen wieder dabei."
+      },
+      {
+        "id": "195",
+        "start": 874,
+        "end": 878.98,
+        "text": "Diese Nachricht stammt vom NPR-Sponsor Mint Mobile. Von der Zapfsäule bis zum"
+      },
+      {
+        "id": "196",
+        "start": 878.98,
+        "end": 883.12,
+        "text": "Lebensmittelgeschäft, Inflation ist überall. Daher bietet Mint Mobile Premium an"
+      },
+      {
+        "id": "197",
+        "start": 883.12,
+        "end": 887.56,
+        "text": "WLAN schon ab 15 $ pro Monat. So erhalten Sie Ihren neuen Telefonplan für nur"
+      },
+      {
+        "id": "198",
+        "start": 887.56,
+        "end": 894.14,
+        "text": "15 $, gehen Sie zu mintmobile.com.slashswitch. Diese Nachricht stammt vom NPR-Sponsor"
+      },
+      {
+        "id": "199",
+        "start": 894.14,
+        "end": 899.54,
+        "text": "Warby Parker. Ihre Brillen beginnen bei 95 $, inklusive Antireflex-Kratzer"
+      },
+      {
+        "id": "200",
+        "start": 899.54,
+        "end": 904.28,
+        "text": "-beständige Korrektionsgläser, die 100 % der UV-Strahlen blockieren. Probieren Sie fünf Paare aus"
+      },
+      {
+        "id": "201",
+        "start": 904.28,
+        "end": 908.14,
+        "text": "von Rahmen kostenlos zu Hause. Gehen Sie zu warbyparker.com.slashcovered."
+      }
+    ]
+  }
+}
