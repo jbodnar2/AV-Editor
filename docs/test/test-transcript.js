@@ -1,4 +1,4 @@
-import { downloadVTT, downloadTXT, downloadJSON } from "./test-helpers.js";
+import { downloadVTT, downloadTXT, downloadJSON } from "./test-downloads.js";
 
 // --- Variables & Setup --- //
 
@@ -8,7 +8,7 @@ Object.assign(videoElement, {
   id: "478e2cb1",
   title: "Newscast",
   controls: true,
-  autoplay: true,
+  autoplay: false,
   muted: true,
   loop: true,
   poster: "../media/images/01.jpeg",
