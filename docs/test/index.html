@@ -30,11 +30,7 @@
         <div class="row row--media">
           <div class="col col--media">
             <video id="video-1">
-              <!-- <source src="/media/audio-video/newscast.mp4" type="video/mp4" /> -->
-              <track kind="captions" label="English" srclang="en" src="../data/newscast-en.vtt" default />
-              <track kind="captions" label="Vietnamese" srclang="vi" src="../data/newscast-vi.vtt" />
-              <track kind="captions" label="German" srclang="de" src="../data/newscast-de.vtt" />
-              <track kind="captions" label="Galic" srclang="ga" src="../data/newscast-ga.vtt" />
+              <track kind="captions" src="./api/data/media-478e2cb1-de.vtt" label="German" srclang="de" />
             </video>
           </div>
           <div class="col col--controls"></div>
@@ -53,6 +49,20 @@
     </main>
     <footer></footer>
 
-    <script defer type="module" src="test-transcript.js"></script>
+    <script type="module" defer>
+      import { fetchMediaData } from "./test-api.js";
+      import { addVideoData } from "./test-track.js";
+      import { appendTranscript } from "./test-transcript.js";
+      import { addDownloadListeners } from "./test-downloads.js";
+
+      const videoElement = document.querySelector("#video-1");
+      const transcriptElement = document.querySelector("#transcript");
+
+      fetchMediaData({}).then(mediaData => {
+        addVideoData(videoElement, mediaData);
+        appendTranscript(videoElement, transcriptElement);
+        addDownloadListeners(videoElement, {});
+      });
+    </script>
   </body>
 </html>

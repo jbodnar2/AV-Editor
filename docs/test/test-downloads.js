@@ -31,7 +31,7 @@ function downloadVTT(videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `media-${videoElement.id}.vtt`;
+  link.download = `${videoElement.id}.vtt`;
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
@@ -50,7 +50,7 @@ function downloadTXT(videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `media-${videoElement.id}.txt`;
+  link.download = `${videoElement.id}.txt`;
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
@@ -64,19 +64,20 @@ function downloadJSON(videoElement) {
 
   const content = JSON.stringify(
     {
-      id: `media-${videoElement.id}`,
+      id: `${videoElement.id}`,
       src: videoElement.src,
       title: videoElement.title,
       poster: videoElement.poster,
       track: {
         kind: track.kind,
         label: track.label,
-        language: track.language,
+        srclang: track.language,
         cues: Array.from(track.cues).map((cue, idx) => ({
           id: idx + 1,
           start: cue.startTime,
           end: cue.endTime,
           text: cue.text,
+          data: { ...cue.data },
         })),
       },
     },
@@ -88,7 +89,7 @@ function downloadJSON(videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `media-${videoElement.id}.json`;
+  link.download = `${videoElement.id}.json`;
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
@@ -96,4 +97,17 @@ function downloadJSON(videoElement) {
   document.body.removeChild(link); // remove the link when done
 }
 
-export { downloadVTT, downloadTXT, downloadJSON };
+function addDownloadListeners(
+  videoElement,
+  {
+    btnJSON = document.querySelector?.("a[download='json']"),
+    btnVTT = document.querySelector?.("a[download='vtt']"),
+    btnTXT = document.querySelector?.("a[download='txt']"),
+  },
+) {
+  if (btnJSON) btnJSON.addEventListener("click", event => downloadJSON(videoElement));
+  if (btnVTT) btnVTT.addEventListener("click", event => downloadVTT(videoElement));
+  if (btnTXT) btnTXT.addEventListener("click", event => downloadTXT(videoElement));
+}
+
+export { addDownloadListeners };

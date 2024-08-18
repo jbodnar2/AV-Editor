@@ -1,23 +1,3 @@
-import { downloadVTT, downloadTXT, downloadJSON } from "./test-downloads.js";
-
-// --- Variables & Setup --- //
-
-const videoElement = document.querySelector("#video-1");
-
-Object.assign(videoElement, {
-  id: "478e2cb1",
-  title: "Newscast",
-  controls: true,
-  autoplay: false,
-  muted: true,
-  loop: true,
-  poster: "../media/images/01.jpeg",
-  src: "../media/audio-video/newscast.mp4",
-  playbackRate: 1.0,
-});
-
-// --- Functions --- //
-
 function findTrackByMode(textTracks, mode) {
   return [...textTracks].find(track => track.mode === mode) || null;
 }
@@ -33,7 +13,7 @@ function createCueElement(cue) {
   return cueElement;
 }
 
-function addCueEventListeners(cueMap) {
+function addCueEventListeners(cueMap, videoElement) {
   const handleEnter = element => () => {
     element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     element.classList.add("cue--current");
@@ -50,7 +30,7 @@ function addCueEventListeners(cueMap) {
   }
 }
 
-function addTranscript(track, transcriptElement = document.querySelector("#transcript")) {
+function addTranscript(track, transcriptElement, videoElement) {
   transcriptElement.innerHTML = "";
 
   if (!track) return;
@@ -78,29 +58,27 @@ function addTranscript(track, transcriptElement = document.querySelector("#trans
     currentCueElement.classList.add("cue--current");
   }
 
-  addCueEventListeners(cueMap);
+  addCueEventListeners(cueMap, videoElement);
 }
 
-// --- Init & Event Listeners --- //
-
-videoElement.addEventListener("loadeddata", () => {
+function appendTranscript(videoElement, transcriptElement) {
   const textTracks = videoElement.textTracks;
   if (!textTracks) return;
 
   const showingTrack = findTrackByMode(textTracks, "showing");
-  addTranscript(showingTrack);
+  addTranscript(showingTrack, transcriptElement, videoElement);
 
   textTracks.onchange = () => {
     const showingTrack = findTrackByMode(textTracks, "showing");
     if (!showingTrack) {
-      addTranscript(null);
+      addTranscript(showingTrack, transcriptElement, videoElement);
       return;
     }
 
     function hasCuesAddTranscript() {
       let hasCues = showingTrack.cues.length > 0;
       if (hasCues) {
-        return addTranscript(showingTrack);
+        return addTranscript(showingTrack, transcriptElement, videoElement);
       }
 
       requestAnimationFrame(hasCuesAddTranscript);
@@ -108,12 +86,6 @@ videoElement.addEventListener("loadeddata", () => {
 
     requestAnimationFrame(hasCuesAddTranscript);
   };
-});
+}
 
-const vttButton = document.querySelector('a[download="vtt"]');
-const txtButton = document.querySelector('a[download="txt"]');
-const jsonButton = document.querySelector('a[download="json"]');
-
-vttButton.addEventListener("click", event => downloadVTT(videoElement));
-txtButton.addEventListener("click", event => downloadTXT(videoElement));
-jsonButton.addEventListener("click", event => downloadJSON(videoElement));
+export { appendTranscript };
