@@ -9,10 +9,10 @@ function addVideoTrackAndCues(videoElement, mediaData) {
   track.mode = "showing";
 
   for (const cueData of trackData.cues) {
-    const { start, end, text } = cueData;
+    const { start, end, text, ...remaining } = cueData;
 
     const cue = new VTTCue(start, end, text.trim());
-    Object.assign(cue, cueData);
+    Object.assign(cue, remaining);
 
     track.addCue(cue);
   }
