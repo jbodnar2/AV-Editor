@@ -5,7 +5,9 @@ function downloadVTT(event, videoElement) {
   const track = findTrackByMode(videoElement.textTracks, "showing");
   if (!track) return;
 
-  const filename = videoElement.id.replace(/(-[^-]*)$/, `-${track.language}`);
+  const videoId = videoElement.id.replace(/(-[^-]*)$/, `-${track.language}`);
+  const format = event.target.download;
+
   const cues = Array.from(track.cues);
   const content = cues
     .map(cue => `${secondsToVttTime(cue.startTime)} --> ${secondsToVttTime(cue.endTime)}\n${cue.text}`)
@@ -15,7 +17,7 @@ function downloadVTT(event, videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${filename}.vtt`;
+  link.download = `${videoId}.${format}`;
   link.rel = "noopener";
   link.style.display = "none";
 
@@ -30,7 +32,8 @@ function downloadTXT(event, videoElement) {
   const track = findTrackByMode(videoElement.textTracks, "showing");
   if (!track) return;
 
-  const filename = videoElement.id.replace(/(-[^-]*)$/, `-${track.language}`);
+  const videoId = videoElement.id.replace(/(-[^-]*)$/, `-${track.language}`);
+  const format = event.target.download;
 
   const cues = Array.from(track.cues);
   const content = cues.map(cue => `${cue.text}`).join(" ");
@@ -39,7 +42,7 @@ function downloadTXT(event, videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${filename}.txt`;
+  link.download = `${videoId}.${format}`;
   link.rel = "noopener";
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
@@ -54,6 +57,7 @@ function downloadJSON(event, videoElement) {
   if (!track) return;
 
   const videoId = videoElement.id.replace(/(-[^-]*)$/, `-${track.language}`);
+  const format = event.target.download;
 
   const content = JSON.stringify(
     {
@@ -82,7 +86,7 @@ function downloadJSON(event, videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = `${videoId}.json`;
+  link.download = `${videoId}.${format}`;
   link.style.display = "none";
   link.rel = "noopener";
   document.body.appendChild(link); // Firefox requires the link to be in the body
