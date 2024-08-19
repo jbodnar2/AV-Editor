@@ -8,7 +8,7 @@ function extractMediaIdFromUrl() {
   return urlSearchParams.get("id");
 }
 
-async function fetchMediaData({ id = extractMediaIdFromUrl(), url = "/test/api/data/" }) {
+async function fetchMediaData({ id = extractMediaIdFromUrl(), url = "./api/data/" }) {
   if (!id) return;
 
   const dataUrl = `${url}${id}.json`;
