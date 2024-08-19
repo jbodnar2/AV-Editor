@@ -29,11 +29,6 @@ function addVideoData(videoElement, mediaData) {
     src,
     title,
     poster,
-    controls: true,
-    muted: true,
-    loop: true,
-    playbackRate: 1.0,
-    autoplay: false,
   });
 
   addVideoTrackAndCues(videoElement, mediaData);

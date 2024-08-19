@@ -2,7 +2,7 @@
   "id": "media-3bab12c6-en",
   "src": "https://static.library.gsu.edu/temp/denny.mp4",
   "title": "Denny Interview",
-  "poster": "media/images/01.jpeg",
+  "poster": "/media/images/01.jpeg",
   "track": {
     "kind": "captions",
     "label": "English",
