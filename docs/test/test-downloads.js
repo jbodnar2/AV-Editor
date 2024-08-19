@@ -1,11 +1,11 @@
 import { findTrackByMode, secondsToVttTime } from "./test-helpers.js";
 
-function downloadVTT(videoElement) {
+function downloadVTT(event, videoElement) {
+  event.preventDefault();
   const track = findTrackByMode(videoElement.textTracks, "showing");
   if (!track) return;
 
   const filename = videoElement.id.replace(/(-[^-]*)$/, `-${track.language}`);
-
   const cues = Array.from(track.cues);
   const content = cues
     .map(cue => `${secondsToVttTime(cue.startTime)} --> ${secondsToVttTime(cue.endTime)}\n${cue.text}`)
@@ -16,14 +16,17 @@ function downloadVTT(videoElement) {
   const link = document.createElement("a");
   link.href = url;
   link.download = `${filename}.vtt`;
+  link.rel = "noopener";
   link.style.display = "none";
+
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
   URL.revokeObjectURL(url);
   document.body.removeChild(link); // remove the link when done
 }
 
-function downloadTXT(videoElement) {
+function downloadTXT(event, videoElement) {
+  event.preventDefault();
   const track = findTrackByMode(videoElement.textTracks, "showing");
   if (!track) return;
 
@@ -37,6 +40,7 @@ function downloadTXT(videoElement) {
   const link = document.createElement("a");
   link.href = url;
   link.download = `${filename}.txt`;
+  link.rel = "noopener";
   link.style.display = "none";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
@@ -44,15 +48,16 @@ function downloadTXT(videoElement) {
   document.body.removeChild(link); // remove the link when done
 }
 
-function downloadJSON(videoElement) {
+function downloadJSON(event, videoElement) {
+  event.preventDefault();
   const track = findTrackByMode(videoElement.textTracks, "showing");
   if (!track) return;
 
-  const filename = videoElement.id.replace(/(-[^-]*)$/, `-${track.language}`);
+  const videoId = videoElement.id.replace(/(-[^-]*)$/, `-${track.language}`);
 
   const content = JSON.stringify(
     {
-      id: filename,
+      id: videoId,
       src: videoElement.src,
       title: videoElement.title,
       poster: videoElement.poster,
@@ -77,8 +82,9 @@ function downloadJSON(videoElement) {
   const url = URL.createObjectURL(blob);
   const link = document.createElement("a");
   link.href = url;
-  link.download = filename + ".json";
+  link.download = `${videoId}.json`;
   link.style.display = "none";
+  link.rel = "noopener";
   document.body.appendChild(link); // Firefox requires the link to be in the body
   link.click();
   URL.revokeObjectURL(url);
@@ -93,9 +99,9 @@ function addDownloadListeners(
     btnTXT = document.querySelector?.("a[download='txt']"),
   },
 ) {
-  if (btnJSON) btnJSON.addEventListener("click", event => downloadJSON(videoElement));
-  if (btnVTT) btnVTT.addEventListener("click", event => downloadVTT(videoElement));
-  if (btnTXT) btnTXT.addEventListener("click", event => downloadTXT(videoElement));
+  if (btnJSON) btnJSON.addEventListener("click", event => downloadJSON(event, videoElement));
+  if (btnVTT) btnVTT.addEventListener("click", event => downloadVTT(event, videoElement));
+  if (btnTXT) btnTXT.addEventListener("click", event => downloadTXT(event, videoElement));
 }
 
 export { addDownloadListeners };
