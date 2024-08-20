@@ -51,4 +51,14 @@ function findTrackByMode(textTracks, mode) {
   return [...textTracks].find(track => track.mode === mode) || null;
 }
 
-export { secondsToHHMMSS, findTrackByMode, secondsToVttTime, setSessionMedia, getSessionMedia };
+function extractMediaIdFromUrl() {
+  const currentUrl = new URL(window.location.href);
+
+  const url = new URL(currentUrl);
+
+  const urlSearchParams = new URLSearchParams(url.search);
+
+  return urlSearchParams.get("id");
+}
+
+export { secondsToHHMMSS, findTrackByMode, secondsToVttTime, setSessionMedia, getSessionMedia, extractMediaIdFromUrl };

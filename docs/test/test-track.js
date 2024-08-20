@@ -1,4 +1,4 @@
-function addMediaTrackAndCues(mediaElement, mediaData) {
+function addTrackAndCues(mediaElement, mediaData) {
   if (!mediaElement) return;
   if (!mediaData) return;
 
@@ -18,7 +18,7 @@ function addMediaTrackAndCues(mediaElement, mediaData) {
   }
 }
 
-function addMediaData(mediaElement, mediaData) {
+function addMediaDataAndTrack(mediaElement, mediaData) {
   if (!mediaElement) return;
   if (!mediaData) return;
 
@@ -42,9 +42,16 @@ function addMediaData(mediaElement, mediaData) {
     src,
     title,
     poster,
+    // autoplay: true,
+    // muted: true,
+    loop: true,
+    controls: true,
+    playsInline: true,
+    preload: "auto",
+    // crossOrigin: "anonymous",
   });
 
-  addMediaTrackAndCues(mediaElement, mediaData);
+  addTrackAndCues(mediaElement, mediaData);
 }
 
-export { addMediaData };
+export { addMediaDataAndTrack };

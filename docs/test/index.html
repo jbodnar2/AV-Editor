@@ -31,7 +31,7 @@
       <div class="container main-grid">
         <div class="row row--media">
           <div class="col col--media">
-            <audio id="media-1" controls></audio>
+            <audio id="media-1" class="media-player"></audio>
           </div>
           <div class="col col--controls"></div>
         </div>
@@ -51,7 +51,7 @@
 
     <script type="module" defer>
       import { fetchMediaData } from "./test-api.js";
-      import { addMediaData } from "./test-track.js";
+      import { addMediaDataAndTrack } from "./test-track.js";
       import { appendTranscript } from "./test-transcript.js";
       import { addDownloadListeners } from "./test-downloads.js";
 
@@ -59,7 +59,7 @@
       const transcriptElement = document.querySelector("#transcript");
 
       fetchMediaData({}).then(mediaData => {
-        addMediaData(mediaElement, mediaData);
+        addMediaDataAndTrack(mediaElement, mediaData);
         appendTranscript(mediaElement, transcriptElement);
         addDownloadListeners(mediaElement, {});
       });

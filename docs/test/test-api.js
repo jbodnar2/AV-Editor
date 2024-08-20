@@ -1,14 +1,4 @@
-import { getSessionMedia, setSessionMedia } from "./test-helpers.js";
-
-function extractMediaIdFromUrl() {
-  const currentUrl = new URL(window.location.href);
-
-  const url = new URL(currentUrl);
-
-  const urlSearchParams = new URLSearchParams(url.search);
-
-  return urlSearchParams.get("id");
-}
+import { getSessionMedia, setSessionMedia, extractMediaIdFromUrl } from "./test-helpers.js";
 
 async function fetchMediaData({ id = extractMediaIdFromUrl(), url = "./api/data/" }) {
   if (!id) return;
