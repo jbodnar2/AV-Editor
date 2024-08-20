@@ -26,17 +26,16 @@ function addVideoData(videoElement, mediaData) {
 
   const isGithub = window.location.pathname.includes("AV-Editor");
 
-  if (isGithub && !src.startsWith("https://static.library.gsu.edu/")) {
-    src = `/AV-Editor${src}`;
-  }
-
+  // Add the prefix to the URL if it's on GitHub
   if (isGithub) {
-    poster = `/AV-Editor${poster}`;
+    if (!src.startsWith("https://static.library.gsu.edu/")) {
+      src = `/AV-Editor${src}`;
+    }
+
+    if (poster) {
+      poster = `/AV-Editor${poster}`;
+    }
   }
-
-  console.log(poster);
-
-  console.log(src);
 
   Object.assign(videoElement, {
     id,
