@@ -23,6 +23,10 @@ function addVideoData(videoElement, mediaData) {
   if (!mediaData) return;
 
   const { id, src, title, poster } = mediaData;
+  
+  const url = new URL(window.location);
+  console.log(url);
+  
 
   Object.assign(videoElement, {
     id,
