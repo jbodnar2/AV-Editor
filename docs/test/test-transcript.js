@@ -11,7 +11,7 @@ function createCueElement(cue) {
   return cueElement;
 }
 
-function addCueEventListeners(cueMap, videoElement) {
+function addCueEventListeners(cueMap, mediaElement) {
   const handleEnter = element => () => {
     element.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     element.classList.add("cue--current");
@@ -19,7 +19,7 @@ function addCueEventListeners(cueMap, videoElement) {
 
   const handleExit = element => () => element.classList.remove("cue--current");
 
-  const handleClick = cue => () => (videoElement.currentTime = cue.startTime);
+  const handleClick = cue => () => (mediaElement.currentTime = cue.startTime);
 
   for (const [cue, element] of cueMap.entries()) {
     cue.onenter = handleEnter(element);
@@ -28,7 +28,7 @@ function addCueEventListeners(cueMap, videoElement) {
   }
 }
 
-function addTranscript(track, transcriptElement, videoElement) {
+function addTranscript(track, transcriptElement, mediaElement) {
   transcriptElement.innerHTML = "";
 
   if (!track) return;
@@ -50,33 +50,33 @@ function addTranscript(track, transcriptElement, videoElement) {
 
   const currentCue = track.activeCues[0];
   if (currentCue) {
-    videoElement.currentTime = currentCue.startTime;
+    mediaElement.currentTime = currentCue.startTime;
     const currentCueElement = cueMap.get(currentCue);
     currentCueElement.scrollIntoView({ behavior: "smooth", block: "center", inline: "nearest" });
     currentCueElement.classList.add("cue--current");
   }
 
-  addCueEventListeners(cueMap, videoElement);
+  addCueEventListeners(cueMap, mediaElement);
 }
 
-function appendTranscript(videoElement, transcriptElement) {
-  const textTracks = videoElement.textTracks;
+function appendTranscript(mediaElement, transcriptElement) {
+  const textTracks = mediaElement.textTracks;
   if (!textTracks) return;
 
   const showingTrack = findTrackByMode(textTracks, "showing");
-  addTranscript(showingTrack, transcriptElement, videoElement);
+  addTranscript(showingTrack, transcriptElement, mediaElement);
 
   textTracks.onchange = () => {
     const showingTrack = findTrackByMode(textTracks, "showing");
     if (!showingTrack) {
-      addTranscript(showingTrack, transcriptElement, videoElement);
+      addTranscript(showingTrack, transcriptElement, mediaElement);
       return;
     }
 
     function hasCuesAddTranscript() {
       let hasCues = showingTrack.cues.length > 0;
       if (hasCues) {
-        return addTranscript(showingTrack, transcriptElement, videoElement);
+        return addTranscript(showingTrack, transcriptElement, mediaElement);
       }
 
       requestAnimationFrame(hasCuesAddTranscript);

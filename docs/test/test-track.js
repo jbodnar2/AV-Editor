@@ -1,11 +1,11 @@
-function addVideoTrackAndCues(videoElement, mediaData) {
-  if (!videoElement) return;
+function addMediaTrackAndCues(mediaElement, mediaData) {
+  if (!mediaElement) return;
   if (!mediaData) return;
 
   // TODO: Investigate track.kind options and how it might affect, loading, downloads, etc
   // NOTE: Default is metadata, c.f. https://developer.mozilla.org/en-US/docs/Web/HTML/Element/track
   const trackData = mediaData.track;
-  const track = videoElement.addTextTrack(trackData.kind, trackData.label, trackData.srclang);
+  const track = mediaElement.addTextTrack(trackData.kind, trackData.label, trackData.srclang);
   track.mode = "showing";
 
   for (const cueData of trackData.cues) {
@@ -18,8 +18,8 @@ function addVideoTrackAndCues(videoElement, mediaData) {
   }
 }
 
-function addVideoData(videoElement, mediaData) {
-  if (!videoElement) return;
+function addMediaData(mediaElement, mediaData) {
+  if (!mediaElement) return;
   if (!mediaData) return;
 
   let { id, src, title, poster } = mediaData;
@@ -37,14 +37,14 @@ function addVideoData(videoElement, mediaData) {
     }
   }
 
-  Object.assign(videoElement, {
+  Object.assign(mediaElement, {
     id,
     src,
     title,
     poster,
   });
 
-  addVideoTrackAndCues(videoElement, mediaData);
+  addMediaTrackAndCues(mediaElement, mediaData);
 }
 
-export { addVideoData };
+export { addMediaData };
