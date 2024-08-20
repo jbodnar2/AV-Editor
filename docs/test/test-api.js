@@ -1,3 +1,5 @@
+import { getSessionMedia, setSessionMedia } from "./test-helpers.js";
+
 function extractMediaIdFromUrl() {
   const currentUrl = new URL(window.location.href);
 
@@ -11,6 +13,12 @@ function extractMediaIdFromUrl() {
 async function fetchMediaData({ id = extractMediaIdFromUrl(), url = "./api/data/" }) {
   if (!id) return;
 
+  const cachedMedia = getSessionMedia(id);
+
+  if (cachedMedia) {
+    return cachedMedia;
+  }
+
   const dataUrl = `${url}${id}.json`;
 
   try {
@@ -21,6 +29,9 @@ async function fetchMediaData({ id = extractMediaIdFromUrl(), url = "./api/data/
     }
 
     const mediaData = await response.json();
+
+    setSessionMedia(id, mediaData);
+
     return mediaData;
   } catch (error) {
     return null;
