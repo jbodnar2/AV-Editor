@@ -22,11 +22,21 @@ function addVideoData(videoElement, mediaData) {
   if (!videoElement) return;
   if (!mediaData) return;
 
-  const { id, src, title, poster } = mediaData;
-  
-  const url = new URL(window.location);
-  console.log(url);
-  
+  let { id, src, title, poster } = mediaData;
+
+  const isGithub = window.location.pathname.includes("AV-Editor");
+
+  if (isGithub && !src.startsWith("https://static.library.gsu.edu/")) {
+    src = `/AV-Editor${src}`;
+  }
+
+  if (isGithub) {
+    poster = `/AV-Editor${poster}`;
+  }
+
+  console.log(poster);
+
+  console.log(src);
 
   Object.assign(videoElement, {
     id,
