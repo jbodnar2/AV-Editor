@@ -32,7 +32,6 @@ function downloadTranscript(event, videoElement, format) {
             start: cue.startTime,
             end: cue.endTime,
             text: cue.text,
-            ...cue,
           })),
         },
       },

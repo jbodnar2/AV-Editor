@@ -9,11 +9,9 @@ function addTrackAndCues(mediaElement, mediaData) {
   track.mode = "showing";
 
   for (const cueData of trackData.cues) {
-    const { start, end, text, ...remaining } = cueData;
+    const { start, end, text } = cueData;
 
-    const cue = new VTTCue(start, end, text.trim());
-    Object.assign(cue, remaining);
-
+    const cue = new VTTCue(start, end, text);
     track.addCue(cue);
   }
 }
@@ -22,7 +20,7 @@ function addMediaDataAndTrack(mediaElement, mediaData) {
   if (!mediaElement) return;
   if (!mediaData) return;
 
-  let { id, src, title, poster } = mediaData;
+  let { id, src, title } = mediaData;
 
   const isGithub = window.location.pathname.includes("AV-Editor");
 
@@ -31,17 +29,12 @@ function addMediaDataAndTrack(mediaElement, mediaData) {
     if (!src.startsWith("https://static.library.gsu.edu/")) {
       src = `/AV-Editor${src}`;
     }
-
-    if (poster) {
-      poster = `/AV-Editor${poster}`;
-    }
   }
 
   Object.assign(mediaElement, {
     id,
     src,
     title,
-    poster,
     // autoplay: true,
     // muted: true,
     loop: true,
