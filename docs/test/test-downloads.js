@@ -22,7 +22,6 @@ function downloadTranscript(event, videoElement, format) {
         id: videoId,
         src: videoElement.src,
         title: videoElement.title,
-        poster: videoElement.poster,
         track: {
           kind: track.kind,
           label: track.label,
