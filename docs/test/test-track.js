@@ -30,6 +30,7 @@ function addMediaDataAndTrack(mediaElement, mediaData) {
       src = `/AV-Editor${src}`;
     }
   }
+  console.log("src", src);
 
   Object.assign(mediaElement, {
     id,
