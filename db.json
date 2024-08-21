@@ -1,0 +1,44 @@
+{
+  "people": [
+    {
+      "id": 1,
+      "fname": "John",
+      "lname": "Doe",
+      "age": 30,
+      "city": "New York",
+      "country": "USA",
+      "description": "A person who lives in New York, USA.",
+      "image": "https://picsum.photos/200/300"
+    },
+    {
+      "id": 2,
+      "fname": "Jane",
+      "lname": "Doe",
+      "age": 25,
+      "city": "Paris",
+      "country": "France",
+      "description": "A person who lives in Paris, France.",
+      "image": "https://picsum.photos/200/300"
+    },
+    {
+      "id": 3,
+      "fname": "Bob",
+      "lname": "Smith",
+      "age": 40,
+      "city": "London",
+      "country": "UK",
+      "description": "A person who lives in London, UK.",
+      "image": "https://picsum.photos/200/300"
+    },
+    {
+      "id": 4,
+      "fname": "Alice",
+      "lname": "Smith",
+      "age": 35,
+      "city": "Berlin",
+      "country": "Germany",
+      "description": "A person who lives in Berlin, Germany.",
+      "image": "https://picsum.photos/200/300"
+    }
+  ]
+}

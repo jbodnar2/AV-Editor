@@ -4,11 +4,9 @@
   "private": "true",
   "type": "module",
   "scripts": {
-    "start": "npm run serve-docs",
-    "start-php": "php -S localhost:3000 -t ./docs",
-    "serve-docs-and-db": "npm run serve-db & npm run serve-docs",
-    "serve-docs": "node ./serve-docs.js",
-    "serve-db": "npx json-server --port 3001 ./data/db.json",
+    "start": "npx live-server ./docs --port=3000 --host=localhost",
+    "json-server": "npx json-server --port 3001 ./db.json",
+    "start-php": "php -S localhost:3002 -t ./docs",
     "prettier": "npx prettier --write ."
   },
   "prettier": {
@@ -20,8 +18,5 @@
     "endOfLine": "auto",
     "useTabs": false,
     "semi": true
-  },
-  "dependencies": {
-    "live-server": "^1.2.2"
   }
 }
