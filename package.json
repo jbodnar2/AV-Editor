@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "start": "npx live-server ./docs --port=3000 --host=localhost",
-    "json-server": "npx json-server --port 3001 ./db.json",
     "start-php": "php -S localhost:3002 -t ./docs",
     "prettier": "npx prettier --write ."
   },
